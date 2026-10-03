@@ -16,7 +16,7 @@ const casteloDetails = {
 const castelinhoDetails = {
   ...unidades.castelinho,
   faixa: "Primeira Infância",
-  endereco: ["Av. São Paulo, 1381-1563", "Santa Rosa de Viterbo - SP", "CEP 14270-000"],
+  endereco: ["Av. São Paulo, 1381-1563", "Santa Rosa de Viterbo/SP — CEP 14270-000"],
   instagram: "https://www.instagram.com/castelinhodocriar/",
   facebook: "https://www.facebook.com/profile.php?id=61561814674315",
 };
@@ -44,7 +44,7 @@ export function Footer() {
               className="h-auto w-48"
             />
           </div>
-          <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+          <p className="mt-3 text-xs leading-normal text-muted-foreground md:max-w-48">
             {grupo.descricao}
           </p>
         </div>
@@ -196,8 +196,8 @@ export function Footer() {
               </Link>
             </div>
           </div>
-          <p className="mt-2 text-center text-xs text-muted-foreground/60 sm:text-left">
-            Desenvolvido por - Leonardo Dias Tech
+          <p className="mt-2 text-center text-xs text-muted-foreground/70 sm:text-left">
+            Desenvolvido por Leonardo Dias Tech
           </p>
         </div>
       </div>
