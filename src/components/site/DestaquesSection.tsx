@@ -6,6 +6,7 @@ import { ExternalLink } from "@/components/site/ExternalLink";
 import { Container, SectionHeading } from "@/components/site/Section";
 import { Button } from "@/components/ui/button";
 import { destaques } from "@/content/destaques";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
 function DestaqueCta({ cta }: { cta: (typeof destaques)[number]["cta"] }) {
@@ -36,12 +37,13 @@ function DestaqueCta({ cta }: { cta: (typeof destaques)[number]["cta"] }) {
 export function DestaquesSection() {
   const [index, setIndex] = useState(0);
   const total = destaques.length;
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (total < 2) return;
+    if (total < 2 || prefersReducedMotion) return;
     const timer = window.setInterval(() => setIndex((i) => (i + 1) % total), 7000);
     return () => window.clearInterval(timer);
-  }, [total]);
+  }, [total, prefersReducedMotion]);
 
   const atual = destaques[index];
   if (!atual) return null;

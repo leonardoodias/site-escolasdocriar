@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-escola.jpg";
 import { Container } from "@/components/site/Section";
 import { Button } from "@/components/ui/button";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
 export interface HeroCta {
@@ -235,14 +236,15 @@ export function HeroGrupo() {
   const [isPaused, setIsPaused] = useState(false);
   const [contatoOpen, setContatoOpen] = useState(false);
   const total = heroBanners.length;
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (isPaused || contatoOpen || total < 2) return;
+    if (isPaused || contatoOpen || total < 2 || prefersReducedMotion) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % total);
     }, 7000);
     return () => clearInterval(interval);
-  }, [isPaused, contatoOpen, total]);
+  }, [isPaused, contatoOpen, total, prefersReducedMotion]);
 
   const currentBanner = (heroBanners[currentIndex] ?? heroBanners[0]) as HeroBanner;
 
@@ -320,6 +322,7 @@ export function HeroGrupo() {
               <img
                 src={currentBanner.image}
                 alt={currentBanner.imageAlt}
+                fetchPriority="high"
                 className="aspect-[4/3] w-full object-cover sm:aspect-[16/11]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/40 via-transparent to-transparent" />
