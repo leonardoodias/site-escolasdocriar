@@ -51,14 +51,16 @@ export function Footer() {
 
         {/* Coluna 2 — Castelinho do Criar */}
         <div className="flex flex-col">
-          <h3 className="font-display text-sm font-bold text-primary-deep uppercase tracking-wider">
-            {castelinhoDetails.nome}
-          </h3>
-          <span className="mt-0.5 text-xs font-semibold text-accent uppercase">
-            {castelinhoDetails.faixa}
-          </span>
+          <div className="flex min-h-10 flex-col">
+            <h3 className="font-display text-sm font-bold text-primary-deep uppercase tracking-wider">
+              {castelinhoDetails.nome}
+            </h3>
+            <span className="mt-0.5 text-xs font-semibold text-accent uppercase">
+              {castelinhoDetails.faixa}
+            </span>
+          </div>
           <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
-            <li className="flex gap-2">
+            <li className="flex items-start gap-2">
               <MapPin className="mt-0.5 size-3.5 shrink-0 text-accent" aria-hidden="true" />
               <span>
                 {castelinhoDetails.endereco.map((linha) => (
@@ -68,16 +70,20 @@ export function Footer() {
                 ))}
               </span>
             </li>
-            <li className="flex gap-2">
+            <li className="flex items-start gap-2">
               <Phone className="mt-0.5 size-3.5 shrink-0 text-accent" aria-hidden="true" />
               <a href={castelinhoDetails.telefoneHref} className="hover:text-primary transition-colors">
                 <span className="whitespace-nowrap">{castelinhoDetails.telefone}</span>
               </a>
             </li>
-            <li className="flex gap-2">
+            <li className="flex items-start gap-2">
               <MessageCircle className="mt-0.5 size-3.5 shrink-0 text-accent" aria-hidden="true" />
-              <ExternalLink href={castelinhoDetails.whatsappUrl} className="hover:text-primary transition-colors">
-                WhatsApp <span className="whitespace-nowrap">{castelinhoDetails.whatsapp}</span>
+              <ExternalLink
+                href={castelinhoDetails.whatsappUrl}
+                aria-label={`WhatsApp do ${castelinhoDetails.nome}, ${castelinhoDetails.whatsapp}`}
+                className="hover:text-primary transition-colors"
+              >
+                <span className="whitespace-nowrap">{castelinhoDetails.whatsapp}</span>
               </ExternalLink>
             </li>
           </ul>
@@ -101,14 +107,16 @@ export function Footer() {
 
         {/* Coluna 3 — Castelo do Criar */}
         <div className="flex flex-col">
-          <h3 className="font-display text-sm font-bold text-primary-deep uppercase tracking-wider">
-            {casteloDetails.nome}
-          </h3>
-          <span className="mt-0.5 text-xs font-semibold text-accent uppercase">
-            {casteloDetails.faixa}
-          </span>
+          <div className="flex min-h-10 flex-col">
+            <h3 className="font-display text-sm font-bold text-primary-deep uppercase tracking-wider">
+              {casteloDetails.nome}
+            </h3>
+            <span className="mt-0.5 text-xs font-semibold text-accent uppercase">
+              {casteloDetails.faixa}
+            </span>
+          </div>
           <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
-            <li className="flex gap-2">
+            <li className="flex items-start gap-2">
               <MapPin className="mt-0.5 size-3.5 shrink-0 text-accent" aria-hidden="true" />
               <span>
                 {casteloDetails.endereco.map((linha) => (
@@ -118,16 +126,20 @@ export function Footer() {
                 ))}
               </span>
             </li>
-            <li className="flex gap-2">
+            <li className="flex items-start gap-2">
               <Phone className="mt-0.5 size-3.5 shrink-0 text-accent" aria-hidden="true" />
               <a href={casteloDetails.telefoneHref} className="hover:text-primary transition-colors">
                 <span className="whitespace-nowrap">{casteloDetails.telefone}</span>
               </a>
             </li>
-            <li className="flex gap-2">
+            <li className="flex items-start gap-2">
               <MessageCircle className="mt-0.5 size-3.5 shrink-0 text-accent" aria-hidden="true" />
-              <ExternalLink href={casteloDetails.whatsappUrl} className="hover:text-primary transition-colors">
-                WhatsApp <span className="whitespace-nowrap">{casteloDetails.whatsapp}</span>
+              <ExternalLink
+                href={casteloDetails.whatsappUrl}
+                aria-label={`WhatsApp do ${casteloDetails.nome}, ${casteloDetails.whatsapp}`}
+                className="hover:text-primary transition-colors"
+              >
+                <span className="whitespace-nowrap">{casteloDetails.whatsapp}</span>
               </ExternalLink>
             </li>
           </ul>
@@ -151,9 +163,11 @@ export function Footer() {
 
         {/* Coluna 4 — Links rápidos */}
         <div className="flex flex-col">
-          <h3 className="font-display text-sm font-bold text-primary-deep uppercase tracking-wider">
-            Links rápidos
-          </h3>
+          <div className="flex min-h-10 flex-col">
+            <h3 className="font-display text-sm font-bold text-primary-deep uppercase tracking-wider">
+              Links rápidos
+            </h3>
+          </div>
           <ul className="mt-3 space-y-2">
             {linksRapidos.map((link) => (
               <li key={link.to}>
@@ -170,16 +184,21 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border/80">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 text-[11px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <p>© {new Date().getFullYear()} {grupo.nome} — Todos os direitos reservados.</p>
-          <div className="flex gap-4">
-            <Link to="/politica-de-privacidade" className="hover:text-primary transition-colors">
-              Política de Privacidade
-            </Link>
-            <Link to="/termos-de-uso" className="hover:text-primary transition-colors">
-              Termos de Uso
-            </Link>
+        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+          <div className="flex flex-col gap-2 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+            <p>© {new Date().getFullYear()} {grupo.nome} — Todos os direitos reservados.</p>
+            <div className="flex gap-4">
+              <Link to="/politica-de-privacidade" className="hover:text-primary transition-colors">
+                Política de Privacidade
+              </Link>
+              <Link to="/termos-de-uso" className="hover:text-primary transition-colors">
+                Termos de Uso
+              </Link>
+            </div>
           </div>
+          <p className="mt-2 text-center text-xs text-muted-foreground/60 sm:text-left">
+            Desenvolvido por - Leonardo Dias Tech
+          </p>
         </div>
       </div>
     </footer>
