@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, Mail, MapPin } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { UnidadesContato } from "@/components/site/ContatoDialog";
@@ -56,7 +56,7 @@ function Contato() {
               <h3 className="font-display text-xl font-extrabold text-primary-deep">
                 {castelinhoContato.nome}
               </h3>
-              <ul className="mt-5 space-y-5 text-sm">
+              <ul className="mt-5 space-y-4 text-sm">
                 <li className="flex gap-3">
                   <MapPin className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden="true" />
                   <span className="text-foreground/85">
@@ -69,22 +69,22 @@ function Contato() {
                 </li>
               </ul>
 
-              <div className="mt-6">
-                <Button asChild variant="outline" className="min-h-12 rounded-full font-bold">
+              <div className="mt-auto flex flex-col gap-6 pt-6">
+                <Button asChild variant="outline" className="min-h-12 w-fit rounded-full font-bold">
                   <a href={castelinhoContato.mapsDirections} target="_blank" rel="noopener noreferrer">
                     Ver rota no mapa
                   </a>
                 </Button>
-              </div>
 
-              <div className="mt-6 overflow-hidden rounded-4xl shadow-lift">
-                <iframe
-                  src={castelinhoContato.mapsEmbed}
-                  title="Mapa da localização do Castelinho do Criar"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="h-72 w-full border-0"
-                />
+                <div className="overflow-hidden rounded-4xl shadow-lift">
+                  <iframe
+                    src={castelinhoContato.mapsEmbed}
+                    title="Mapa da localização do Castelinho do Criar"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="h-72 w-full border-0"
+                  />
+                </div>
               </div>
             </div>
 
@@ -93,7 +93,7 @@ function Contato() {
               <h3 className="font-display text-xl font-extrabold text-primary-deep">
                 {school.shortName}
               </h3>
-              <ul className="mt-5 space-y-5 text-sm">
+              <ul className="mt-5 space-y-4 text-sm">
                 <li className="flex gap-3">
                   <MapPin className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden="true" />
                   <span className="text-foreground/85">
@@ -103,33 +103,27 @@ function Contato() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <Mail className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden="true" />
-                  <a href={`mailto:${school.email}`} className="font-semibold hover:text-primary">
-                    {school.email}
-                  </a>
-                </li>
-                <li className="flex gap-3">
                   <Clock className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden="true" />
                   <span className="text-foreground/85">{school.hours}</span>
                 </li>
               </ul>
 
-              <div className="mt-6">
-                <Button asChild variant="outline" className="min-h-12 rounded-full font-bold">
+              <div className="mt-auto flex flex-col gap-6 pt-6">
+                <Button asChild variant="outline" className="min-h-12 w-fit rounded-full font-bold">
                   <a href={school.mapsDirections} target="_blank" rel="noopener noreferrer">
                     Ver rota no mapa
                   </a>
                 </Button>
-              </div>
 
-              <div className="mt-6 overflow-hidden rounded-4xl shadow-lift">
-                <iframe
-                  src={school.mapsEmbed}
-                  title="Mapa da localização da Escola Castelo do Criar"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="h-72 w-full border-0"
-                />
+                <div className="overflow-hidden rounded-4xl shadow-lift">
+                  <iframe
+                    src={school.mapsEmbed}
+                    title="Mapa da localização da Escola Castelo do Criar"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="h-72 w-full border-0"
+                  />
+                </div>
               </div>
             </div>
           </div>
