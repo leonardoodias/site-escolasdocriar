@@ -13,7 +13,6 @@ export const school = {
   tagline: "Educar é criar possibilidades para o futuro.",
   description:
     "Escola de Educação Infantil, Ensino Fundamental e Ensino Médio em Santa Rosa de Viterbo/SP. Conhecimento, afeto e criatividade em cada etapa da vida escolar.",
-  email: "contato@castelodocriar.com.br",
   address: {
     street: "Rua Coronel Garcia, 158",
     city: "Santa Rosa de Viterbo, São Paulo",
