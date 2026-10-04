@@ -45,3 +45,7 @@ Para rodar esta skill de verdade, uma destas opções:
 3. **Rodar esta skill em um ambiente com a ferramenta de navegador integrada** (ex.: outra sessão/IDE que já tenha esse recurso disponível).
 
 Nenhum arquivo do site foi alterado.
+
+---
+
+**Reconfirmado:** nova tentativa na mesma sessão — servidor segue respondendo `200` em `/` e `/contato`, e as mesmas ferramentas de navegador (`resize_window`, `javascript_tool`, `read_page`, `read_console_messages`) continuam ausentes. Bloqueio inalterado desde a última verificação; nenhum resultado novo para reportar.

@@ -64,7 +64,7 @@ export function Header() {
 
           <Button
             asChild
-            className="hidden h-10 rounded-full gradient-accent px-5 text-[13px] font-bold text-accent-foreground shadow-soft transition-opacity hover:opacity-90 sm:inline-flex"
+            className="hidden h-10 rounded-full bg-accent px-5 text-[13px] font-bold text-accent-foreground shadow-soft transition-colors hover:bg-accent/90 sm:inline-flex"
           >
             <Link to="/matriculas">
               <CalendarCheck className="mr-1.5 size-4" aria-hidden="true" />
@@ -112,7 +112,7 @@ export function Header() {
             <li className="mt-2 pt-3 border-t border-border/60">
               <Button
                 asChild
-                className="h-11 w-full rounded-full gradient-accent font-bold text-accent-foreground shadow-soft"
+                className="h-11 w-full rounded-full bg-accent font-bold text-accent-foreground shadow-soft transition-colors hover:bg-accent/90"
               >
                 <Link to="/matriculas" onClick={() => setOpen(false)}>
                   <CalendarCheck className="mr-2 size-4" aria-hidden="true" />

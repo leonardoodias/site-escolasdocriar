@@ -30,7 +30,8 @@ export const Route = createFileRoute("/contato")({
 /** Endereço e mapa do Castelinho do Criar — mesmos dados usados no rodapé do site. */
 const castelinhoContato = {
   nome: "Castelinho do Criar",
-  endereco: ["Av. São Paulo, 1381-1563", "Santa Rosa de Viterbo - SP", "CEP 14270-000"],
+  endereco: ["Av. São Paulo, 1381-1563", "Santa Rosa de Viterbo, São Paulo", "CEP 14270-000"],
+  horario: "Segunda a Sexta-Feira, das 7h às 17h.",
   mapsEmbed:
     "https://www.google.com/maps?q=Av.+Sao+Paulo,+1381-1563,+Santa+Rosa+de+Viterbo,+Sao+Paulo,+14270-000&output=embed",
   mapsDirections:
@@ -67,6 +68,10 @@ function Contato() {
                     ))}
                   </span>
                 </li>
+                <li className="flex gap-3">
+                  <Clock className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden="true" />
+                  <span className="text-foreground/85">{castelinhoContato.horario}</span>
+                </li>
               </ul>
 
               <div className="mt-auto flex flex-col gap-6 pt-6">
@@ -97,9 +102,9 @@ function Contato() {
                 <li className="flex gap-3">
                   <MapPin className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden="true" />
                   <span className="text-foreground/85">
-                    {school.address.street}
-                    <br />
-                    {school.address.city} — {school.address.zip}
+                    <span className="block">{school.address.street}</span>
+                    <span className="block">{school.address.city}</span>
+                    <span className="block">CEP {school.address.zip}</span>
                   </span>
                 </li>
                 <li className="flex gap-3">

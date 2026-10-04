@@ -8,10 +8,7 @@ import { grupo } from "@/content/grupo";
 const casteloDetails = {
   ...unidades.castelo,
   faixa: "Fundamental I, II e Médio",
-  endereco: ["Rua Coronel Garcia, 158 — Centro",
-    "Santa Rosa de Viterbo/SP,
-    CEP 14270-077",
-    ],
+  endereco: ["Rua Coronel Garcia, 158 — Centro", "Santa Rosa de Viterbo/SP", "CEP 14270-077"],
   instagram: "https://www.instagram.com/castelodocriar/",
   facebook: "https://www.facebook.com/profile.php?id=61588620640733",
 };
@@ -19,10 +16,7 @@ const casteloDetails = {
 const castelinhoDetails = {
   ...unidades.castelinho,
   faixa: "Primeira Infância",
-  endereco: [""Av. São Paulo, 1381-1563",
-    "Santa Rosa de Viterbo/SP",
-    "CEP 14270-000",
-  ],
+  endereco: ["Av. São Paulo, 1381-1563", "Santa Rosa de Viterbo/SP", "CEP 14270-000"],
   instagram: "https://www.instagram.com/castelinhodocriar/",
   facebook: "https://www.facebook.com/profile.php?id=61561814674315",
 };
