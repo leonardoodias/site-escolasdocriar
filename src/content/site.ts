@@ -66,32 +66,85 @@ export const pilares = [
   },
 ];
 
-export const propostaEtapas = [
+/** Como cada escola do grupo acompanha o desenvolvimento dos alunos em sua faixa etária. */
+export const etapasDesenvolvimento = [
   {
-    title: "Conhecer",
-    text: "Contato com os conteúdos, conceitos e diferentes formas de pensar o mundo.",
+    escola: "Castelinho do Criar",
+    faixa: "Berçário • Mini Maternal • Maternal • Nível I • Nível II",
+    frase: "Os primeiros passos são construídos com afeto, cuidado, estímulo e intencionalidade.",
+    destaques: [
+      "Acolhimento e vínculo",
+      "Brincar e explorar",
+      "Desenvolvimento motor",
+      "Linguagem e comunicação",
+      "Socialização",
+      "Autonomia progressiva",
+      "Experiências sensoriais",
+      "Respeito ao ritmo de cada criança",
+    ],
   },
   {
-    title: "Experimentar",
-    text: "Atividades práticas, investigação e uso real do que foi aprendido.",
-  },
-  {
-    title: "Refletir",
-    text: "Análise dos resultados, das dúvidas e dos próprios caminhos de aprendizagem.",
-  },
-  {
-    title: "Escolher",
-    text: "Tomada de decisão com critério, responsabilidade e autonomia.",
-  },
-  {
-    title: "Planejar",
-    text: "Organização de etapas, metas e recursos para chegar a um objetivo.",
-  },
-  {
-    title: "Realizar",
-    text: "Execução, apresentação e celebração do que foi construído.",
+    escola: "Castelo do Criar",
+    faixa: "Ensino Fundamental I • Ensino Fundamental II • Ensino Médio",
+    frase: "Educação com propósito. Formação com excelência.",
+    destaques: [
+      "Construção sólida do conhecimento",
+      "Autonomia",
+      "Responsabilidade",
+      "Criatividade",
+      "Pensamento crítico",
+      "Desenvolvimento humano",
+      "Projetos e experiências",
+      "Preparação para novos desafios",
+    ],
   },
 ];
+
+/**
+ * Apresentação institucional da parceria com a FTD Educação e a School of
+ * Schools, adotada pelo Castelo do Criar como apoio ao trabalho pedagógico.
+ * Não é exclusiva do Ensino Médio — ver `ensinoMedioDestaque` para o
+ * diferencial específico dessa etapa.
+ */
+export const sistemaEnsino = {
+  title: "Tecnologia, conteúdo e acompanhamento que ampliam a aprendizagem",
+  text: "O Castelo do Criar conta com as soluções educacionais da FTD Educação, em parceria com a School of Schools, agregando materiais, conteúdos, recursos digitais e ferramentas que apoiam o trabalho dos professores e ampliam as possibilidades de aprendizagem dos alunos.",
+  responsabilidades: [
+    {
+      title: "FTD Educação + School of Schools",
+      text: "Oferecem conteúdos, materiais didáticos, recursos digitais, plataforma e ferramentas de apoio à aprendizagem.",
+    },
+    {
+      title: "Castelo do Criar",
+      text: "Conduz a proposta pedagógica por meio dos professores, planejamento das aulas, acompanhamento próximo dos alunos e experiências desenvolvidas pela escola.",
+    },
+  ],
+  regularizacaoTitle: "Sobre a regularização da School of Schools",
+  regularizacaoText:
+    "Nossas escolas já utilizam as soluções educacionais da FTD, e estamos em processo de regularização da identificação da School of Schools junto à plataforma. Trata-se de uma etapa de formalização administrativa, que está em andamento e não altera o material utilizado, a metodologia aplicada ou o acompanhamento pedagógico dos nossos alunos.",
+};
+
+/** Recursos gerais da plataforma FTD, disponíveis aos alunos do Castelo do Criar. */
+export const recursosAprendizagem = [
+  { icon: "BookOpen", title: "Livros e materiais digitais" },
+  { icon: "ListChecks", title: "Conteúdos e trilhas de estudo" },
+  { icon: "Sparkles", title: "Recursos e atividades de apoio" },
+  { icon: "LineChart", title: "Acompanhamento de desempenho" },
+];
+
+/** Diferencial específico do Ensino Médio dentro da plataforma FTD — não define a parceria. */
+export const ensinoMedioDestaque = {
+  eyebrow: "Ensino Médio",
+  title: "Preparação para os próximos desafios",
+  text: "No Ensino Médio, esses recursos ganham ainda mais importância na preparação para o ENEM e vestibulares. Simulados, trilhas de estudo, exercícios e ferramentas de produção e correção de redação complementam o acompanhamento realizado pelos professores do Castelo do Criar.",
+  diferenciais: [
+    "Simulados",
+    "Preparação para o ENEM",
+    "Exercícios e trilhas de estudo",
+    "Produção e correção de redação (Pontue)",
+    "Acompanhamento da evolução e desempenho",
+  ],
+};
 
 export const eventosFamilia = [
   "Dia da Família",
