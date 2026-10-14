@@ -4,9 +4,9 @@
  * Estrutura pensada para migrar futuramente para banco de dados/painel admin.
  */
 
-import familiaImg from "@/assets/familia-escola.jpg";
-import financeiraImg from "@/assets/educacao-financeira.jpg";
-import casteloImg from "@/assets/hero-escola.jpg";
+import fundamentalImg from "@/assets/ensino-fundamental.jpg";
+import heroImg from "@/assets/hero-escola.jpg";
+import baileDeMascarasImg from "@/assets/baile-de-mascaras.webp";
 
 export type Destaque = {
   id: string;
@@ -20,31 +20,85 @@ export type Destaque = {
 
 export const destaques: Destaque[] = [
   {
-    id: "festa-da-familia",
+    id: "festa-das-cores",
     tag: "Evento",
-    titulo: "Festa da Família",
-    texto:
-      "Um dia de encontro, brincadeiras e apresentações para celebrar quem caminha com a gente.",
-    data: "Setembro",
-    imagem: familiaImg,
+    titulo: "Festa das Cores",
+    texto: "Um evento para os alunos, parte da programação especial de outubro.",
+    data: "30/10",
+    imagem: fundamentalImg,
     cta: { label: "Ver detalhes", to: "/destaques" },
   },
   {
-    id: "matriculas-2027",
-    tag: "Matrículas",
-    titulo: "Matrículas 2027 abertas",
+    id: "cantata-de-natal",
+    tag: "Evento",
+    titulo: "Cantata de Natal",
     texto:
-      "Garanta a vaga do seu filho no Castelo do Criar ou no Castelinho do Criar. Agende uma visita e conheça de perto.",
-    imagem: casteloImg,
-    cta: { label: "Quero me matricular", to: "/matriculas" },
+      "Uma apresentação natalina dos alunos para celebrar o encerramento do ano com a comunidade escolar.",
+    data: "28/11",
+    imagem: heroImg,
+    cta: { label: "Ver detalhes", to: "/destaques" },
   },
   {
-    id: "projetos-especiais",
-    tag: "Projetos",
-    titulo: "Projetos que preparam para a vida",
+    id: "baile-de-mascaras",
+    tag: "Evento",
+    titulo: "Baile de Máscaras",
     texto:
-      "Educação financeira, cultura e vivências práticas fazem parte da rotina das nossas escolas.",
-    imagem: financeiraImg,
-    cta: { label: "Conhecer as escolas", to: "/escolas" },
+      "Uma noite para alunos, professores, colaboradores, familiares e amigos, na Chácara Recanto Campanilli.",
+    data: "04/12",
+    imagem: baileDeMascarasImg,
+    cta: { label: "Ver detalhes", to: "/destaques" },
+  },
+];
+
+export type ItemAgenda = {
+  data: string;
+  evento: string;
+  detalhe?: string;
+};
+
+export type MesAgenda = {
+  mes: string;
+  itens: ItemAgenda[];
+};
+
+/**
+ * Agenda compacta exibida abaixo do carrossel de destaques na Home.
+ * Não repete os eventos já destacados em `destaques` (Festa das Cores,
+ * Cantata de Natal, Baile de Máscaras).
+ */
+export const proximasDatas: MesAgenda[] = [
+  {
+    mes: "Outubro",
+    itens: [
+      { data: "08 e 09/10", evento: "Reunião de Pais e Mestres" },
+      {
+        data: "09/10",
+        evento: "Comemoração do Dia das Crianças",
+        detalhe: "Evento para os alunos",
+      },
+      {
+        data: "13/10",
+        evento: "Semana da Criança — Festa Karaokê",
+        detalhe: "Evento para os alunos",
+      },
+      { data: "19 a 22/10", evento: "Interclasses", detalhe: "A partir do 5º Ano" },
+      { data: "24/10", evento: "Mostra Cultural e Manhã de Autógrafos — Estante Mágica" },
+    ],
+  },
+  {
+    mes: "Novembro",
+    itens: [
+      { data: "07/11", evento: "Concurso de Bolsas", detalhe: "Ensino Médio" },
+      { data: "23 a 30/11", evento: "Avaliação P2" },
+      { data: "Data a definir", evento: "Viagem do 9º Ano" },
+    ],
+  },
+  {
+    mes: "Dezembro",
+    itens: [
+      { data: "08 e 09/12", evento: "Reunião de Pais e Mestres" },
+      { data: "10/12", evento: "Festa de encerramento para alunos" },
+      { data: "11/12", evento: "Formatura 5º e 9º Ano" },
+    ],
   },
 ];

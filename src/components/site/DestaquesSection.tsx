@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { ExternalLink } from "@/components/site/ExternalLink";
 import { Container, SectionHeading } from "@/components/site/Section";
 import { Button } from "@/components/ui/button";
-import { destaques } from "@/content/destaques";
+import { destaques, proximasDatas } from "@/content/destaques";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
@@ -74,9 +74,7 @@ export function DestaquesSection() {
                   {atual.tag}
                 </span>
                 {atual.data && (
-                  <span className="text-xs font-bold text-muted-foreground">
-                    {atual.data}
-                  </span>
+                  <span className="text-xs font-bold text-muted-foreground">{atual.data}</span>
                 )}
               </div>
               <h3 className="mt-4 text-2xl font-extrabold text-primary-deep md:text-3xl">
@@ -127,6 +125,51 @@ export function DestaquesSection() {
                 </div>
               )}
             </div>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-border pt-10 md:mt-16 md:pt-12">
+          <div className="max-w-2xl">
+            <p className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
+              Calendário
+            </p>
+            <h3 className="mt-2 text-2xl font-extrabold text-primary-deep md:text-3xl">
+              Próximas datas
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground md:text-base">
+              Acompanhe os próximos compromissos do calendário escolar.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-8 md:grid-cols-3 md:gap-10">
+            {proximasDatas.map((mes) => (
+              <div key={mes.mes}>
+                <h4 className="flex items-center gap-2 text-xs font-extrabold tracking-[0.14em] text-primary uppercase">
+                  <span aria-hidden="true" className="size-1.5 rounded-full bg-accent" />
+                  {mes.mes}
+                </h4>
+                <ul className="mt-3">
+                  {mes.itens.map((item) => (
+                    <li
+                      key={`${item.data}-${item.evento}`}
+                      className="flex items-start gap-3 border-b border-border/60 py-3 first:pt-0 last:border-b-0 last:pb-0"
+                    >
+                      <span className="shrink-0 text-sm font-extrabold whitespace-nowrap text-primary-deep">
+                        {item.data}
+                      </span>
+                      <span className="text-sm text-foreground/80">
+                        {item.evento}
+                        {item.detalhe && (
+                          <span className="block text-xs text-muted-foreground">
+                            {item.detalhe}
+                          </span>
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </Container>
