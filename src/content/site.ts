@@ -94,10 +94,7 @@ export const metodologia = {
 export const materialPedagogico = {
   title: "Material que apoia nossa proposta pedagógica",
   text: "As Escolas do Criar utilizam materiais, conteúdos e recursos educacionais que apoiam o planejamento dos professores e ampliam as possibilidades de aprendizagem dos alunos. A tecnologia e os materiais didáticos são ferramentas de apoio à proposta pedagógica conduzida pela equipe das Escolas do Criar.",
-  /**
-   * Nomes institucionais dos parceiros educacionais. Exibidos como texto —
-   * ver nota de entrega sobre os logos oficiais (pendentes nos assets).
-   */
+  /** Nomes institucionais dos parceiros educacionais, usados como alt text do logo oficial. */
   parceiros: ["FTD Educação", "School of Schools"],
   destaques: [
     "Materiais didáticos",

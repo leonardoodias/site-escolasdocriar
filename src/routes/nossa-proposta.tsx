@@ -9,6 +9,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import ftdSchoolOfSchoolsLogo from "@/assets/ftd-school-of-schools-logo.webp";
 import { Container, PageHero, SectionHeading } from "@/components/site/Section";
 import { CtaMatriculas } from "@/components/site/CtaMatriculas";
 import { pilares, metodologia, materialPedagogico } from "@/content/site";
@@ -129,23 +130,18 @@ function NossaProposta() {
                 </p>
               </div>
 
-              {/*
-                Logos oficiais da FTD Educação e da School of Schools ainda não
-                estão disponíveis nos assets do projeto — ver pendência na
-                entrega. Até lá, os parceiros são citados em texto institucional
-                neutro (sem recriar as marcas).
-              */}
-              <div className="flex flex-col justify-center gap-6 rounded-3xl bg-secondary/40 p-6 lg:col-span-2 lg:p-8">
+              <div className="flex flex-col justify-center gap-5 rounded-3xl bg-background p-6 shadow-soft lg:col-span-2 lg:p-8">
                 <p className="text-xs font-extrabold tracking-[0.16em] text-muted-foreground uppercase">
                   Soluções educacionais utilizadas
                 </p>
-                <div className="space-y-5">
-                  {materialPedagogico.parceiros.map((nome) => (
-                    <p key={nome} className="text-2xl font-extrabold text-primary-deep">
-                      {nome}
-                    </p>
-                  ))}
-                </div>
+                <img
+                  src={ftdSchoolOfSchoolsLogo}
+                  alt={materialPedagogico.parceiros.join(" e ")}
+                  width={367}
+                  height={220}
+                  loading="lazy"
+                  className="w-full max-w-[260px] rounded-2xl"
+                />
               </div>
             </div>
           </div>
