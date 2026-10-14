@@ -49,21 +49,24 @@ function NossaProposta() {
         eyebrow="Proposta pedagógica"
         title="Aprender com sentido, em cada etapa do desenvolvimento"
         text="Nas Escolas do Criar, aprendizagem, desenvolvimento e formação humana caminham juntos. Nossa proposta respeita cada etapa, estimula autonomia, criatividade e responsabilidade e conecta conhecimento a experiências que fazem sentido para os alunos."
+        wide
       />
 
       <section className="section">
         <Container>
-          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
-            <SectionHeading
-              align="left"
-              eyebrow="Metodologia"
-              title={metodologia.title}
-              text={metodologia.text}
-            />
-            <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
+          <div className="grid items-center gap-10 lg:grid-cols-5 lg:gap-16">
+            <div className="lg:col-span-2">
+              <SectionHeading
+                align="left"
+                eyebrow="Metodologia"
+                title={metodologia.title}
+                text={metodologia.text}
+              />
+            </div>
+            <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:col-span-3">
               {metodologia.principios.map((p) => (
-                <li key={p} className="flex items-start gap-2.5 text-sm text-foreground/85">
-                  <Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                <li key={p} className="flex items-start gap-2.5 text-base text-foreground/85">
+                  <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden="true" />
                   {p}
                 </li>
               ))}
@@ -96,23 +99,56 @@ function NossaProposta() {
 
       <section className="section bg-secondary/30">
         <Container>
-          <SectionHeading title={materialPedagogico.title} text={materialPedagogico.text} />
-          <p className="mt-6 text-center text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
-            {materialPedagogico.parceria}
-          </p>
+          <div className="overflow-hidden rounded-[2rem] border border-border bg-card shadow-soft">
+            <div className="grid gap-10 p-8 md:p-12 lg:grid-cols-5 lg:gap-12">
+              <div className="lg:col-span-3">
+                <p className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
+                  Material e recursos
+                </p>
+                <h2 className="mt-2 text-3xl font-extrabold text-primary-deep md:text-4xl">
+                  {materialPedagogico.title}
+                </h2>
+                <p className="mt-4 text-base text-muted-foreground md:text-lg">
+                  {materialPedagogico.text}
+                </p>
 
-          <ul className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2.5">
-            {materialPedagogico.destaques.map((d) => (
-              <li key={d} className="flex items-center gap-2 text-sm text-foreground/85">
-                <Check className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                {d}
-              </li>
-            ))}
-          </ul>
+                <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                  {materialPedagogico.destaques.map((d) => (
+                    <li
+                      key={d}
+                      className="flex items-start gap-2.5 text-sm font-semibold text-foreground/85"
+                    >
+                      <Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                      {d}
+                    </li>
+                  ))}
+                </ul>
 
-          <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
-            {materialPedagogico.nota}
-          </p>
+                <p className="mt-8 text-sm font-bold text-primary-deep">
+                  {materialPedagogico.nota}
+                </p>
+              </div>
+
+              {/*
+                Logos oficiais da FTD Educação e da School of Schools ainda não
+                estão disponíveis nos assets do projeto — ver pendência na
+                entrega. Até lá, os parceiros são citados em texto institucional
+                neutro (sem recriar as marcas).
+              */}
+              <div className="flex flex-col justify-center gap-6 rounded-3xl bg-secondary/40 p-6 lg:col-span-2 lg:p-8">
+                <p className="text-xs font-extrabold tracking-[0.16em] text-muted-foreground uppercase">
+                  Soluções educacionais utilizadas
+                </p>
+                <div className="space-y-5">
+                  {materialPedagogico.parceiros.map((nome) => (
+                    <p key={nome} className="text-2xl font-extrabold text-primary-deep">
+                      {nome}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 

@@ -93,16 +93,20 @@ export const metodologia = {
  */
 export const materialPedagogico = {
   title: "Material que apoia nossa proposta pedagógica",
-  text: "As Escolas do Criar utilizam materiais, conteúdos e recursos educacionais que apoiam o planejamento dos professores e ampliam as possibilidades de aprendizagem dos alunos. A tecnologia e os materiais didáticos são ferramentas de apoio à proposta pedagógica conduzida pela equipe da escola.",
-  parceria: "FTD Educação + School of Schools + Escolas do Criar",
+  text: "As Escolas do Criar utilizam materiais, conteúdos e recursos educacionais que apoiam o planejamento dos professores e ampliam as possibilidades de aprendizagem dos alunos. A tecnologia e os materiais didáticos são ferramentas de apoio à proposta pedagógica conduzida pela equipe das Escolas do Criar.",
+  /**
+   * Nomes institucionais dos parceiros educacionais. Exibidos como texto —
+   * ver nota de entrega sobre os logos oficiais (pendentes nos assets).
+   */
+  parceiros: ["FTD Educação", "School of Schools"],
   destaques: [
     "Materiais didáticos",
     "Conteúdos digitais",
     "Trilhas e atividades de apoio",
-    "Acompanhamento da aprendizagem",
+    "Recursos de acompanhamento da aprendizagem",
     "Ferramentas que complementam o trabalho dos professores",
   ],
-  nota: "Os recursos apoiam o trabalho pedagógico. A metodologia e o acompanhamento são conduzidos pela equipe das Escolas do Criar.",
+  nota: "Tecnologia e conteúdo apoiam a aprendizagem. A proposta pedagógica e o acompanhamento são conduzidos pelas Escolas do Criar.",
 };
 
 /**
