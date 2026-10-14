@@ -6,7 +6,14 @@ import { Container, SectionHeading } from "@/components/site/Section";
 import { Button } from "@/components/ui/button";
 import { escolas } from "@/content/grupo";
 
-export function EscolasSection({ heading = true }: { heading?: boolean }) {
+export function EscolasSection({
+  heading = true,
+  detailed = false,
+}: {
+  heading?: boolean;
+  /** Enriquece cada card com posicionamento, focos pedagógicos (tags) e CTA nomeado. */
+  detailed?: boolean;
+}) {
   return (
     <section className="section">
       <Container>
@@ -18,7 +25,7 @@ export function EscolasSection({ heading = true }: { heading?: boolean }) {
         )}
 
         <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-2 md:gap-8">
-          {escolas.map((escola) => (
+          {escolas.map((escola, i) => (
             <article
               key={escola.slug}
               className="card-hover group flex flex-col overflow-hidden rounded-3xl md:rounded-4xl border border-border bg-card shadow-soft"
@@ -41,10 +48,26 @@ export function EscolasSection({ heading = true }: { heading?: boolean }) {
                 <p className="text-xs font-extrabold tracking-[0.14em] text-accent uppercase">
                   {escola.faixa}
                 </p>
-                <h3 className="mt-2.5 text-2xl font-extrabold text-primary-deep">
-                  {escola.nome}
-                </h3>
-                <p className="mt-2.5 text-muted-foreground">{escola.resumo}</p>
+                <h3 className="mt-2.5 text-2xl font-extrabold text-primary-deep">{escola.nome}</h3>
+                <p className="mt-2.5 text-muted-foreground">
+                  {detailed ? escola.posicionamento : escola.resumo}
+                </p>
+                {detailed && (
+                  <ul className="mt-4 flex flex-wrap gap-1.5">
+                    {escola.focos.map((foco) => (
+                      <li
+                        key={foco}
+                        className={
+                          i === 0
+                            ? "rounded-full bg-accent-soft px-2.5 py-1 text-xs font-bold text-accent"
+                            : "rounded-full bg-primary-soft px-2.5 py-1 text-xs font-bold text-primary"
+                        }
+                      >
+                        {foco}
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <div className="mt-6">
                   <Button
                     asChild
@@ -52,7 +75,7 @@ export function EscolasSection({ heading = true }: { heading?: boolean }) {
                     className="min-h-11 rounded-full border-primary/30 font-bold text-primary hover:bg-primary-soft"
                   >
                     <Link to="/escolas/$slug" params={{ slug: escola.slug }}>
-                      Conhecer escola
+                      {detailed ? escola.ctaLabel : "Conhecer escola"}
                       <ArrowRight className="size-4" aria-hidden="true" />
                     </Link>
                   </Button>

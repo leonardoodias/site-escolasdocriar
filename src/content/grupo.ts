@@ -26,6 +26,12 @@ export type Escola = {
   nome: string;
   faixa: string;
   resumo: string;
+  /** Frase curta de posicionamento, usada em listagens compactas (ex.: página "Nossas Escolas"). */
+  posicionamento: string;
+  /** Principais focos pedagógicos, exibidos como tags/chips em listagens compactas. */
+  focos: string[];
+  /** Rótulo do CTA em listagens compactas (ex.: "Conhecer o Castelinho"). */
+  ctaLabel: string;
   descricao: string;
   /** Logotipo oficial da escola. */
   logo: string | null;
@@ -39,9 +45,22 @@ export const escolas: Escola[] = [
     slug: "castelinho",
     to: "/escolas/castelinho",
     nome: "Castelinho do Criar",
-    faixa: "BERÇÁRIO • MINIMATERNAL • MATERNAL • NÍVEL I • NÍVEL II",
+    faixa: "BERÇÁRIO • MINI MATERNAL • MATERNAL • NÍVEL I • NÍVEL II",
     resumo:
       "Um ambiente seguro e afetuoso para os primeiros anos, onde brincar é a principal forma de aprender.",
+    posicionamento:
+      "Os primeiros passos são construídos com afeto, cuidado, estímulo e intencionalidade.",
+    focos: [
+      "Acolhimento e vínculo",
+      "Brincar e explorar",
+      "Desenvolvimento motor",
+      "Linguagem e comunicação",
+      "Socialização",
+      "Autonomia progressiva",
+      "Experiências sensoriais",
+      "Respeito ao ritmo de cada criança",
+    ],
+    ctaLabel: "Conhecer o Castelinho",
     descricao:
       "No Castelinho do Criar, cada criança encontra rotina previsível, cuidado atento e experiências que ampliam linguagem, movimento e imaginação.",
     logo: logoCastelinho,
@@ -74,6 +93,18 @@ export const escolas: Escola[] = [
     faixa: "Ensino Fundamental I • Ensino Fundamental II • Ensino Médio",
     resumo:
       "Formação sólida, projetos criativos e acompanhamento próximo no Ensino Fundamental I, Ensino Fundamental II e Ensino Médio.",
+    posicionamento: "Educação com propósito. Formação com excelência.",
+    focos: [
+      "Construção sólida do conhecimento",
+      "Autonomia",
+      "Responsabilidade",
+      "Criatividade",
+      "Pensamento crítico",
+      "Desenvolvimento humano",
+      "Projetos e experiências",
+      "Preparação para novos desafios",
+    ],
+    ctaLabel: "Conhecer o Castelo do Criar",
     descricao:
       "No Castelo do Criar, o conhecimento é construído com propósito: base acadêmica consistente, vivências práticas e uma equipe que conhece cada aluno pelo nome.",
     logo: logoCastelo,

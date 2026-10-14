@@ -33,7 +33,7 @@ function EscolasPage() {
         title="Nossas escolas"
         text="Cada escola tem sua identidade, mas todas compartilham o mesmo cuidado com a aprendizagem e com as famílias."
       />
-      <EscolasSection heading={false} />
+      <EscolasSection heading={false} detailed />
       <CtaMatriculas />
     </>
   );
