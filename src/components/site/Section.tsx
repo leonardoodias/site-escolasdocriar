@@ -40,6 +40,7 @@ export function PageHero({
   children,
   size = "default",
   wide = false,
+  visual,
 }: {
   eyebrow?: string;
   title: string;
@@ -50,41 +51,54 @@ export function PageHero({
   size?: "default" | "compact";
   /** Usa a largura total do Container (título com mais espaço antes de quebrar linha). */
   wide?: boolean;
+  /** Elemento visual exibido ao lado do texto em telas grandes (composição editorial de 2 colunas). Ignorado junto com `wide`. */
+  visual?: ReactNode;
 }) {
+  const content = (
+    <div className={cn("max-w-3xl", wide && "max-w-none")}>
+      {eyebrow && (
+        <p className="mb-3 text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
+          {eyebrow}
+        </p>
+      )}
+      <h1 className="text-4xl font-extrabold text-balance text-primary-deep md:text-5xl">
+        {title}
+      </h1>
+      {text && (
+        <p
+          className={cn(
+            "mt-5 text-lg text-muted-foreground",
+            wide && "max-w-none text-xl font-semibold text-foreground/90",
+          )}
+        >
+          {text}
+        </p>
+      )}
+      {supportText && (
+        <p
+          className={cn(
+            "mt-3 text-sm text-muted-foreground",
+            wide && "max-w-4xl text-muted-foreground/75",
+          )}
+        >
+          {supportText}
+        </p>
+      )}
+      {children && <div className="mt-8">{children}</div>}
+    </div>
+  );
+
   return (
     <section className="gradient-soft border-b border-border">
       <Container className={cn("py-14 md:py-20", size === "compact" && "py-10 md:py-14")}>
-        <div className={cn("max-w-3xl", wide && "max-w-none")}>
-          {eyebrow && (
-            <p className="mb-3 text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
-              {eyebrow}
-            </p>
-          )}
-          <h1 className="text-4xl font-extrabold text-balance text-primary-deep md:text-5xl">
-            {title}
-          </h1>
-          {text && (
-            <p
-              className={cn(
-                "mt-5 text-lg text-muted-foreground",
-                wide && "max-w-none text-xl font-semibold text-foreground/90",
-              )}
-            >
-              {text}
-            </p>
-          )}
-          {supportText && (
-            <p
-              className={cn(
-                "mt-3 text-sm text-muted-foreground",
-                wide && "max-w-4xl text-muted-foreground/75",
-              )}
-            >
-              {supportText}
-            </p>
-          )}
-          {children && <div className="mt-8">{children}</div>}
-        </div>
+        {visual ? (
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-7">{content}</div>
+            <div className="hidden lg:col-span-5 lg:block">{visual}</div>
+          </div>
+        ) : (
+          content
+        )}
       </Container>
     </section>
   );
