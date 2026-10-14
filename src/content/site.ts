@@ -66,84 +66,55 @@ export const pilares = [
   },
 ];
 
-/** Como cada escola do grupo acompanha o desenvolvimento dos alunos em sua faixa etária. */
-export const etapasDesenvolvimento = [
-  {
-    escola: "Castelinho do Criar",
-    faixa: "Berçário • Mini Maternal • Maternal • Nível I • Nível II",
-    frase: "Os primeiros passos são construídos com afeto, cuidado, estímulo e intencionalidade.",
-    destaques: [
-      "Acolhimento e vínculo",
-      "Brincar e explorar",
-      "Desenvolvimento motor",
-      "Linguagem e comunicação",
-      "Socialização",
-      "Autonomia progressiva",
-      "Experiências sensoriais",
-      "Respeito ao ritmo de cada criança",
-    ],
-  },
-  {
-    escola: "Castelo do Criar",
-    faixa: "Ensino Fundamental I • Ensino Fundamental II • Ensino Médio",
-    frase: "Educação com propósito. Formação com excelência.",
-    destaques: [
-      "Construção sólida do conhecimento",
-      "Autonomia",
-      "Responsabilidade",
-      "Criatividade",
-      "Pensamento crítico",
-      "Desenvolvimento humano",
-      "Projetos e experiências",
-      "Preparação para novos desafios",
-    ],
-  },
-];
-
 /**
- * Apresentação institucional da parceria com a FTD Educação e a School of
- * Schools, adotada pelo Castelo do Criar como apoio ao trabalho pedagógico.
- * Não é exclusiva do Ensino Médio — ver `ensinoMedioDestaque` para o
- * diferencial específico dessa etapa.
+ * Metodologia das Escolas do Criar — composição editorial curta para a
+ * página "Nosso Jeito de Educar". Não detalha escolas ou segmentos
+ * específicos (isso fica nas páginas próprias de cada etapa/escola).
  */
-export const sistemaEnsino = {
-  title: "Tecnologia, conteúdo e acompanhamento que ampliam a aprendizagem",
-  text: "O Castelo do Criar conta com as soluções educacionais da FTD Educação, em parceria com a School of Schools, agregando materiais, conteúdos, recursos digitais e ferramentas que apoiam o trabalho dos professores e ampliam as possibilidades de aprendizagem dos alunos.",
-  responsabilidades: [
-    {
-      title: "FTD Educação + School of Schools",
-      text: "Oferecem conteúdos, materiais didáticos, recursos digitais, plataforma e ferramentas de apoio à aprendizagem.",
-    },
-    {
-      title: "Castelo do Criar",
-      text: "Conduz a proposta pedagógica por meio dos professores, planejamento das aulas, acompanhamento próximo dos alunos e experiências desenvolvidas pela escola.",
-    },
+export const metodologia = {
+  title: "Uma aprendizagem que conecta conhecimento e experiência",
+  text: "Nossa proposta pedagógica une consistência acadêmica e sentido prático, respeitando o ritmo de cada aluno.",
+  principios: [
+    "Construir conhecimento de forma consistente",
+    "Estimular curiosidade e participação",
+    "Desenvolver autonomia",
+    "Conectar teoria e prática",
+    "Promover reflexão e tomada de decisão",
+    "Respeitar o desenvolvimento de cada aluno",
   ],
-  regularizacaoTitle: "Sobre a regularização da School of Schools",
-  regularizacaoText:
-    "Nossas escolas já utilizam as soluções educacionais da FTD, e estamos em processo de regularização da identificação da School of Schools junto à plataforma. Trata-se de uma etapa de formalização administrativa, que está em andamento e não altera o material utilizado, a metodologia aplicada ou o acompanhamento pedagógico dos nossos alunos.",
 };
 
-/** Recursos gerais da plataforma FTD, disponíveis aos alunos do Castelo do Criar. */
-export const recursosAprendizagem = [
-  { icon: "BookOpen", title: "Livros e materiais digitais" },
-  { icon: "ListChecks", title: "Conteúdos e trilhas de estudo" },
-  { icon: "Sparkles", title: "Recursos e atividades de apoio" },
-  { icon: "LineChart", title: "Acompanhamento de desempenho" },
-];
-
-/** Diferencial específico do Ensino Médio dentro da plataforma FTD — não define a parceria. */
-export const ensinoMedioDestaque = {
-  eyebrow: "Ensino Médio",
-  title: "Preparação para os próximos desafios",
-  text: "No Ensino Médio, esses recursos ganham ainda mais importância na preparação para o ENEM e vestibulares. Simulados, trilhas de estudo, exercícios e ferramentas de produção e correção de redação complementam o acompanhamento realizado pelos professores do Castelo do Criar.",
-  diferenciais: [
-    "Simulados",
-    "Preparação para o ENEM",
-    "Exercícios e trilhas de estudo",
-    "Produção e correção de redação (Pontue)",
-    "Acompanhamento da evolução e desempenho",
+/**
+ * Material e recursos educacionais que apoiam a proposta pedagógica das
+ * Escolas do Criar (grupo), incluindo a parceria institucional com a FTD
+ * Educação e a School of Schools. Tratamento resumido e institucional — sem
+ * detalhar recursos específicos de segmento (ex.: simulados, ENEM, redação),
+ * que ficam nas páginas próprias de cada etapa.
+ */
+export const materialPedagogico = {
+  title: "Material que apoia nossa proposta pedagógica",
+  text: "As Escolas do Criar utilizam materiais, conteúdos e recursos educacionais que apoiam o planejamento dos professores e ampliam as possibilidades de aprendizagem dos alunos. A tecnologia e os materiais didáticos são ferramentas de apoio à proposta pedagógica conduzida pela equipe da escola.",
+  parceria: "FTD Educação + School of Schools + Escolas do Criar",
+  destaques: [
+    "Materiais didáticos",
+    "Conteúdos digitais",
+    "Trilhas e atividades de apoio",
+    "Acompanhamento da aprendizagem",
+    "Ferramentas que complementam o trabalho dos professores",
   ],
+  nota: "Os recursos apoiam o trabalho pedagógico. A metodologia e o acompanhamento são conduzidos pela equipe das Escolas do Criar.",
+};
+
+/**
+ * Nota administrativa sobre a regularização da identificação da School of
+ * Schools junto à plataforma FTD. Conteúdo preservado sem alteração — não é
+ * exibido na página "Nosso Jeito de Educar" após a simplificação para foco
+ * em metodologia. Avaliar com o cliente onde publicá-la (ex.: página de uma
+ * das escolas, FAQ ou rodapé) caso a divulgação seja obrigatória.
+ */
+export const regularizacaoSchoolOfSchools = {
+  title: "Sobre a regularização da School of Schools",
+  text: "Nossas escolas já utilizam as soluções educacionais da FTD, e estamos em processo de regularização da identificação da School of Schools junto à plataforma. Trata-se de uma etapa de formalização administrativa, que está em andamento e não altera o material utilizado, a metodologia aplicada ou o acompanhamento pedagógico dos nossos alunos.",
 };
 
 export const eventosFamilia = [
