@@ -24,6 +24,8 @@ export type Escola = {
   slug: string;
   to: string;
   nome: string;
+  /** Forma curta para menções seguintes, depois que o nome completo já apareceu. */
+  nomeCurto: string;
   faixa: string;
   resumo: string;
   /** Frase curta de posicionamento, usada em listagens compactas (ex.: página "Nossas Escolas"). */
@@ -45,6 +47,7 @@ export const escolas: Escola[] = [
     slug: "castelinho",
     to: "/escolas/castelinho",
     nome: "Castelinho do Criar",
+    nomeCurto: "Castelinho",
     faixa: "BERÇÁRIO • MINI MATERNAL • MATERNAL • NÍVEL I • NÍVEL II",
     resumo:
       "Um ambiente seguro e afetuoso para os primeiros anos, onde brincar é a principal forma de aprender.",
@@ -62,7 +65,7 @@ export const escolas: Escola[] = [
     ],
     ctaLabel: "Conhecer o Castelinho",
     descricao:
-      "No Castelinho do Criar, cada criança encontra rotina previsível, cuidado atento e experiências que ampliam linguagem, movimento e imaginação.",
+      "No Castelinho, cada criança encontra rotina previsível, cuidado atento e experiências que ampliam linguagem, movimento e imaginação.",
     logo: logoCastelinho,
     imagem: castelinhoImg,
     destaques: [
@@ -90,6 +93,7 @@ export const escolas: Escola[] = [
     slug: "castelo-do-criar",
     to: "/escolas/castelo-do-criar",
     nome: "Castelo do Criar",
+    nomeCurto: "Castelo do Criar",
     faixa: "Ensino Fundamental I • Ensino Fundamental II • Ensino Médio",
     resumo:
       "Formação sólida, projetos criativos e acompanhamento próximo no Ensino Fundamental I, Ensino Fundamental II e Ensino Médio.",

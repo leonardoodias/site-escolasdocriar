@@ -2,23 +2,19 @@ import { ExternalLink } from "@/components/site/ExternalLink";
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 
-import { unidades } from "@/content/contatos";
+import { localizacaoCastelinho, localizacaoCastelo, unidades } from "@/content/contatos";
 import { grupo } from "@/content/grupo";
 
 const casteloDetails = {
   ...unidades.castelo,
+  ...localizacaoCastelo.rodape,
   faixa: "Fundamental I, II e Médio",
-  endereco: ["Rua Coronel Garcia, 158 — Centro", "Santa Rosa de Viterbo/SP", "CEP 14270-077"],
-  instagram: "https://www.instagram.com/castelodocriar/",
-  facebook: "https://www.facebook.com/profile.php?id=61588620640733",
 };
 
 const castelinhoDetails = {
   ...unidades.castelinho,
+  ...localizacaoCastelinho,
   faixa: "Primeira Infância",
-  endereco: ["Av. São Paulo, 1381-1563", "Santa Rosa de Viterbo/SP", "CEP 14270-000"],
-  instagram: "https://www.instagram.com/castelinhodocriar/",
-  facebook: "https://www.facebook.com/profile.php?id=61561814674315",
 };
 
 const linksRapidos = [

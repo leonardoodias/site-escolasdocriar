@@ -13,20 +13,6 @@ export const school = {
   tagline: "Educar é criar possibilidades para o futuro.",
   description:
     "Escola de Educação Infantil, Ensino Fundamental e Ensino Médio em Santa Rosa de Viterbo/SP. Conhecimento, afeto e criatividade em cada etapa da vida escolar.",
-  address: {
-    street: "Rua Coronel Garcia, 158",
-    city: "Santa Rosa de Viterbo, São Paulo",
-    zip: "14270-000",
-  },
-  hours: "Segunda a sexta, das 7h às 17h",
-  social: {
-    instagram: "https://instagram.com/castelodocriar",
-    facebook: "https://www.facebook.com/profile.php?id=61588620640733",
-  },
-  mapsEmbed:
-    "https://www.google.com/maps?q=Rua+Coronel+Garcia,+158,+Santa+Rosa+de+Viterbo,+Sao+Paulo,+14270-000&output=embed",
-  mapsDirections:
-    "https://www.google.com/maps/dir/?api=1&destination=Rua+Coronel+Garcia,+158,+Santa+Rosa+de+Viterbo,+Sao+Paulo,+14270-000",
 };
 
 /** Menu principal simplificado */

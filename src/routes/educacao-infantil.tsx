@@ -1,27 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { SegmentoPage } from "@/components/site/SegmentoPage";
-import { segmentos } from "@/content/segmentos";
-
-const segmento = segmentos[0]!;
-
+// Endereço antigo preservado: redireciona com HTTP 301 no servidor e por substituição no navegador.
+// A Educação Infantil é oferecida pelo Castelinho do Criar. Textos antigos registrados em docs/conteudo-pendente.md.
 export const Route = createFileRoute("/educacao-infantil")({
-  head: () => ({
-    meta: [
-      { title: "Educação Infantil — Escola Castelo do Criar" },
-      {
-        name: "description",
-        content:
-          "Educação Infantil em Santa Rosa de Viterbo/SP: brincar, acolhimento e primeiras descobertas no Castelo do Criar.",
-      },
-      { property: "og:title", content: "Educação Infantil — Castelo do Criar" },
-      {
-        property: "og:description",
-        content: "Rotina acolhedora, brincadeira e aprendizagem para crianças de 2 a 5 anos.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: () => <SegmentoPage segmento={segmento} />,
+  beforeLoad: () => {
+    throw redirect({ to: "/escolas/$slug", params: { slug: "castelinho" }, statusCode: 301 });
+  },
 });

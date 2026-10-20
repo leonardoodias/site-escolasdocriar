@@ -138,11 +138,3 @@ export const educacaoFinanceiraTopicos = [
   "Organização financeira",
   "Responsabilidade",
 ];
-
-export const educacaoFinanceiraAtividades = [
-  "Jogos de tabuleiro sobre escolhas e prioridades",
-  "Simulação de mercadinho e feira do Castelo",
-  "Cofrinho de metas e diário de planejamento",
-  "Oficinas de orçamento para as turmas maiores",
-  "Rodas de conversa sobre consumo e publicidade",
-];

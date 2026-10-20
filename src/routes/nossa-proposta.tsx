@@ -13,6 +13,7 @@ import {
 import ftdSchoolOfSchoolsLogo from "@/assets/ftd-school-of-schools-logo.webp";
 import { Container, PageHero, SectionHeading } from "@/components/site/Section";
 import { CtaMatriculas } from "@/components/site/CtaMatriculas";
+import { ExperienciasVida } from "@/components/site/ExperienciasVida";
 import { pilares, metodologia, materialPedagogico } from "@/content/site";
 
 const pilarIcons: Record<string, LucideIcon> = {
@@ -185,6 +186,8 @@ function NossaProposta() {
           </div>
         </Container>
       </section>
+
+      <ExperienciasVida />
 
       <CtaMatriculas />
     </>

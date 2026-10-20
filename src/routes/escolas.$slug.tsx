@@ -1,11 +1,16 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { Link, createFileRoute, notFound } from "@tanstack/react-router";
+import { CalendarCheck, Check, MessageCircle } from "lucide-react";
 
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { CasteloDoCriarPage } from "@/components/site/CasteloDoCriarPage";
 import { Container, SectionHeading } from "@/components/site/Section";
-import { CtaMatriculas } from "@/components/site/CtaMatriculas";
+import { ExternalLink } from "@/components/site/ExternalLink";
+import { LocalizacaoContato } from "@/components/site/LocalizacaoContato";
+import { ProgramaCard } from "@/components/site/ProgramaCard";
 import { getEscola } from "@/content/grupo";
+import { Button } from "@/components/ui/button";
+import { localizacaoCastelinho, unidades } from "@/content/contatos";
+import { programasCastelinho } from "@/content/programas";
 
 export const Route = createFileRoute("/escolas/$slug")({
   loader: ({ params }) => {
@@ -16,7 +21,10 @@ export const Route = createFileRoute("/escolas/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Escola não encontrada — Escolas do Criar" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Escola não encontrada — Escolas do Criar" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { escola } = loaderData;
@@ -60,6 +68,30 @@ function EscolaPage() {
               {escola.nome}
             </h1>
             <p className="mt-5 text-lg text-muted-foreground">{escola.descricao}</p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button
+                asChild
+                size="lg"
+                className="min-h-12 rounded-full gradient-accent px-7 font-bold text-accent-foreground shadow-soft hover:opacity-90"
+              >
+                <Link to="/matriculas">
+                  <CalendarCheck className="mr-2 size-5" aria-hidden="true" />
+                  Agende uma visita
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="min-h-12 rounded-full border-primary/30 bg-background px-7 font-bold text-primary hover:bg-primary-soft hover:text-primary"
+              >
+                <ExternalLink href={unidades.castelinho.whatsappUrl}>
+                  <MessageCircle className="mr-2 size-5" aria-hidden="true" />
+                  Fale no WhatsApp
+                </ExternalLink>
+              </Button>
+            </div>
           </div>
           <img
             src={escola.imagem}
@@ -73,7 +105,7 @@ function EscolaPage() {
         <Container>
           <SectionHeading
             eyebrow="Diferenciais"
-            title={`O que marca o dia a dia no ${escola.nome}`}
+            title={`O que marca o dia a dia no ${escola.nomeCurto}`}
           />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {escola.destaques.map((d) => (
@@ -101,7 +133,26 @@ function EscolaPage() {
         </Container>
       </section>
 
-      <CtaMatriculas unidade="castelinho" />
+      <section id="aprendizagens" className="section scroll-mt-24 bg-secondary/40">
+        <Container>
+          <SectionHeading
+            eyebrow="Aulas e programas"
+            title="Aprendizagens e descobertas"
+            text="Experiências que ampliam a rotina e respeitam o momento de cada turma."
+          />
+          <div className="mx-auto mt-10 grid max-w-5xl gap-4 md:mt-12 md:grid-cols-2 md:gap-5">
+            {programasCastelinho.map((programa) => (
+              <ProgramaCard key={programa.nome} programa={programa} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <LocalizacaoContato
+        unidade="castelinho"
+        localizacao={localizacaoCastelinho}
+        mensagem="Venha conhecer o espaço preparado para os primeiros anos e conversar com a nossa equipe."
+      />
     </>
   );
 }

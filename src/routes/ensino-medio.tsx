@@ -1,27 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { SegmentoPage } from "@/components/site/SegmentoPage";
-import { segmentos } from "@/content/segmentos";
-
-const segmento = segmentos[2]!;
-
+// Endereço antigo preservado: redireciona com HTTP 301 no servidor e por substituição no navegador.
+// Conteúdo incorporado à etapa Ensino Médio da página do Castelo do Criar. Textos antigos registrados em docs/conteudo-pendente.md.
 export const Route = createFileRoute("/ensino-medio")({
-  head: () => ({
-    meta: [
-      { title: "Ensino Médio — Escola Castelo do Criar" },
-      {
-        name: "description",
-        content:
-          "Ensino Médio em Santa Rosa de Viterbo/SP: preparação acadêmica, projeto de vida e protagonismo estudantil.",
-      },
-      { property: "og:title", content: "Ensino Médio — Castelo do Criar" },
-      {
-        property: "og:description",
-        content: "Preparação para vestibulares e ENEM com projeto de vida e autonomia.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: () => <SegmentoPage segmento={segmento} />,
+  beforeLoad: () => {
+    throw redirect({
+      to: "/escolas/$slug",
+      params: { slug: "castelo-do-criar" },
+      hash: "ensino-medio",
+      statusCode: 301,
+    });
+  },
 });

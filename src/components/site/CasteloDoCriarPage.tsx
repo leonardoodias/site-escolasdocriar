@@ -2,7 +2,6 @@ import { ExternalLink } from "@/components/site/ExternalLink";
 import { Link } from "@tanstack/react-router";
 import {
   Activity,
-  ArrowRight,
   BookOpen,
   Bot,
   Calculator,
@@ -10,35 +9,22 @@ import {
   Compass,
   Dice5,
   Drama,
-  Facebook,
   Globe,
   GraduationCap,
   HeartHandshake,
-  Instagram,
   Languages,
-  MapPin,
   MessageCircle,
-  Phone,
 } from "lucide-react";
 
 import casteloImg from "@/assets/hero-escola.jpg";
-import ensinoFundamentalImg from "@/assets/ensino-fundamental.jpg";
-import ensinoMedioImg from "@/assets/ensino-medio.jpg";
 import logoCastelo3d from "@/assets/logo-castelo-3d.png.asset.json";
+import { EtapasEnsino } from "@/components/site/EtapasEnsino";
+import { LocalizacaoContato } from "@/components/site/LocalizacaoContato";
 import { Container, SectionHeading } from "@/components/site/Section";
 import { Button } from "@/components/ui/button";
-import { unidades } from "@/content/contatos";
+import { localizacaoCastelo, unidades } from "@/content/contatos";
+import { programasCastelo } from "@/content/programas";
 import type { Escola } from "@/content/grupo";
-
-const casteloContact = {
-  address: "Rua Coronel Garcia, 158 — Centro, Santa Rosa de Viterbo/SP — CEP: 14270-077",
-  facebookUrl: "https://www.facebook.com/castelodocriar",
-  instagramUrl: "https://www.instagram.com/castelo_do_criar",
-  mapsEmbed:
-    "https://www.google.com/maps?q=Rua+Coronel+Garcia,+158,+Santa+Rosa+de+Viterbo,+Sao+Paulo,+14270-077&output=embed",
-  mapsDirections:
-    "https://www.google.com/maps/dir/?api=1&destination=Rua+Coronel+Garcia,+158,+Santa+Rosa+de+Viterbo,+Sao+Paulo,+14270-077",
-};
 
 const pilaresProposta = [
   {
@@ -94,9 +80,9 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
               Educação com propósito. Formação com excelência.
             </h1>
             <p className="mt-5 text-base text-primary-foreground/85 sm:text-lg">
-              A Escola Castelo do Criar oferece Ensino Fundamental e Ensino Médio com uma
-              proposta voltada à formação integral, unindo excelência acadêmica, desenvolvimento
-              humano e construção de valores.
+              A Escola Castelo do Criar oferece Ensino Fundamental e Ensino Médio com uma proposta
+              voltada à formação integral, unindo excelência acadêmica, desenvolvimento humano e
+              construção de valores.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -167,9 +153,9 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
             </div>
             <div className="space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
               <p>
-                A Escola Castelo do Criar, localizada em Santa Rosa de Viterbo, é uma
-                instituição particular de ensino que oferece Ensino Fundamental e Ensino Médio
-                com foco na formação integral dos estudantes.
+                A Escola Castelo do Criar, localizada em Santa Rosa de Viterbo, é uma instituição
+                particular de ensino que oferece Ensino Fundamental e Ensino Médio com foco na
+                formação integral dos estudantes.
               </p>
               <p>
                 Sua proposta pedagógica une excelência acadêmica, desenvolvimento humano e
@@ -212,88 +198,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
         </Container>
       </section>
 
-      {/* 4. SEGMENTOS */}
-      <section className="section bg-background">
-        <Container>
-          <SectionHeading
-            eyebrow="Segmentos"
-            title="Nossos segmentos de ensino"
-            text="Acompanhamento consistente do Ensino Fundamental até a conclusão do Ensino Médio."
-          />
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {/* Ensino Fundamental */}
-            <article className="card-hover group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-soft">
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <img
-                  src={ensinoFundamentalImg}
-                  alt="Alunos do Ensino Fundamental do Castelo do Criar"
-                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="flex flex-1 flex-col p-6 sm:p-8">
-                <p className="text-xs font-extrabold tracking-[0.14em] text-accent uppercase">
-                  Anos Iniciais e Finais
-                </p>
-                <h3 className="mt-2 text-2xl font-extrabold text-primary-deep">
-                  Ensino Fundamental
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  Desenvolvimento sólido de competências fundamentais, raciocínio lógico,
-                  vivências práticas e consolidação da autonomia nos estudos.
-                </p>
-                <div className="mt-6">
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="min-h-11 rounded-full border-primary/30 font-bold text-primary hover:bg-primary-soft"
-                  >
-                    <Link to="/ensino-fundamental">
-                      Saiba mais sobre o Fundamental
-                      <ArrowRight className="ml-2 size-4" aria-hidden="true" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </article>
-
-            {/* Ensino Médio */}
-            <article className="card-hover group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-soft">
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <img
-                  src={ensinoMedioImg}
-                  alt="Alunos do Ensino Médio do Castelo do Criar"
-                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="flex flex-1 flex-col p-6 sm:p-8">
-                <p className="text-xs font-extrabold tracking-[0.14em] text-accent uppercase">
-                  Preparação e Futuro
-                </p>
-                <h3 className="mt-2 text-2xl font-extrabold text-primary-deep">
-                  Ensino Médio
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  Aprofundamento acadêmico, preparação consistente para vestibulares e Enem,
-                  desenvolvimento do pensamento crítico e projeto de vida.
-                </p>
-                <div className="mt-6">
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="min-h-11 rounded-full border-primary/30 font-bold text-primary hover:bg-primary-soft"
-                  >
-                    <Link to="/ensino-medio">
-                      Saiba mais sobre o Ensino Médio
-                      <ArrowRight className="ml-2 size-4" aria-hidden="true" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </article>
-          </div>
-        </Container>
-      </section>
+      <EtapasEnsino etapas={programasCastelo} />
 
       {/* 5. PERÍODO ESTENDIDO */}
       <section className="section bg-sand">
@@ -334,146 +239,11 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
         </Container>
       </section>
 
-      {/* 6. CONTATO E LOCALIZAÇÃO */}
-      <section className="section bg-background">
-        <Container>
-          <SectionHeading
-            eyebrow="Localização e Contato"
-            title="Venha conhecer o Castelo do Criar"
-            text="Nossa equipe está pronta para receber você e apresentar nossa estrutura completa."
-          />
-
-          <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div>
-              <ul className="space-y-5 text-sm sm:text-base">
-                <li className="flex gap-3.5">
-                  <MapPin className="mt-1 size-5 shrink-0 text-accent" aria-hidden="true" />
-                  <span className="text-foreground/85 leading-relaxed">
-                    {casteloContact.address}
-                  </span>
-                </li>
-                <li className="flex gap-3.5">
-                  <Phone className="mt-1 size-5 shrink-0 text-accent" aria-hidden="true" />
-                  <div>
-                    <span className="text-xs font-semibold text-muted-foreground block uppercase">
-                      Telefone
-                    </span>
-                    <a
-                      href={unidades.castelo.telefoneHref}
-                      className="font-bold text-foreground hover:text-primary transition-colors"
-                    >
-                      {unidades.castelo.telefone}
-                    </a>
-                  </div>
-                </li>
-                <li className="flex gap-3.5">
-                  <MessageCircle className="mt-1 size-5 shrink-0 text-accent" aria-hidden="true" />
-                  <div>
-                    <span className="text-xs font-semibold text-muted-foreground block uppercase">
-                      WhatsApp da Secretaria
-                    </span>
-                    <ExternalLink
-                      href={unidades.castelo.whatsappUrl}
-                      className="font-bold text-foreground hover:text-primary transition-colors"
-                    >
-                      {unidades.castelo.whatsapp}
-                    </ExternalLink>
-                  </div>
-                </li>
-              </ul>
-
-              {/* Redes sociais */}
-              <div className="mt-6 flex items-center gap-3">
-                <ExternalLink
-                  href={casteloContact.instagramUrl}
-                  aria-label="Instagram do Castelo do Criar"
-                  className="flex size-10 items-center justify-center rounded-full border border-border bg-card text-primary shadow-soft transition-colors hover:bg-primary-soft"
-                >
-                  <Instagram className="size-4.5" />
-                </ExternalLink>
-                <ExternalLink
-                  href={casteloContact.facebookUrl}
-                  aria-label="Facebook do Castelo do Criar"
-                  className="flex size-10 items-center justify-center rounded-full border border-border bg-card text-primary shadow-soft transition-colors hover:bg-primary-soft"
-                >
-                  <Facebook className="size-4.5" />
-                </ExternalLink>
-              </div>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button
-                  asChild
-                  className="min-h-12 rounded-full gradient-accent font-bold text-accent-foreground shadow-soft hover:opacity-90"
-                >
-                  <ExternalLink href={unidades.castelo.whatsappUrl}>
-                    <MessageCircle className="mr-2 size-4" />
-                    Falar no WhatsApp
-                  </ExternalLink>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="min-h-12 rounded-full border-primary/30 font-bold text-primary hover:bg-primary-soft"
-                >
-                  <Link to="/matriculas">
-                    <CalendarCheck className="mr-2 size-4" />
-                    Agendar uma visita
-                  </Link>
-                </Button>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-4xl border border-border shadow-lift">
-              <iframe
-                src={casteloContact.mapsEmbed}
-                title="Localização da Escola Castelo do Criar no mapa"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="h-80 w-full border-0 lg:h-96"
-              />
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* 7. CTA FINAL */}
-      <section className="section bg-primary-deep text-primary-foreground relative overflow-hidden">
-        <div aria-hidden="true" className="gradient-hero absolute inset-0 opacity-80" />
-        <Container className="relative text-center">
-          <div className="mx-auto max-w-2xl">
-            <h2 className="text-3xl font-extrabold text-primary-foreground sm:text-4xl">
-              Conheça de perto o Castelo do Criar
-            </h2>
-            <p className="mt-4 text-base text-primary-foreground/85 sm:text-lg">
-              Agende uma visita, conheça nossa proposta e descubra como podemos acompanhar o
-              desenvolvimento do seu filho em cada nova etapa.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Button
-                asChild
-                size="lg"
-                className="min-h-12 rounded-full gradient-accent px-8 font-bold text-accent-foreground shadow-lift hover:opacity-90"
-              >
-                <Link to="/matriculas">
-                  <CalendarCheck className="mr-2 size-5" aria-hidden="true" />
-                  Agendar uma visita
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="min-h-12 rounded-full border-white/40 bg-transparent px-8 font-bold text-primary-foreground hover:bg-white/15 hover:text-primary-foreground"
-              >
-                <ExternalLink href={unidades.castelo.whatsappUrl}>
-                  <MessageCircle className="mr-2 size-5" aria-hidden="true" />
-                  Falar com a secretaria
-                </ExternalLink>
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <LocalizacaoContato
+        unidade="castelo"
+        localizacao={localizacaoCastelo.paginaEscola}
+        mensagem="Nossa equipe está pronta para receber você e apresentar nossa estrutura completa."
+      />
     </>
   );
 }
