@@ -42,6 +42,8 @@ export type Escola = {
   /** Logotipo oficial da escola. */
   logo: string | null;
   imagem: string;
+  /** Galeria de fotos exibida na página da escola (primeira é a imagem principal). */
+  imagens: { src: string; alt: string }[];
   destaques: { title: string; text: string }[];
   proposta: string[];
 };
