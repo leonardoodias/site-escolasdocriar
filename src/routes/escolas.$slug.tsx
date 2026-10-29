@@ -95,11 +95,7 @@ function EscolaPage() {
               </Button>
             </div>
           </div>
-          <img
-            src={escola.imagem}
-            alt={`Ambiente da escola ${escola.nome}`}
-            className="aspect-[4/3] w-full rounded-4xl object-cover shadow-lift"
-          />
+          <GaleriaImagens imagens={escola.imagens} />
         </Container>
       </section>
 
