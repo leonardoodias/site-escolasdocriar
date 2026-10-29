@@ -5,6 +5,10 @@
  */
 
 import castelinhoImg from "@/assets/castelinho.jpeg.asset.json";
+import castelinhoGaleria1 from "@/assets/castelinho-galeria-1.jpeg.asset.json";
+import castelinhoGaleria2 from "@/assets/castelinho-galeria-2.jpeg.asset.json";
+import castelinhoGaleria3 from "@/assets/castelinho-galeria-3.jpeg.asset.json";
+import castelinhoGaleria4 from "@/assets/castelinho-galeria-4.jpeg.asset.json";
 import casteloImg from "@/assets/castelo-fachada.jpg";
 import logoCastelinho from "@/assets/logo-castelinho.webp";
 import logoCastelo from "@/assets/logo-castelo.webp";

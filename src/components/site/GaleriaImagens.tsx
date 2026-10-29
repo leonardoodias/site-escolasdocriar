@@ -19,7 +19,7 @@ export function GaleriaImagens({ imagens }: Props) {
         className="aspect-[4/3] w-full rounded-4xl object-cover shadow-lift"
       />
       {imagens.length > 1 && (
-        <div className="grid grid-cols-4 gap-2 sm:gap-3">
+        <div className="grid grid-cols-5 gap-2 sm:gap-3">
           {imagens.map((img, i) => (
             <button
               key={img.src}
