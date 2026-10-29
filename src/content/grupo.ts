@@ -5,6 +5,10 @@
  */
 
 import castelinhoImg from "@/assets/castelinho.jpeg.asset.json";
+import castelinhoGaleria1 from "@/assets/castelinho-galeria-1.jpeg.asset.json";
+import castelinhoGaleria2 from "@/assets/castelinho-galeria-2.jpeg.asset.json";
+import castelinhoGaleria3 from "@/assets/castelinho-galeria-3.jpeg.asset.json";
+import castelinhoGaleria4 from "@/assets/castelinho-galeria-4.jpeg.asset.json";
 import casteloImg from "@/assets/castelo-fachada.jpg";
 import logoCastelinho from "@/assets/logo-castelinho.webp";
 import logoCastelo from "@/assets/logo-castelo.webp";
@@ -38,6 +42,8 @@ export type Escola = {
   /** Logotipo oficial da escola. */
   logo: string | null;
   imagem: string;
+  /** Galeria de fotos exibida na página da escola (primeira é a imagem principal). */
+  imagens: { src: string; alt: string }[];
   destaques: { title: string; text: string }[];
   proposta: string[];
 };
@@ -68,6 +74,13 @@ export const escolas: Escola[] = [
       "No Castelinho, cada criança encontra rotina previsível, cuidado atento e experiências que ampliam linguagem, movimento e imaginação.",
     logo: logoCastelinho,
     imagem: castelinhoImg.url,
+    imagens: [
+      { src: castelinhoImg.url, alt: "Fachada do Castelinho do Criar, com portões coloridos" },
+      { src: castelinhoGaleria1.url, alt: "Recreação do Castelinho do Criar com escorregador e jardim" },
+      { src: castelinhoGaleria2.url, alt: "Portões amarelo e rosa da fachada do Castelinho do Criar" },
+      { src: castelinhoGaleria3.url, alt: "Brinquedão de madeira no pátio do Castelinho do Criar" },
+      { src: castelinhoGaleria4.url, alt: "Fachada do Castelinho do Criar vista da rua" },
+    ],
     destaques: [
       {
         title: "Acolhimento em primeiro lugar",
@@ -113,6 +126,7 @@ export const escolas: Escola[] = [
       "No Castelo do Criar, o conhecimento é construído com propósito: base acadêmica consistente, vivências práticas e uma equipe que conhece cada aluno pelo nome.",
     logo: logoCastelo,
     imagem: casteloImg,
+    imagens: [{ src: casteloImg, alt: "Fachada da Escola Castelo do Criar" }],
     destaques: [
       {
         title: "Base acadêmica sólida",

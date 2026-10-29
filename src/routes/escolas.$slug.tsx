@@ -1,6 +1,8 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { CalendarCheck, Check, MessageCircle } from "lucide-react";
 
+import { GaleriaImagens } from "@/components/site/GaleriaImagens";
+
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { CasteloDoCriarPage } from "@/components/site/CasteloDoCriarPage";
 import { Container, SectionHeading } from "@/components/site/Section";
@@ -93,11 +95,7 @@ function EscolaPage() {
               </Button>
             </div>
           </div>
-          <img
-            src={escola.imagem}
-            alt={`Ambiente da escola ${escola.nome}`}
-            className="aspect-[4/3] w-full rounded-4xl object-cover shadow-lift"
-          />
+          <GaleriaImagens imagens={escola.imagens} />
         </Container>
       </section>
 
