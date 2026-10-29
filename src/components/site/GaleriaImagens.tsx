@@ -9,7 +9,7 @@ type Props = {
  */
 export function GaleriaImagens({ imagens }: Props) {
   const [ativa, setAtiva] = useState(0);
-  const atual = imagens[ativa] ?? imagens[0];
+  const atual = imagens[ativa] ?? imagens[0]!;
 
   return (
     <div className="flex flex-col gap-3">
