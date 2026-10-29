@@ -1,6 +1,8 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { CalendarCheck, Check, MessageCircle } from "lucide-react";
 
+import { GaleriaImagens } from "@/components/site/GaleriaImagens";
+
 import { BrandLogo } from "@/components/site/BrandLogo";
 import { CasteloDoCriarPage } from "@/components/site/CasteloDoCriarPage";
 import { Container, SectionHeading } from "@/components/site/Section";
