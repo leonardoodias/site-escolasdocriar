@@ -126,6 +126,7 @@ export const escolas: Escola[] = [
       "No Castelo do Criar, o conhecimento é construído com propósito: base acadêmica consistente, vivências práticas e uma equipe que conhece cada aluno pelo nome.",
     logo: logoCastelo,
     imagem: casteloImg,
+    imagens: [{ src: casteloImg, alt: "Fachada da Escola Castelo do Criar" }],
     destaques: [
       {
         title: "Base acadêmica sólida",
