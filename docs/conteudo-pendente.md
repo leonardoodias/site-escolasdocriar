@@ -73,6 +73,6 @@ Proposta: depois de confirmar ou descartar esses itens, redirecionar `/a-escola`
 
 ## Outros
 
-- **E-mail nas páginas legais:** Política de Privacidade e Termos de Uso usam `school.email`, removido em `main` no commit "remover email". O link aparece como `mailto:undefined`. É preciso definir o canal de contato dessas páginas.
+- **E-mail nas páginas legais:** resolvido em 2026-10-29 — Política de Privacidade e Termos de Uso agora apontam para `/contato`, que lista os canais de cada unidade. Falta só um e-mail oficial, se a escola quiser publicá-lo.
 - **Regularização da School of Schools:** o texto `regularizacaoSchoolOfSchools` (`src/content/site.ts`) não é exibido. É preciso definir se e onde publicá-lo.
 - **Foto do Fundamental II:** não há foto própria dessa etapa.

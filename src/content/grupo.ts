@@ -4,7 +4,7 @@
  * Para adicionar uma nova escola, basta incluir um item em `escolas`.
  */
 
-import castelinhoImg from "@/assets/castelinho.jpg";
+import castelinhoImg from "@/assets/castelinho.jpeg.asset.json";
 import casteloImg from "@/assets/castelo-fachada.jpg";
 import logoCastelinho from "@/assets/logo-castelinho.webp";
 import logoCastelo from "@/assets/logo-castelo.webp";
@@ -67,7 +67,7 @@ export const escolas: Escola[] = [
     descricao:
       "No Castelinho, cada criança encontra rotina previsível, cuidado atento e experiências que ampliam linguagem, movimento e imaginação.",
     logo: logoCastelinho,
-    imagem: castelinhoImg,
+    imagem: castelinhoImg.url,
     destaques: [
       {
         title: "Acolhimento em primeiro lugar",

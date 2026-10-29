@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { Container, PageHero } from "@/components/site/Section";
 import { school } from "@/content/site";
@@ -49,10 +49,10 @@ function Termos() {
           </p>
           <h2 className="text-2xl font-extrabold text-primary-deep">Contato</h2>
           <p>
-            Dúvidas sobre estes termos podem ser enviadas para{" "}
-            <a href={`mailto:${school.email}`} className="font-bold text-primary">
-              {school.email}
-            </a>
+            Dúvidas sobre estes termos podem ser enviadas pela nossa{" "}
+            <Link to="/contato" className="font-bold text-primary">
+              página de Contato
+            </Link>
             .
           </p>
         </Container>
