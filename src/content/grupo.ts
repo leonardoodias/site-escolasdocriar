@@ -4,11 +4,11 @@
  * Para adicionar uma nova escola, basta incluir um item em `escolas`.
  */
 
-import castelinhoImg from "@/assets/castelinho.jpeg.asset.json";
-import castelinhoGaleria1 from "@/assets/castelinho-galeria-1.jpeg.asset.json";
-import castelinhoGaleria2 from "@/assets/castelinho-galeria-2.jpeg.asset.json";
-import castelinhoGaleria3 from "@/assets/castelinho-galeria-3.jpeg.asset.json";
-import castelinhoGaleria4 from "@/assets/castelinho-galeria-4.jpeg.asset.json";
+import castelinhoImg from "@/assets/castelinho.jpeg";
+import castelinhoGaleria1 from "@/assets/castelinho-galeria-1.jpeg";
+import castelinhoGaleria2 from "@/assets/castelinho-galeria-2.jpeg";
+import castelinhoGaleria3 from "@/assets/castelinho-galeria-3.jpeg";
+import castelinhoGaleria4 from "@/assets/castelinho-galeria-4.jpeg";
 import casteloImg from "@/assets/castelo-fachada.jpg";
 import logoCastelinho from "@/assets/logo-castelinho.webp";
 import logoCastelo from "@/assets/logo-castelo.webp";
@@ -73,13 +73,13 @@ export const escolas: Escola[] = [
     descricao:
       "No Castelinho, cada criança encontra rotina previsível, cuidado atento e experiências que ampliam linguagem, movimento e imaginação.",
     logo: logoCastelinho,
-    imagem: castelinhoImg.url,
+    imagem: castelinhoImg,
     imagens: [
-      { src: castelinhoImg.url, alt: "Fachada do Castelinho do Criar, com portões coloridos" },
-      { src: castelinhoGaleria1.url, alt: "Recreação do Castelinho do Criar com escorregador e jardim" },
-      { src: castelinhoGaleria2.url, alt: "Portões amarelo e rosa da fachada do Castelinho do Criar" },
-      { src: castelinhoGaleria3.url, alt: "Brinquedão de madeira no pátio do Castelinho do Criar" },
-      { src: castelinhoGaleria4.url, alt: "Fachada do Castelinho do Criar vista da rua" },
+      { src: castelinhoImg, alt: "Fachada do Castelinho do Criar, com portões coloridos" },
+      { src: castelinhoGaleria1, alt: "Recreação do Castelinho do Criar com escorregador e jardim" },
+      { src: castelinhoGaleria2, alt: "Portões amarelo e rosa da fachada do Castelinho do Criar" },
+      { src: castelinhoGaleria3, alt: "Brinquedão de madeira no pátio do Castelinho do Criar" },
+      { src: castelinhoGaleria4, alt: "Fachada do Castelinho do Criar vista da rua" },
     ],
     destaques: [
       {

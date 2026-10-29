@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 import casteloImg from "@/assets/hero-escola.jpg";
-import logoCastelo3d from "@/assets/logo-castelo-3d.png.asset.json";
+import logoCastelo3d from "@/assets/logo-castelo-3d.png";
 import { EtapasEnsino } from "@/components/site/EtapasEnsino";
 import { LocalizacaoContato } from "@/components/site/LocalizacaoContato";
 import { Container, SectionHeading } from "@/components/site/Section";
@@ -119,7 +119,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
               />
               <div className="absolute right-4 bottom-4 flex items-center gap-3 rounded-2xl bg-background/95 p-3 shadow-soft backdrop-blur-md">
                 <img
-                  src={logoCastelo3d.url}
+                  src={logoCastelo3d}
                   alt="Logo 3D Castelo do Criar"
                   width={44}
                   height={44}
