@@ -2,10 +2,10 @@ import {
   BookOpen,
   ChefHat,
   Globe,
-  HeartHandshake,
   Languages,
   Music,
-  Puzzle,
+  PersonStanding,
+  Volleyball,
   type LucideIcon,
 } from "lucide-react";
 
@@ -14,10 +14,10 @@ import type { Programa } from "@/content/programas";
 const icons: Record<string, LucideIcon> = {
   ChefHat,
   Globe,
-  HeartHandshake,
   Languages,
   Music,
-  Puzzle,
+  PersonStanding,
+  Volleyball,
 };
 
 export function ProgramaCard({ programa }: { programa: Programa }) {

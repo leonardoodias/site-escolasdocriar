@@ -273,45 +273,45 @@ export const eixosExperiencias: EixoExperiencias[] = [
 
 export const programasCastelinho: Programa[] = [
   {
-    nome: "Inglês — Programa Bilíngue B21",
-    publico: "Nível I e Nível II",
-    texto:
-      "Músicas, histórias e brincadeiras aproximam as crianças do inglês de forma natural, ampliando o vocabulário e desenvolvendo a comunicação.",
-    icon: "Languages",
-  },
-  {
-    nome: "Oficinas de Inglês",
-    publico: "Mini Maternal e Maternal",
-    texto:
-      "Um primeiro contato divertido com o idioma, pensado para a faixa etária, que estimula a escuta, a curiosidade e a familiaridade com o inglês.",
-    icon: "Globe",
-  },
-  {
-    nome: "Musicalização Infantil",
-    publico: "Educação Infantil",
+    nome: "Musicalização",
+    publico: "Berçário ao Nível II",
     texto:
       "Vivências musicais que despertam a criatividade e a expressão, enquanto desenvolvem ritmo, percepção auditiva, coordenação motora e convivência.",
     icon: "Music",
   },
   {
-    nome: "Culinária Infantil",
-    publico: "Educação Infantil",
+    nome: "Psicomotricidade",
+    publico: "Berçário ao Nível II",
+    texto:
+      "Brincadeiras de movimento, equilíbrio e exploração do espaço ajudam as crianças a conhecer o próprio corpo e a desenvolver coordenação e confiança.",
+    icon: "PersonStanding",
+  },
+  {
+    nome: "Culinária",
+    publico: "Mini Maternal ao Nível II",
     texto:
       "Em atividades práticas com os alimentos, as crianças fazem novas descobertas sensoriais, ganham autonomia e constroem hábitos saudáveis.",
     icon: "ChefHat",
   },
   {
-    nome: "Desenvolvimento Socioemocional",
-    publico: "Educação Infantil",
+    nome: "Educação Física em Inglês",
+    publico: "Mini Maternal ao Nível II",
     texto:
-      "Momentos dedicados às emoções, à convivência e ao respeito, que fortalecem a empatia, a autoconfiança e a autonomia.",
-    icon: "HeartHandshake",
+      "Jogos e brincadeiras de movimento conduzidos em inglês unem o desenvolvimento motor ao contato natural com o idioma.",
+    icon: "Volleyball",
   },
   {
-    nome: "Vivências e Aprendizagem Lúdica",
-    publico: "Berçário ao Nível II",
+    nome: "Oficina de Inglês",
+    publico: "Mini Maternal",
     texto:
-      "Brincar, explorar e descobrir: experiências educativas que estimulam o desenvolvimento cognitivo, motor, afetivo e social.",
-    icon: "Puzzle",
+      "Um primeiro contato divertido com o idioma, pensado para a faixa etária, que estimula a escuta, a curiosidade e a familiaridade com o inglês.",
+    icon: "Globe",
+  },
+  {
+    nome: "Projeto Bilíngue",
+    publico: "Maternal ao Nível II",
+    texto:
+      "Músicas, histórias e brincadeiras aproximam as crianças do inglês de forma natural, ampliando o vocabulário e desenvolvendo a comunicação.",
+    icon: "Languages",
   },
 ];
