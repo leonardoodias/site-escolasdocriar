@@ -1,7 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { Container, PageHero } from "@/components/site/Section";
-import { school } from "@/content/site";
 
 export const Route = createFileRoute("/politica-de-privacidade")({
   head: () => ({
@@ -52,11 +51,11 @@ function Politica() {
           <h2 className="text-2xl font-extrabold text-primary-deep">Seus direitos</h2>
           <p>
             Conforme a Lei Geral de Proteção de Dados (LGPD), você pode solicitar a
-            confirmação, correção ou exclusão dos seus dados entrando em contato pelo
-            e-mail{" "}
-            <a href={`mailto:${school.email}`} className="font-bold text-primary">
-              {school.email}
-            </a>
+            confirmação, correção ou exclusão dos seus dados entrando em contato pela
+            nossa{" "}
+            <Link to="/contato" className="font-bold text-primary">
+              página de Contato
+            </Link>
             .
           </p>
         </Container>
