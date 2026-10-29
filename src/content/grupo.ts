@@ -74,6 +74,13 @@ export const escolas: Escola[] = [
       "No Castelinho, cada criança encontra rotina previsível, cuidado atento e experiências que ampliam linguagem, movimento e imaginação.",
     logo: logoCastelinho,
     imagem: castelinhoImg.url,
+    imagens: [
+      { src: castelinhoImg.url, alt: "Fachada do Castelinho do Criar, com portões coloridos" },
+      { src: castelinhoGaleria1.url, alt: "Recreação do Castelinho do Criar com escorregador e jardim" },
+      { src: castelinhoGaleria2.url, alt: "Portões amarelo e rosa da fachada do Castelinho do Criar" },
+      { src: castelinhoGaleria3.url, alt: "Brinquedão de madeira no pátio do Castelinho do Criar" },
+      { src: castelinhoGaleria4.url, alt: "Fachada do Castelinho do Criar vista da rua" },
+    ],
     destaques: [
       {
         title: "Acolhimento em primeiro lugar",
