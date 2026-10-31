@@ -6,13 +6,65 @@ import { useEffect, useState } from "react";
 import { ExternalLink } from "@/components/site/ExternalLink";
 import { Container, SectionHeading } from "@/components/site/Section";
 import { unidades } from "@/content/contatos";
-import type { EtapaProgramas } from "@/content/programas";
+import type { BlocoComplementar, EtapaProgramas } from "@/content/programas";
 
 const ABERTA_INICIALMENTE = "fundamental-1";
 
+function BlocoComplementarEtapa({ id, bloco }: { id: string; bloco: BlocoComplementar }) {
+  return (
+    <section aria-labelledby={id} className="border-t border-border px-6 py-6 sm:px-8 sm:py-7">
+      {bloco.publico && (
+        <p className="text-xs font-extrabold tracking-[0.12em] text-accent uppercase">
+          {bloco.publico}
+        </p>
+      )}
+      <h4 id={id} className="mt-1 text-xl font-extrabold text-primary-deep">
+        {bloco.titulo}
+      </h4>
+      {bloco.intro && (
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          {bloco.intro}
+        </p>
+      )}
+      {bloco.atividades && (
+        <ul className="mt-3 grid md:grid-cols-2 md:gap-x-10">
+          {bloco.atividades.map((atividade) => (
+            <li
+              key={atividade.nome}
+              className="border-t border-border/70 py-4 first:border-t-0 md:[&:nth-child(2)]:border-t-0"
+            >
+              <h5 className="text-base leading-snug font-bold text-primary-deep">
+                {atividade.nome}
+              </h5>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                {atividade.texto}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
+      {bloco.notas && (
+        <div className="mt-4 rounded-2xl bg-primary-soft px-5 py-4">
+          {bloco.notasTitulo && (
+            <p className="text-sm font-extrabold text-primary-deep">{bloco.notasTitulo}</p>
+          )}
+          <ul className={`space-y-1.5 ${bloco.notasTitulo ? "mt-2" : ""}`}>
+            {bloco.notas.map((nota) => (
+              <li key={nota} className="text-sm leading-relaxed font-semibold text-foreground/85">
+                {nota}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
+  );
+}
+
 /**
  * Etapas do Castelo do Criar: título, séries e resumo sempre visíveis;
- * aulas e programas em uma área expansível por etapa, aberta automaticamente pela âncora da URL.
+ * aulas, programas e atividades complementares em uma área expansível por etapa,
+ * aberta automaticamente pela âncora da URL.
  */
 export function EtapasEnsino({ etapas }: { etapas: EtapaProgramas[] }) {
   const hash = useLocation({ select: (l) => l.hash.replace(/^#/, "") });
@@ -94,10 +146,10 @@ export function EtapasEnsino({ etapas }: { etapas: EtapaProgramas[] }) {
                     <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
                       <CollapsiblePrimitive.Trigger className="group inline-flex min-h-11 w-fit cursor-pointer items-center gap-2 rounded-full border border-primary/30 px-5 text-sm font-bold text-primary transition-colors hover:bg-primary-soft">
                         <span className="group-data-[state=open]:hidden">
-                          Ver as {etapa.programas.length} aulas e programas
+                          Ver aulas, programas e atividades
                         </span>
                         <span className="hidden group-data-[state=open]:inline">
-                          Ocultar aulas e programas
+                          Ocultar aulas, programas e atividades
                         </span>
                         <ChevronDown
                           className="size-4 transition-transform duration-200 group-data-[state=open]:rotate-180 motion-reduce:transition-none"
@@ -135,6 +187,13 @@ export function EtapasEnsino({ etapas }: { etapas: EtapaProgramas[] }) {
                         </li>
                       ))}
                     </ul>
+                    {etapa.complementares?.map((bloco, indice) => (
+                      <BlocoComplementarEtapa
+                        key={bloco.titulo}
+                        id={`${etapa.id}-complementar-${indice}`}
+                        bloco={bloco}
+                      />
+                    ))}
                   </CollapsiblePrimitive.Content>
                 </article>
               </CollapsiblePrimitive.Root>

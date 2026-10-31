@@ -55,7 +55,7 @@ Os textos abaixo saíram das páginas, mas não foram incorporados à nova estru
 
 ## Período estendido do Castelo
 
-As oito atividades da seção "Mais experiências, mais possibilidades" (Teatro, Robótica, Jogos de tabuleiro, Libras, Reforço em Língua Portuguesa, Reforço em Matemática, Inglês, Treinos esportivos) seguem publicadas sem atribuição a etapas. **Pendente:** a quais etapas pertence cada atividade.
+As oficinas e atividades oficiais de 2027 estão publicadas em "Etapas de ensino", para 4º e 5º anos, 6º ao 9º ano e Ensino Médio. A seção antiga "Mais experiências, mais possibilidades" foi removida; Jogos de tabuleiro, Reforço em Língua Portuguesa e Reforço em Matemática constavam dela, mas não das listas oficiais. **Pendente:** a lista de oficinas do 1º ao 3º ano, hoje representada por um card genérico "Conforme disponibilidade".
 
 ## Página `/a-escola`
 

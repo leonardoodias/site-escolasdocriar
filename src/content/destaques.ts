@@ -53,8 +53,9 @@ export const destaques: Destaque[] = [
     titulo: "Cantata de Natal",
     texto:
       "Apresentação natalina dos alunos para celebrar o encerramento do ano com a comunidade escolar.",
-    data: "28/11",
+    data: "30/11",
     placeholderText: "Adicione imagem de referência da Cantata de Natal",
+    detalhes: ["18h30", "Escadaria da Praça Matriz"],
     cta: { label: "Ver detalhes", to: "/destaques" },
   },
 ];
@@ -86,10 +87,9 @@ export const proximasDatas: MesAgenda[] = [
   {
     mes: "Novembro",
     itens: [
-      { data: "07/11", evento: "Concurso de Bolsas", detalhe: "Ensino Médio" },
       { data: "23 a 30/11", evento: "Avaliação P2" },
       { data: "Data a definir", evento: "Viagem do 9º Ano" },
-      { data: "28/11", evento: "Cantata de Natal" },
+      { data: "30/11", evento: "Cantata de Natal", detalhe: "18h30 · Escadaria da Praça Matriz" },
     ],
   },
   {

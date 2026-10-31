@@ -16,6 +16,15 @@ export type ProgramaEtapa = {
   condicoes?: string[];
 };
 
+export type BlocoComplementar = {
+  titulo: string;
+  publico?: string;
+  intro?: string;
+  atividades?: { nome: string; texto: string }[];
+  notasTitulo?: string;
+  notas?: string[];
+};
+
 export type EtapaProgramas = {
   id: string;
   titulo: string;
@@ -23,6 +32,8 @@ export type EtapaProgramas = {
   /** Resumo pedagógico composto apenas a partir da relação oficial de aulas e programas. */
   resumo: string;
   programas: ProgramaEtapa[];
+  /** Período estendido e atividades complementares, com o texto oficial da escola. */
+  complementares?: BlocoComplementar[];
 };
 
 export const programasCastelo: EtapaProgramas[] = [
@@ -42,7 +53,6 @@ export const programasCastelo: EtapaProgramas[] = [
         nome: "Robótica Educacional",
         texto:
           "Construção, tecnologia e resolução de desafios em atividades práticas que desenvolvem raciocínio lógico, criatividade e trabalho em equipe.",
-        condicoes: ["Em parceria com a EasyComp"],
       },
       {
         nome: "Educação Financeira",
@@ -74,7 +84,61 @@ export const programasCastelo: EtapaProgramas[] = [
         nome: "Período Estendido",
         texto:
           "Ampliação da rotina escolar com acompanhamento e atividades complementares, que acolhe os alunos, desenvolve novas habilidades e apoia as famílias.",
-        condicoes: ["Conforme disponibilidade"],
+        condicoes: ["1º ao 3º ano", "Conforme disponibilidade"],
+      },
+    ],
+    complementares: [
+      {
+        titulo: "Oficinas do Período Estendido",
+        publico: "4º e 5º anos",
+        intro:
+          "No Castelo do Criar, o período estendido oferece atividades que complementam a formação dos alunos, estimulando a criatividade, a autonomia e o desenvolvimento de novas habilidades.",
+        atividades: [
+          {
+            nome: "Dança",
+            texto: "Expressão corporal, ritmo, coordenação motora e socialização.",
+          },
+          {
+            nome: "Libras",
+            texto:
+              "Aprendizagem da Língua Brasileira de Sinais, promovendo inclusão e comunicação.",
+          },
+          {
+            nome: "Inglês",
+            texto:
+              "Desenvolvimento da comunicação e do vocabulário por meio de atividades práticas.",
+          },
+          {
+            nome: "Teatro",
+            texto: "Criatividade, expressão oral, interpretação e autoconfiança.",
+          },
+          {
+            nome: "Tarefa de Casa",
+            texto: "Acompanhamento e orientação das atividades escolares.",
+          },
+          {
+            nome: "Informática – Easycomp",
+            texto:
+              "Cursos específicos de informática e tecnologia, oferecidos em parceria com a Easycomp.",
+          },
+          {
+            nome: "Apoio Pedagógico",
+            texto: "Reforço da aprendizagem e acompanhamento das dificuldades escolares.",
+          },
+          {
+            nome: "Música",
+            texto: "Desenvolvimento da percepção musical, ritmo e criatividade.",
+          },
+          {
+            nome: "Treinos Esportivos",
+            texto:
+              "Futsal, vôlei, basquete e handebol, incentivando disciplina e trabalho em equipe.",
+          },
+          {
+            nome: "Sustentabilidade",
+            texto: "Educação ambiental, reciclagem e práticas de preservação da natureza.",
+          },
+        ],
       },
     ],
   },
@@ -123,6 +187,81 @@ export const programasCastelo: EtapaProgramas[] = [
           "Acompanhamento acadêmico e orientação na organização dos estudos para consolidar conhecimentos, melhorar o desempenho e desenvolver disciplina.",
       },
     ],
+    complementares: [
+      {
+        titulo: "Oficinas do Período Estendido",
+        publico: "6º ao 9º ano · 2027",
+        intro:
+          "No Castelo do Criar, o período estendido oferece atividades que complementam a formação acadêmica, desenvolvendo autonomia, criatividade, responsabilidade, pensamento crítico e habilidades essenciais para o futuro.",
+        atividades: [
+          {
+            nome: "Dança",
+            texto:
+              "Desenvolve a expressão corporal, o ritmo, a coordenação motora e a socialização.",
+          },
+          {
+            nome: "Inglês",
+            texto:
+              "Amplia o vocabulário, a compreensão e a comunicação na língua inglesa por meio de atividades práticas.",
+          },
+          {
+            nome: "Libras e Jogos",
+            texto:
+              "Promove a inclusão, a comunicação, o raciocínio lógico e a interação entre os alunos.",
+          },
+          {
+            nome: "Tarefa de Casa",
+            texto:
+              "Acompanhamento e orientação das atividades escolares, incentivando a organização e a autonomia.",
+          },
+          {
+            nome: "Ecoempreendedorismo",
+            texto:
+              "Desenvolve a consciência ambiental e o espírito empreendedor por meio de projetos sustentáveis.",
+          },
+          {
+            nome: "Educação Financeira",
+            texto:
+              "Ensina conceitos de planejamento, economia, consumo consciente e organização financeira.",
+          },
+          {
+            nome: "Treinos Esportivos",
+            texto:
+              "Futsal, vôlei, basquete e handebol, estimulando disciplina, cooperação e espírito de equipe.",
+          },
+          {
+            nome: "Projeto Leitura",
+            texto:
+              "Incentiva o hábito da leitura, a interpretação de textos, a criatividade e o pensamento crítico.",
+          },
+          {
+            nome: "Informática – Easycomp",
+            texto:
+              "Cursos específicos de informática e tecnologia, oferecidos em parceria com a Easycomp.",
+          },
+          {
+            nome: "Oficina de Sustentabilidade",
+            texto:
+              "Atividades práticas de preservação ambiental, reciclagem e uso consciente dos recursos naturais.",
+          },
+          {
+            nome: "Robótica",
+            texto:
+              "Introduz conceitos de programação, tecnologia e construção de projetos, desenvolvendo criatividade e raciocínio lógico.",
+          },
+        ],
+      },
+      {
+        titulo: "Atividade extracurricular opcional – Teatro",
+        publico: "6º ao 9º ano",
+        intro:
+          "Além das oficinas do período estendido, o Castelo do Criar oferecerá a oportunidade de participação em um Grupo de Teatro Escolar, exclusivo para alunos do 6º ao 9º ano. A atividade será voltada ao desenvolvimento da expressão artística, comunicação, interpretação, criatividade e autoconfiança, com preparação de apresentações teatrais.",
+        notas: [
+          "Participação opcional, mediante inscrição, com pagamento realizado diretamente ao professor responsável.",
+          "A atividade será oferecida separadamente do período estendido.",
+        ],
+      },
+    ],
   },
   {
     id: "ensino-medio",
@@ -161,11 +300,62 @@ export const programasCastelo: EtapaProgramas[] = [
         texto:
           "Autoconhecimento, planejamento de futuro e desenvolvimento pessoal para estimular escolhas conscientes, responsabilidade e preparação para a vida adulta.",
       },
+    ],
+    complementares: [
       {
-        nome: "Período Estendido e Oficinas",
-        texto:
-          "Atividades complementares que ampliam as oportunidades de aprendizagem e fortalecem a formação integral.",
-        condicoes: ["Conforme organização das turmas"],
+        titulo: "Atividades inclusas no período da tarde",
+        publico: "1ª, 2ª e 3ª séries · 2027",
+        intro:
+          "No Castelo do Criar, o aprendizado vai além da sala de aula! Nossa proposta para 2027 oferece atividades complementares que fortalecem a formação acadêmica, incentivam novas habilidades e preparam os alunos para o futuro.",
+        atividades: [
+          {
+            nome: "Ecoempreendedorismo",
+            texto:
+              "Projetos práticos de sustentabilidade, inovação e empreendedorismo, desenvolvendo liderança, criatividade e responsabilidade social.",
+          },
+          {
+            nome: "Treinos Esportivos",
+            texto:
+              "Atividades que promovem saúde, disciplina, trabalho em equipe e desenvolvimento físico.",
+          },
+          {
+            nome: "Plantão de Dúvidas e Preparação para ENEM e Vestibulares",
+            texto:
+              "Encontros com professores, organizados conforme as necessidades das turmas, incluindo reforço de conteúdos, revisões e resolução de questões específicas para vestibulares e ENEM.",
+          },
+        ],
+        notas: ["Todas essas atividades estão inclusas, sem custo adicional."],
+      },
+      {
+        titulo: "Cursos extracurriculares opcionais",
+        publico: "1ª, 2ª e 3ª séries · 2027",
+        intro:
+          "Para ampliar as oportunidades dos alunos, também ofereceremos cursos complementares dentro da própria escola.",
+        atividades: [
+          {
+            nome: "Teatro",
+            texto: "Expressão artística, comunicação e autoconfiança.",
+          },
+          {
+            nome: "Inglês",
+            texto: "Aprofundamento do idioma e conversação.",
+          },
+          {
+            nome: "Informática – Easycomp",
+            texto: "Cursos específicos de informática e tecnologia.",
+          },
+          {
+            nome: "Redação",
+            texto: "Aperfeiçoamento da escrita e preparação para ENEM e vestibulares.",
+          },
+        ],
+        notasTitulo: "Como funcionarão?",
+        notas: [
+          "No início do ano letivo, consultaremos as famílias para identificar o interesse em cada curso.",
+          "As turmas serão organizadas conforme a demanda, com professores específicos e pagamento realizado diretamente ao profissional responsável.",
+          "Os cursos são opcionais, possuem custo adicional e dependem da formação de turmas.",
+          "Nosso objetivo é oferecer mais oportunidades dentro da própria escola, proporcionando praticidade às famílias e uma formação ainda mais completa aos alunos.",
+        ],
       },
     ],
   },
@@ -227,7 +417,7 @@ export const eixosExperiencias: EixoExperiencias[] = [
         nome: "Robótica e Tecnologia",
         texto:
           "Atividades de construção, desafios e projetos tecnológicos que desenvolvem raciocínio lógico, criatividade, inovação e trabalho em equipe.",
-        publico: "Ensino Fundamental I e II · no Fundamental I, em parceria com a EasyComp",
+        publico: "Ensino Fundamental I e II",
       },
       {
         nome: "Educação Financeira",

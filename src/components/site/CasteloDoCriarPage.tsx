@@ -1,18 +1,11 @@
 import { ExternalLink } from "@/components/site/ExternalLink";
 import { Link } from "@tanstack/react-router";
 import {
-  Activity,
-  BookOpen,
-  Bot,
-  Calculator,
   CalendarCheck,
   Compass,
-  Dice5,
-  Drama,
   Globe,
   GraduationCap,
   HeartHandshake,
-  Languages,
   MessageCircle,
 } from "lucide-react";
 
@@ -48,17 +41,6 @@ const pilaresProposta = [
     title: "Consciência social",
     description: "Formação de estudantes capazes de compreender seu papel na sociedade.",
   },
-];
-
-const experienciasEstendido = [
-  { icon: Drama, name: "Teatro" },
-  { icon: Bot, name: "Robótica" },
-  { icon: Dice5, name: "Jogos de tabuleiro" },
-  { icon: Languages, name: "Libras" },
-  { icon: BookOpen, name: "Reforço em Língua Portuguesa" },
-  { icon: Calculator, name: "Reforço em Matemática" },
-  { icon: Globe, name: "Inglês" },
-  { icon: Activity, name: "Treinos esportivos" },
 ];
 
 export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
@@ -199,45 +181,6 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
       </section>
 
       <EtapasEnsino etapas={programasCastelo} />
-
-      {/* 5. PERÍODO ESTENDIDO */}
-      <section className="section bg-sand">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
-              Diferencial
-            </p>
-            <h2 className="mt-3 text-3xl font-extrabold text-primary-deep sm:text-4xl">
-              Mais experiências, mais possibilidades
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Como diferencial, o Castelo do Criar oferece período estendido com experiências que
-              ampliam o aprendizado e contribuem para o desenvolvimento intelectual, físico, social
-              e emocional dos estudantes.
-            </p>
-            <p className="mt-2 text-sm font-semibold text-primary">
-              Entre as experiências oferecidas estão:
-            </p>
-          </div>
-
-          <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-2 md:grid-cols-4">
-            {experienciasEstendido.map((exp) => {
-              const Icon = exp.icon;
-              return (
-                <div
-                  key={exp.name}
-                  className="flex items-center gap-3.5 rounded-2xl border border-border/80 bg-background p-4 shadow-soft transition-all hover:border-primary/30"
-                >
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary">
-                    <Icon className="size-5" aria-hidden="true" />
-                  </div>
-                  <span className="text-sm font-bold text-foreground/90">{exp.name}</span>
-                </div>
-              );
-            })}
-          </div>
-        </Container>
-      </section>
 
       <LocalizacaoContato
         unidade="castelo"

@@ -52,7 +52,7 @@ O contexto de negócio, tom de voz e identidade estão detalhados em [docs/desig
 | `/` | Home do grupo | Banner rotativo, escolas, eventos e campanhas com agenda escolar, propósito, diferenciais, CTA de matrícula |
 | `/escolas` | Nossas Escolas | Cards das duas escolas com posicionamento, focos e acesso à página de cada uma |
 | `/escolas/castelinho` | Castelinho do Criar | Apresentação com acesso ao atendimento, diferenciais, "Aprendizagens e descobertas", localização e contato |
-| `/escolas/castelo-do-criar` | Castelo do Criar | Apresentação, quem somos, proposta, "Etapas de ensino" (Fundamental I, II e Médio com aulas e programas), período estendido, localização e contato |
+| `/escolas/castelo-do-criar` | Castelo do Criar | Apresentação, quem somos, proposta, "Etapas de ensino" (Fundamental I, II e Médio com aulas, programas, período estendido e atividades complementares), localização e contato |
 | `/a-escola` | A Escola | Página antiga sem links internos e com conteúdo contraditório — destino pendente (ver [docs/conteudo-pendente.md](docs/conteudo-pendente.md)) |
 | `/nossa-proposta` | Nosso Jeito de Educar | Metodologia, pilares, material e recursos, experiências que preparam para a vida |
 | `/projetos` | Projetos e experiências | Lista de projetos |
@@ -361,7 +361,7 @@ O registro detalhado, com os textos antigos preservados, está em [docs/conteudo
 - **Dados do Castelo do Criar** — CEP, bairro, Instagram e Facebook divergem entre rodapé, página Contato e página da escola; cada local mantém o valor que já exibia até a confirmação
 - **Endereço do Castelinho do Criar** — confirmar a numeração "1381-1563"
 - **Textos antigos de segmentos** — características e rotinas das antigas páginas de Fundamental, Médio e Educação Infantil (incluindo simulados e itinerários) não foram migrados e aguardam confirmação
-- **Período estendido do Castelo** — as oito atividades seguem publicadas sem atribuição a etapas
+- **Período estendido do Castelo** — falta a lista de oficinas do 1º ao 3º ano, hoje representada por um card genérico
 - **Página `/a-escola`** — conteúdo contraditório e sem links internos; proposta de redirecionamento para a página do Castelo depois de confirmar história, missão, visão, valores e estrutura
 - **E-mail nas páginas legais** — Política de Privacidade e Termos de Uso exibem `mailto:undefined` desde a remoção do e-mail
 - **Destino dos dados do formulário de Matrículas** — o envio apenas valida os campos e exibe uma notificação local
