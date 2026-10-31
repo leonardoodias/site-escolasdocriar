@@ -11,10 +11,10 @@ import {
 } from "lucide-react";
 
 import ftdSchoolOfSchoolsLogo from "@/assets/ftd-school-of-schools-logo.webp";
+import { ChamadaInternacionalizacao } from "@/components/site/ChamadaInternacionalizacao";
 import { Container, PageHero, SectionHeading } from "@/components/site/Section";
 import { CtaMatriculas } from "@/components/site/CtaMatriculas";
 import { ExperienciasVida } from "@/components/site/ExperienciasVida";
-import { PreparandoMundo } from "@/components/site/PreparandoMundo";
 import { pilares, metodologia, materialPedagogico } from "@/content/site";
 
 const pilarIcons: Record<string, LucideIcon> = {
@@ -26,7 +26,7 @@ const pilarIcons: Record<string, LucideIcon> = {
 };
 
 const heroVisual = (
-  <div className="relative mx-auto aspect-square w-full max-w-sm">
+  <div className="relative mx-auto aspect-square w-full max-w-[280px]">
     <div aria-hidden="true" className="absolute inset-0 rounded-full bg-primary-soft" />
     <div
       aria-hidden="true"
@@ -72,80 +72,75 @@ function NossaProposta() {
         title="Aprender com sentido, em cada etapa do desenvolvimento"
         text="Nas Escolas do Criar, aprendizagem, desenvolvimento e formação humana caminham juntos. Nossa proposta respeita cada etapa, estimula autonomia, criatividade e responsabilidade e conecta conhecimento a experiências que fazem sentido para os alunos."
         visual={heroVisual}
+        size="compact"
       />
 
-      <section className="bg-background py-10 md:py-12">
+      <section className="section bg-background">
         <Container>
-          <div className="mx-auto max-w-[1200px]">
-            <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-5">
-                <SectionHeading
-                  align="left"
-                  eyebrow="Metodologia"
-                  title={metodologia.title}
-                  text={metodologia.text}
-                />
-              </div>
-              <div className="lg:col-span-7 lg:border-l lg:border-border lg:pl-16">
-                <ul className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
-                  {metodologia.principios.map((p) => (
-                    <li key={p} className="flex items-start gap-3">
-                      <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden="true" />
-                      <span className="text-base text-foreground/85">{p}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <SectionHeading
+                align="left"
+                eyebrow="Metodologia"
+                title={metodologia.title}
+                text={metodologia.text}
+              />
+            </div>
+            <div className="lg:col-span-7 lg:border-l lg:border-border lg:pl-16">
+              <ul className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
+                {metodologia.principios.map((p) => (
+                  <li key={p} className="flex items-start gap-3">
+                    <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden="true" />
+                    <span className="text-base text-foreground/85">{p}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        </Container>
-      </section>
 
-      <section className="bg-sand py-10 md:py-12">
-        <Container>
-          <div className="mx-auto max-w-[1200px]">
-            <SectionHeading eyebrow="Pilares" title="O que conecta as duas escolas" />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-10 border-t border-border pt-8 md:pt-10">
+            <p className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
+              Pilares
+            </p>
+            <h3 className="mt-2 text-2xl font-extrabold text-primary-deep">
+              O que conecta as duas escolas
+            </h3>
+            <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
               {pilares.map((p) => {
                 const Icon = pilarIcons[p.icon] ?? BookOpen;
                 return (
-                  <div
-                    key={p.title}
-                    className="flex h-full flex-col gap-3 rounded-2xl border border-border/60 bg-background p-5 shadow-soft"
-                  >
-                    <span className="grid size-10 place-items-center rounded-xl bg-primary-soft text-primary">
+                  <li key={p.title} className="flex gap-3 lg:flex-col">
+                    <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary-soft text-primary">
                       <Icon className="size-5" aria-hidden="true" />
                     </span>
                     <div>
-                      <h3 className="text-sm font-extrabold text-primary-deep">{p.title}</h3>
-                      <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-                        {p.text}
-                      </p>
+                      <h4 className="text-base font-extrabold text-primary-deep">{p.title}</h4>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
                     </div>
-                  </div>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </div>
         </Container>
       </section>
 
-      <section className="bg-secondary/30 py-10 md:py-12">
+      <section className="bg-secondary/30 pt-13 pb-5 md:pt-18 md:pb-6">
         <Container>
-          <div className="mx-auto max-w-[1200px] overflow-hidden rounded-[2rem] bg-card shadow-soft">
-            <div className="grid gap-10 p-8 md:p-12 lg:grid-cols-12 lg:gap-12 lg:p-14">
-              <div className="lg:col-span-7">
+          <div className="overflow-hidden rounded-[2rem] bg-card shadow-soft">
+            <div className="grid gap-6 p-6 md:p-8 lg:grid-cols-12 lg:gap-10 lg:p-10">
+              <div className="lg:col-span-8">
                 <p className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
                   Material e recursos
                 </p>
-                <h2 className="mt-2 text-3xl font-extrabold text-primary-deep md:text-4xl">
+                <h2 className="mt-2 text-2xl font-extrabold text-primary-deep md:text-3xl">
                   {materialPedagogico.title}
                 </h2>
-                <p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
                   {materialPedagogico.text}
                 </p>
 
-                <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
                   {materialPedagogico.destaques.map((d) => (
                     <li
                       key={d}
@@ -157,21 +152,13 @@ function NossaProposta() {
                   ))}
                 </ul>
 
-                <p className="mt-8 border-t border-border/70 pt-6 text-sm font-bold text-primary-deep">
+                <p className="mt-5 border-t border-border/70 pt-4 text-sm font-bold text-primary-deep">
                   {materialPedagogico.nota}
                 </p>
               </div>
 
-              <div className="relative isolate flex flex-col items-center justify-center gap-6 overflow-hidden rounded-3xl bg-primary-soft p-10 lg:col-span-5 lg:p-12">
-                <div
-                  aria-hidden="true"
-                  className="absolute -top-10 -right-10 size-40 rounded-full bg-accent/15 blur-2xl"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute -bottom-12 -left-10 size-44 rounded-full bg-primary/10 blur-2xl"
-                />
-                <p className="relative text-xs font-extrabold tracking-[0.18em] text-primary uppercase">
+              <div className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-primary-soft p-6 lg:col-span-4">
+                <p className="text-xs font-extrabold tracking-[0.18em] text-primary uppercase">
                   Soluções educacionais
                 </p>
                 <img
@@ -180,7 +167,7 @@ function NossaProposta() {
                   width={367}
                   height={220}
                   loading="lazy"
-                  className="relative w-full max-w-[320px]"
+                  className="w-full max-w-[220px]"
                 />
               </div>
             </div>
@@ -188,7 +175,7 @@ function NossaProposta() {
         </Container>
       </section>
 
-      <PreparandoMundo />
+      <ChamadaInternacionalizacao variante="suave" className="bg-secondary/30 pb-13 md:pb-18" />
 
       <ExperienciasVida />
 

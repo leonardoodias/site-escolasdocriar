@@ -8,7 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-import { Container, SectionHeading } from "@/components/site/Section";
+import { Container } from "@/components/site/Section";
 import { internacionalizacao } from "@/content/programas";
 
 const icons: Record<string, LucideIcon> = { Languages, PiggyBank, Plane, Tent };
@@ -17,19 +17,10 @@ export function PreparandoMundo() {
   const { fechamento } = internacionalizacao;
 
   return (
-    <section id="internacionalizacao" className="section scroll-mt-24 bg-sand">
+    <section className="section bg-sand">
       <Container>
         <div className="mx-auto max-w-[1200px]">
-          <SectionHeading
-            eyebrow={internacionalizacao.eyebrow}
-            title={internacionalizacao.titulo}
-            text={internacionalizacao.subtitulo}
-          />
-          <p className="mx-auto mt-4 max-w-3xl text-center leading-relaxed text-muted-foreground">
-            {internacionalizacao.abertura}
-          </p>
-
-          <ol className="mt-10 grid gap-3 md:grid-cols-3 md:gap-5">
+          <ol className="grid gap-3 md:grid-cols-3 md:gap-5">
             {internacionalizacao.trajetoria.map((passo, indice) => (
               <li
                 key={passo.titulo}

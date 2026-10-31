@@ -17,6 +17,7 @@ import { Route as EducacaoInfantilRouteImport } from './routes/educacao-infantil
 import { Route as EnsinoFundamentalRouteImport } from './routes/ensino-fundamental'
 import { Route as EnsinoMedioRouteImport } from './routes/ensino-medio'
 import { Route as GaleriaRouteImport } from './routes/galeria'
+import { Route as InternacionalizacaoRouteImport } from './routes/internacionalizacao'
 import { Route as MatriculasRouteImport } from './routes/matriculas'
 import { Route as NossaPropostaRouteImport } from './routes/nossa-proposta'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
@@ -66,6 +67,11 @@ const EnsinoMedioRoute = EnsinoMedioRouteImport.update({
 const GaleriaRoute = GaleriaRouteImport.update({
   id: '/galeria',
   path: '/galeria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InternacionalizacaoRoute = InternacionalizacaoRouteImport.update({
+  id: '/internacionalizacao',
+  path: '/internacionalizacao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MatriculasRoute = MatriculasRouteImport.update({
@@ -128,6 +134,7 @@ export interface FileRoutesByFullPath {
   '/ensino-fundamental': typeof EnsinoFundamentalRoute
   '/ensino-medio': typeof EnsinoMedioRoute
   '/galeria': typeof GaleriaRoute
+  '/internacionalizacao': typeof InternacionalizacaoRoute
   '/matriculas': typeof MatriculasRoute
   '/nossa-proposta': typeof NossaPropostaRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -148,6 +155,7 @@ export interface FileRoutesByTo {
   '/ensino-fundamental': typeof EnsinoFundamentalRoute
   '/ensino-medio': typeof EnsinoMedioRoute
   '/galeria': typeof GaleriaRoute
+  '/internacionalizacao': typeof InternacionalizacaoRoute
   '/matriculas': typeof MatriculasRoute
   '/nossa-proposta': typeof NossaPropostaRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -169,6 +177,7 @@ export interface FileRoutesById {
   '/ensino-fundamental': typeof EnsinoFundamentalRoute
   '/ensino-medio': typeof EnsinoMedioRoute
   '/galeria': typeof GaleriaRoute
+  '/internacionalizacao': typeof InternacionalizacaoRoute
   '/matriculas': typeof MatriculasRoute
   '/nossa-proposta': typeof NossaPropostaRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
@@ -191,6 +200,7 @@ export interface FileRouteTypes {
     | '/ensino-fundamental'
     | '/ensino-medio'
     | '/galeria'
+    | '/internacionalizacao'
     | '/matriculas'
     | '/nossa-proposta'
     | '/politica-de-privacidade'
@@ -211,6 +221,7 @@ export interface FileRouteTypes {
     | '/ensino-fundamental'
     | '/ensino-medio'
     | '/galeria'
+    | '/internacionalizacao'
     | '/matriculas'
     | '/nossa-proposta'
     | '/politica-de-privacidade'
@@ -231,6 +242,7 @@ export interface FileRouteTypes {
     | '/ensino-fundamental'
     | '/ensino-medio'
     | '/galeria'
+    | '/internacionalizacao'
     | '/matriculas'
     | '/nossa-proposta'
     | '/politica-de-privacidade'
@@ -252,6 +264,7 @@ export interface RootRouteChildren {
   EnsinoFundamentalRoute: typeof EnsinoFundamentalRoute
   EnsinoMedioRoute: typeof EnsinoMedioRoute
   GaleriaRoute: typeof GaleriaRoute
+  InternacionalizacaoRoute: typeof InternacionalizacaoRoute
   MatriculasRoute: typeof MatriculasRoute
   NossaPropostaRoute: typeof NossaPropostaRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
@@ -320,6 +333,13 @@ declare module '@tanstack/react-router' {
       path: '/galeria'
       fullPath: '/galeria'
       preLoaderRoute: typeof GaleriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/internacionalizacao': {
+      id: '/internacionalizacao'
+      path: '/internacionalizacao'
+      fullPath: '/internacionalizacao'
+      preLoaderRoute: typeof InternacionalizacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/matriculas': {
@@ -404,6 +424,7 @@ const rootRouteChildren: RootRouteChildren = {
   EnsinoFundamentalRoute: EnsinoFundamentalRoute,
   EnsinoMedioRoute: EnsinoMedioRoute,
   GaleriaRoute: GaleriaRoute,
+  InternacionalizacaoRoute: InternacionalizacaoRoute,
   MatriculasRoute: MatriculasRoute,
   NossaPropostaRoute: NossaPropostaRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
