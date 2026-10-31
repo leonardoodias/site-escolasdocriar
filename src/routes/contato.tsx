@@ -46,12 +46,10 @@ function Contato() {
         <Container>
           <UnidadesContato titleAs="h2" />
 
-          <div className="mt-12 grid gap-10 lg:grid-cols-2">
+          <div className="mt-8 grid gap-10 md:mt-10 lg:grid-cols-2">
             {locaisContato.map(({ unidade, localizacao }) => (
               <div key={unidade.nome} className="flex flex-col">
-                <h3 className="font-display text-xl font-extrabold text-primary-deep">
-                  {unidade.nome}
-                </h3>
+                <h3 className="text-2xl font-extrabold text-primary-deep">{unidade.nome}</h3>
                 <ul className="mt-5 space-y-4 text-sm">
                   <li className="flex gap-3">
                     <MapPin className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden="true" />

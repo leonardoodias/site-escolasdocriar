@@ -49,17 +49,18 @@ function AEscola() {
               className="aspect-3/2 w-full rounded-4xl object-cover shadow-lift"
             />
             <div>
-              <h2 className="text-3xl font-extrabold text-primary-deep">Nossa história</h2>
+              <h2 className="text-3xl font-extrabold text-primary-deep md:text-4xl">
+                Nossa história
+              </h2>
               <p className="mt-4 text-muted-foreground">
-                A escola nasceu do desejo de oferecer à cidade uma educação que unisse
-                excelência acadêmica e acolhimento verdadeiro. Desde então, construímos uma
-                comunidade escolar onde cada criança e cada adolescente é conhecido pelo
-                nome.
+                A escola nasceu do desejo de oferecer à cidade uma educação que unisse excelência
+                acadêmica e acolhimento verdadeiro. Desde então, construímos uma comunidade escolar
+                onde cada criança e cada adolescente é conhecido pelo nome.
               </p>
               <p className="mt-4 text-muted-foreground">
-                Nosso trabalho é orientado por um princípio simples: educar é criar
-                possibilidades. Isso significa preparar os estudantes para os desafios
-                acadêmicos e, ao mesmo tempo, para a vida em sociedade.
+                Nosso trabalho é orientado por um princípio simples: educar é criar possibilidades.
+                Isso significa preparar os estudantes para os desafios acadêmicos e, ao mesmo tempo,
+                para a vida em sociedade.
               </p>
               <dl className="mt-8 grid gap-4 sm:grid-cols-3">
                 {[
@@ -85,13 +86,13 @@ function AEscola() {
             title="O que sustenta nosso trabalho"
             text="Cinco pilares orientam o planejamento pedagógico e a rotina da escola."
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 md:mt-10 lg:grid-cols-3">
             {pilares.map((p) => (
               <article
                 key={p.title}
                 className="card-hover rounded-3xl border border-border bg-card p-7 shadow-soft"
               >
-                <h3 className="text-lg font-extrabold text-primary-deep">{p.title}</h3>
+                <h3 className="text-lg font-bold text-primary-deep">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{p.text}</p>
               </article>
             ))}
@@ -103,10 +104,12 @@ function AEscola() {
         <Container>
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-extrabold text-primary-deep">Nossa estrutura</h2>
+              <h2 className="text-3xl font-extrabold text-primary-deep md:text-4xl">
+                Nossa estrutura
+              </h2>
               <p className="mt-4 text-muted-foreground">
-                Ambientes pensados para cada faixa etária, com segurança, organização e
-                espaço para brincar, estudar e criar.
+                Ambientes pensados para cada faixa etária, com segurança, organização e espaço para
+                brincar, estudar e criar.
               </p>
               <ul className="mt-6 space-y-3">
                 {estrutura.map((item) => (

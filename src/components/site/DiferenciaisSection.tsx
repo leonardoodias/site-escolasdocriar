@@ -25,7 +25,7 @@ export function DiferenciaisSection() {
     <section className="section bg-secondary/30">
       <Container>
         <SectionHeading eyebrow="Diferenciais" title="O que nos move" />
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3 lg:gap-5">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 md:mt-10 lg:grid-cols-3 lg:gap-5">
           {diferenciais.map((item) => {
             const Icon = icons[item.icon] ?? Sprout;
             return (
@@ -37,9 +37,7 @@ export function DiferenciaisSection() {
                   <Icon className="size-6" aria-hidden="true" />
                 </span>
                 <h3 className="mt-4 text-lg font-bold text-primary-deep">{item.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {item.text}
-                </p>
+                <p className="mt-2 flex-1 text-sm text-muted-foreground">{item.text}</p>
               </div>
             );
           })}

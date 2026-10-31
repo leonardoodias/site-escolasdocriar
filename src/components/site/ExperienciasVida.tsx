@@ -26,7 +26,7 @@ export function ExperienciasVida() {
           text="Programas que ampliam a formação para além da sala de aula, com projetos, convivência e escolhas reais."
         />
 
-        <div className="mt-10 grid gap-10 md:mt-12 lg:grid-cols-2 lg:gap-14">
+        <div className="mt-8 grid gap-10 md:mt-10 lg:grid-cols-2 lg:gap-14">
           {eixosExperiencias.map((eixo) => {
             const Icon = icons[eixo.icon] ?? Sprout;
             return (
@@ -35,11 +35,9 @@ export function ExperienciasVida() {
                   <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-primary-soft text-primary">
                     <Icon className="size-5" aria-hidden="true" />
                   </span>
-                  <h3 className="text-xl leading-tight font-extrabold text-primary-deep">
-                    {eixo.titulo}
-                  </h3>
+                  <h3 className="text-2xl font-extrabold text-primary-deep">{eixo.titulo}</h3>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{eixo.intro}</p>
+                <p className="mt-3 text-sm text-muted-foreground">{eixo.intro}</p>
 
                 <Accordion type="multiple" className="mt-3">
                   {eixo.iniciativas.map((item) => (
@@ -57,7 +55,7 @@ export function ExperienciasVida() {
                       {/* Mantém o texto no HTML com o item fechado, para continuar indexável. */}
                       <AccordionContent
                         forceMount
-                        className="leading-relaxed text-muted-foreground [[data-state=closed]>&]:hidden"
+                        className="text-muted-foreground [[data-state=closed]>&]:hidden"
                       >
                         {item.texto}
                       </AccordionContent>

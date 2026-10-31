@@ -53,7 +53,7 @@ function EscolaPage() {
   return (
     <>
       <section className="gradient-soft border-b border-border">
-        <Container className="grid items-center gap-10 py-14 md:grid-cols-2 md:py-20">
+        <Container className="grid items-center gap-10 py-12 md:grid-cols-2 md:py-16">
           <div>
             <div className="flex items-center gap-4">
               <BrandLogo
@@ -62,14 +62,14 @@ function EscolaPage() {
                 className="size-16 shrink-0 rounded-2xl bg-background p-1.5 shadow-soft"
                 imgClassName="size-full"
               />
-              <p className="text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
+              <p className="text-xs font-extrabold tracking-eyebrow text-accent-ink uppercase">
                 {escola.faixa}
               </p>
             </div>
             <h1 className="mt-6 text-4xl font-extrabold text-primary-deep md:text-5xl">
               {escola.nome}
             </h1>
-            <p className="mt-5 text-lg text-muted-foreground">{escola.descricao}</p>
+            <p className="mt-5 text-base text-muted-foreground md:text-lg">{escola.descricao}</p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="cta" size="xl">
@@ -101,7 +101,7 @@ function EscolaPage() {
             eyebrow="Diferenciais"
             title={`O que marca o dia a dia no ${escola.nomeCurto}`}
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-3">
             {escola.destaques.map((d) => (
               <div
                 key={d.title}
@@ -113,7 +113,7 @@ function EscolaPage() {
             ))}
           </div>
 
-          <ul className="mx-auto mt-12 grid max-w-3xl gap-3 sm:grid-cols-2">
+          <ul className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-2 md:mt-10">
             {escola.proposta.map((item) => (
               <li
                 key={item}
@@ -134,7 +134,7 @@ function EscolaPage() {
             title="Aprendizagens e descobertas"
             text="Experiências que ampliam a rotina e respeitam o momento de cada turma."
           />
-          <div className="mx-auto mt-10 grid max-w-5xl gap-4 md:mt-12 md:grid-cols-2 md:gap-5">
+          <div className="mx-auto mt-8 grid max-w-5xl gap-4 md:mt-10 md:grid-cols-2 md:gap-5">
             {programasCastelinho.map((programa) => (
               <ProgramaCard key={programa.nome} programa={programa} />
             ))}

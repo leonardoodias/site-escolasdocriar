@@ -292,14 +292,14 @@ function Matriculas() {
             title="Perguntas Frequentes"
             text="Tire suas principais dúvidas sobre matrícula e rematrícula nas Escolas do Criar."
           />
-          <div className="mt-10 md:mt-12 lg:w-10/12">
+          <div className="mt-8 md:mt-10 lg:w-10/12">
             <Accordion type="single" collapsible>
               {faq.map((item, i) => (
                 <AccordionItem key={item.pergunta} value={`faq-${i}`}>
                   <AccordionTrigger className="py-6 text-left text-base font-bold text-primary-deep hover:no-underline">
                     {item.pergunta}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+                  <AccordionContent className="text-sm text-muted-foreground">
                     {item.resposta}
                   </AccordionContent>
                 </AccordionItem>
@@ -310,14 +310,14 @@ function Matriculas() {
       </section>
 
       {/* CTA final */}
-      <section className="pt-8 pb-14 md:pt-10 md:pb-20">
+      <section className="pt-8 pb-10 md:pt-10 md:pb-14">
         <Container>
           <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-primary/15 bg-primary-soft px-6 py-12 text-center shadow-soft md:rounded-4xl md:px-14 md:py-16">
             <div className="relative mx-auto max-w-2xl">
-              <h2 className="text-2xl font-extrabold text-primary-deep sm:text-3xl md:text-4xl">
+              <h2 className="text-3xl font-extrabold text-primary-deep md:text-4xl">
                 Ainda ficou com alguma dúvida?
               </h2>
-              <p className="mt-4 text-base text-foreground/75 sm:text-lg">
+              <p className="mt-4 text-base text-foreground/75 md:text-lg">
                 Nossa equipe está pronta para orientar sua família sobre vagas, períodos, visitas,
                 matrículas e rematrículas.
               </p>

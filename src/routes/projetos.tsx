@@ -54,7 +54,7 @@ function Projetos() {
                   <span className="w-fit rounded-full bg-primary-soft px-3 py-1 text-xs font-bold text-primary">
                     {p.categoria}
                   </span>
-                  <h2 className="mt-3 text-xl font-extrabold text-primary-deep">{p.nome}</h2>
+                  <h2 className="mt-3 text-lg font-bold text-primary-deep">{p.nome}</h2>
                   <p className="mt-2 text-sm font-semibold text-foreground/80">{p.resumo}</p>
                   <p className="mt-3 flex-1 text-sm text-muted-foreground">{p.detalhe}</p>
                 </div>

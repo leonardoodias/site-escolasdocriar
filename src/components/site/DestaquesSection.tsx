@@ -41,7 +41,7 @@ function DestaqueImagem({ destaque, className }: { destaque: Destaque; className
 function DestaqueMeta({ destaque, className }: { destaque: Destaque; className?: string }) {
   return (
     <div className={cn("flex flex-wrap items-center gap-2.5", className)}>
-      <span className="rounded-full bg-primary-soft px-2.5 py-1 text-[11px] font-extrabold tracking-wide text-primary uppercase">
+      <span className="rounded-full bg-primary-soft px-2.5 py-1 text-xs font-extrabold tracking-wide text-primary uppercase">
         {destaque.tag}
       </span>
       {destaque.data && (
@@ -100,104 +100,98 @@ export function DestaquesSection() {
   return (
     <section className="section bg-secondary/40">
       <Container>
-        <div className="mx-auto max-w-[1200px]">
-          <SectionHeading
-            eyebrow="Destaques"
-            title="Eventos e campanhas"
-            text="Acompanhe o que está acontecendo nas Escolas do Criar."
-          />
+        <SectionHeading
+          eyebrow="Destaques"
+          title="Eventos e campanhas"
+          text="Acompanhe o que está acontecendo nas Escolas do Criar."
+        />
 
-          <div className="mt-10 grid gap-8 md:mt-12 lg:grid-cols-12 lg:gap-10">
-            {/* Coluna esquerda — Destaques editoriais */}
-            <div className="lg:col-span-7">
-              <article className="overflow-hidden rounded-3xl bg-card shadow-soft">
-                <div className="relative aspect-[16/9] sm:aspect-[21/10]">
-                  <DestaqueImagem destaque={principal} />
+        <div className="mt-8 grid gap-8 md:mt-10 lg:grid-cols-12 lg:gap-10">
+          {/* Coluna esquerda — Destaques editoriais */}
+          <div className="lg:col-span-7">
+            <article className="overflow-hidden rounded-3xl bg-card shadow-soft">
+              <div className="relative aspect-[16/9] sm:aspect-[21/10]">
+                <DestaqueImagem destaque={principal} />
+              </div>
+              <div className="p-6 md:p-7">
+                <DestaqueMeta destaque={principal} />
+                <h3 className="mt-3 text-2xl font-extrabold text-primary-deep">
+                  {principal.titulo}
+                </h3>
+                <p className="mt-2 text-muted-foreground md:text-base">{principal.texto}</p>
+                <div className="mt-5">
+                  <VerDetalhesDialog destaque={principal} />
                 </div>
-                <div className="p-6 md:p-7">
-                  <DestaqueMeta destaque={principal} />
-                  <h3 className="mt-3 text-2xl font-extrabold text-primary-deep md:text-3xl">
-                    {principal.titulo}
-                  </h3>
-                  <p className="mt-2 text-muted-foreground md:text-base">{principal.texto}</p>
-                  <div className="mt-5">
-                    <VerDetalhesDialog destaque={principal} />
+              </div>
+            </article>
+
+            <div className="mt-5 grid gap-5 sm:grid-cols-2">
+              {secundarios.map((d) => (
+                <article
+                  key={d.id}
+                  className="flex flex-col overflow-hidden rounded-2xl bg-card shadow-soft"
+                >
+                  <div className="relative aspect-[16/10]">
+                    <DestaqueImagem destaque={d} />
                   </div>
-                </div>
-              </article>
+                  <div className="flex flex-1 flex-col p-5">
+                    <DestaqueMeta destaque={d} />
+                    <h4 className="mt-2.5 text-lg font-bold text-primary-deep">{d.titulo}</h4>
+                    <p className="mt-1.5 flex-1 text-sm text-muted-foreground">{d.texto}</p>
+                    <div className="mt-4">
+                      <VerDetalhesDialog destaque={d} small />
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
 
-              <div className="mt-5 grid gap-5 sm:grid-cols-2">
-                {secundarios.map((d) => (
-                  <article
-                    key={d.id}
-                    className="flex flex-col overflow-hidden rounded-2xl bg-card shadow-soft"
+          {/* Coluna direita — Agenda Escolar */}
+          <div className="lg:col-span-5">
+            <div className="rounded-3xl bg-card p-6 shadow-soft md:p-7 lg:sticky lg:top-24">
+              <h3 className="text-2xl font-extrabold text-primary-deep">Agenda Escolar</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Confira os próximos compromissos e momentos importantes das Escolas do Criar.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2 border-b border-border pb-3">
+                {proximasDatas.map((mes, i) => (
+                  <button
+                    key={mes.mes}
+                    type="button"
+                    aria-current={i === mesAtivo}
+                    onClick={() => setMesAtivo(i)}
+                    className={cn(
+                      "rounded-full px-3.5 py-1.5 text-xs font-extrabold tracking-wide uppercase transition-colors",
+                      i === mesAtivo
+                        ? "bg-primary text-primary-foreground"
+                        : "text-muted-foreground hover:bg-primary-soft hover:text-primary",
+                    )}
                   >
-                    <div className="relative aspect-[16/10]">
-                      <DestaqueImagem destaque={d} />
-                    </div>
-                    <div className="flex flex-1 flex-col p-5">
-                      <DestaqueMeta destaque={d} />
-                      <h4 className="mt-2.5 text-lg font-extrabold text-primary-deep">
-                        {d.titulo}
-                      </h4>
-                      <p className="mt-1.5 flex-1 text-sm text-muted-foreground">{d.texto}</p>
-                      <div className="mt-4">
-                        <VerDetalhesDialog destaque={d} small />
-                      </div>
-                    </div>
-                  </article>
+                    {mes.mes}
+                  </button>
                 ))}
               </div>
-            </div>
 
-            {/* Coluna direita — Agenda Escolar */}
-            <div className="lg:col-span-5">
-              <div className="rounded-3xl bg-card p-6 shadow-soft md:p-7 lg:sticky lg:top-24">
-                <h3 className="text-2xl font-extrabold text-primary-deep">Agenda Escolar</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Confira os próximos compromissos e momentos importantes das Escolas do Criar.
-                </p>
-
-                <div className="mt-5 flex flex-wrap gap-2 border-b border-border pb-3">
-                  {proximasDatas.map((mes, i) => (
-                    <button
-                      key={mes.mes}
-                      type="button"
-                      aria-current={i === mesAtivo}
-                      onClick={() => setMesAtivo(i)}
-                      className={cn(
-                        "rounded-full px-3.5 py-1.5 text-xs font-extrabold tracking-wide uppercase transition-colors",
-                        i === mesAtivo
-                          ? "bg-primary text-primary-foreground"
-                          : "text-muted-foreground hover:bg-primary-soft hover:text-primary",
+              <ul className="mt-1">
+                {mesSelecionado.itens.map((item) => (
+                  <li
+                    key={`${item.data}-${item.evento}`}
+                    className="flex items-start gap-3 border-b border-border/60 py-3.5 last:border-b-0"
+                  >
+                    <span className="shrink-0 text-sm font-extrabold whitespace-nowrap text-primary-deep">
+                      {item.data}
+                    </span>
+                    <span className="text-sm text-foreground/80">
+                      {item.evento}
+                      {item.detalhe && (
+                        <span className="block text-xs text-muted-foreground">{item.detalhe}</span>
                       )}
-                    >
-                      {mes.mes}
-                    </button>
-                  ))}
-                </div>
-
-                <ul className="mt-1">
-                  {mesSelecionado.itens.map((item) => (
-                    <li
-                      key={`${item.data}-${item.evento}`}
-                      className="flex items-start gap-3 border-b border-border/60 py-3.5 last:border-b-0"
-                    >
-                      <span className="shrink-0 text-sm font-extrabold whitespace-nowrap text-primary-deep">
-                        {item.data}
-                      </span>
-                      <span className="text-sm text-foreground/80">
-                        {item.evento}
-                        {item.detalhe && (
-                          <span className="block text-xs text-muted-foreground">
-                            {item.detalhe}
-                          </span>
-                        )}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

@@ -145,6 +145,7 @@ O rodapé (`src/components/site/Footer.tsx`) apresenta as duas unidades lado a l
 
 A identidade visual é definida por tokens de design em `src/styles.css` (Tailwind CSS v4, formato `@theme`):
 
+- **Cores específicas:** verde do WhatsApp (`--whatsapp`, `--whatsapp-deep`) e fundo e ondas do hero da Home (`--hero-canvas`, `--hero-wave-peach`, `--hero-wave-sky`)
 - **Botão principal:** usar `<Button variant="cta" size="xl">` (`src/components/ui/button.tsx`), com altura de 48 px; o gradiente `--gradient-accent` mantém contraste mínimo de 4,5:1 com o texto
 - **Paleta base:** azul institucional (`--primary`), laranja de destaque/CTA (`--accent`), laranja para texto pequeno sobre fundo claro (`--accent-ink`), branco e tons claros de apoio (`--secondary`, `--muted`, `--sand`, `--mint`, `--sky`), todos definidos em `oklch()`
 - **Tipografia:** "Baloo 2" para títulos (`--font-display`) e "Nunito" para texto corrido (`--font-sans`), carregadas via Google Fonts em `src/routes/__root.tsx`

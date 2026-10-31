@@ -40,9 +40,7 @@ export function Footer() {
               className="h-auto w-48"
             />
           </div>
-          <p className="mt-3 text-xs leading-normal text-muted-foreground md:max-w-48">
-            {grupo.descricao}
-          </p>
+          <p className="mt-3 text-xs text-muted-foreground md:max-w-48">{grupo.descricao}</p>
         </div>
 
         {/* Coluna 2 — Castelinho do Criar */}

@@ -60,7 +60,7 @@ function Noticias() {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-2 lg:grid-cols-3">
             {lista.map((n) => (
               <article
                 key={n.slug}
@@ -83,7 +83,7 @@ function Noticias() {
                       {formatarData(n.data)}
                     </time>
                   </div>
-                  <h2 className="mt-3 text-lg font-extrabold text-primary-deep">{n.titulo}</h2>
+                  <h2 className="mt-3 text-lg font-bold text-primary-deep">{n.titulo}</h2>
                   <p className="mt-2 flex-1 text-sm text-muted-foreground">{n.resumo}</p>
                   <Link
                     to="/noticias/$slug"

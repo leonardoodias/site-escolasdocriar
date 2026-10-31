@@ -29,11 +29,11 @@ export function ProgramaCard({ programa }: { programa: Programa }) {
         <Icon className="size-5" aria-hidden="true" />
       </span>
       <div className="min-w-0">
-        <h3 className="text-lg leading-snug font-bold text-primary-deep">{programa.nome}</h3>
-        <p className="mt-1 text-xs font-extrabold tracking-[0.12em] text-accent-ink uppercase">
+        <h3 className="text-lg font-bold text-primary-deep">{programa.nome}</h3>
+        <p className="mt-1 text-xs font-extrabold tracking-eyebrow text-accent-ink uppercase">
           {programa.publico}
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{programa.texto}</p>
+        <p className="mt-3 text-sm text-muted-foreground">{programa.texto}</p>
       </div>
     </article>
   );

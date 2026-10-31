@@ -40,7 +40,7 @@ export function Header() {
                     className:
                       "bg-primary text-primary-foreground shadow-soft hover:bg-primary hover:text-primary-foreground",
                   }}
-                  className="rounded-full px-3 py-2 text-sm font-bold text-primary-deep transition-colors hover:bg-primary-soft hover:text-primary xl:px-4 xl:text-[15px]"
+                  className="rounded-full px-3 py-2 text-sm font-bold text-primary-deep transition-colors hover:bg-primary-soft hover:text-primary xl:px-4"
                 >
                   {link.label}
                 </Link>
@@ -62,7 +62,7 @@ export function Header() {
             </Button>
           </ContatoDialog>
 
-          <Button asChild variant="cta" className="hidden h-10 px-5 text-[13px] sm:inline-flex">
+          <Button asChild variant="cta" className="hidden h-10 px-5 sm:inline-flex">
             <Link to="/matriculas">
               <CalendarCheck className="mr-1.5 size-4" aria-hidden="true" />
               Agende uma visita

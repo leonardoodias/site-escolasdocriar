@@ -30,7 +30,7 @@ export function UnidadesContato({ titleAs: Title = "h3" }: { titleAs?: "h2" | "h
           <Button
             asChild
             size="lg"
-            className="min-h-12 w-full rounded-full bg-[oklch(0.68_0.16_150)] font-bold text-white shadow-soft hover:bg-[oklch(0.62_0.16_150)]"
+            className="min-h-12 w-full rounded-full bg-whatsapp font-bold text-white shadow-soft hover:bg-whatsapp-deep"
           >
             <ExternalLink
               href={unidade.whatsappUrl}

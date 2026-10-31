@@ -22,7 +22,7 @@ export function SectionHeading({
   return (
     <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
       {eyebrow && (
-        <p className="mb-2 text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
+        <p className="mb-2 text-xs font-extrabold tracking-eyebrow text-accent-ink uppercase">
           {eyebrow}
         </p>
       )}
@@ -57,7 +57,7 @@ export function PageHero({
   const content = (
     <div className={cn("max-w-3xl", wide && "max-w-none")}>
       {eyebrow && (
-        <p className="mb-3 text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
+        <p className="mb-3 text-xs font-extrabold tracking-eyebrow text-accent-ink uppercase">
           {eyebrow}
         </p>
       )}
@@ -67,7 +67,7 @@ export function PageHero({
       {text && (
         <p
           className={cn(
-            "mt-5 text-lg text-muted-foreground",
+            "mt-5 text-base text-muted-foreground md:text-lg",
             wide && "max-w-none text-xl font-semibold text-foreground/90",
           )}
         >
@@ -90,7 +90,7 @@ export function PageHero({
 
   return (
     <section className="gradient-soft border-b border-border">
-      <Container className={cn("py-14 md:py-20", size === "compact" && "py-10 md:py-14")}>
+      <Container className={cn("py-12 md:py-16", size === "compact" && "py-10 md:py-14")}>
         {visual ? (
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-7">{content}</div>

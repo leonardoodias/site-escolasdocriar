@@ -9,13 +9,13 @@ export function PropositoSection() {
       <Container>
         <div className="grid items-center gap-8 rounded-3xl md:rounded-4xl border border-border bg-secondary/50 px-6 py-9 md:grid-cols-2 md:gap-10 md:px-12 md:py-12">
           <div>
-            <p className="text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
+            <p className="text-xs font-extrabold tracking-eyebrow text-accent-ink uppercase">
               Nosso propósito
             </p>
-            <h2 className="mt-2.5 text-2xl font-extrabold text-primary-deep sm:text-3xl md:text-4xl">
+            <h2 className="mt-2.5 text-3xl font-extrabold text-primary-deep md:text-4xl">
               Um grupo, o mesmo cuidado em cada escola
             </h2>
-            <p className="mt-3.5 text-muted-foreground md:text-lg">{grupo.descricao}</p>
+            <p className="mt-3.5 text-base text-muted-foreground md:text-lg">{grupo.descricao}</p>
           </div>
           <ul className="grid gap-3">
             {propositoGrupo.map((item) => (

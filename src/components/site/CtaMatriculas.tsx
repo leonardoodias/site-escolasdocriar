@@ -25,12 +25,12 @@ export function CtaMatriculas({ unidade }: { unidade?: UnidadeId }) {
             className="absolute -bottom-20 -left-12 size-64 rounded-full bg-white/10 blur-xl"
           />
           <div className="relative mx-auto max-w-2xl">
-            <h2 className="text-2xl font-extrabold text-primary-foreground sm:text-3xl md:text-4xl">
+            <h2 className="text-3xl font-extrabold text-primary-foreground md:text-4xl">
               Venha conhecer as Escolas do Criar
             </h2>
-            <p className="mt-4 text-base text-primary-foreground/90 sm:text-lg">
-              Agende uma visita e descubra qual das nossas escolas é o melhor caminho para
-              seu filho.
+            <p className="mt-4 text-base text-primary-foreground/90 md:text-lg">
+              Agende uma visita e descubra qual das nossas escolas é o melhor caminho para seu
+              filho.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:items-center">
               <Button

@@ -107,8 +107,8 @@ function NossaProposta() {
             </div>
           </div>
 
-          <div className="mt-10 border-t border-border pt-8 md:pt-10">
-            <p className="text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
+          <div className="mt-8 border-t border-border pt-8 md:mt-10 md:pt-10">
+            <p className="text-xs font-extrabold tracking-eyebrow text-accent-ink uppercase">
               Pilares
             </p>
             <h3 className="mt-2 text-2xl font-extrabold text-primary-deep">
@@ -123,8 +123,8 @@ function NossaProposta() {
                       <Icon className="size-5" aria-hidden="true" />
                     </span>
                     <div>
-                      <h4 className="text-base font-extrabold text-primary-deep">{p.title}</h4>
-                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+                      <h4 className="text-base font-bold text-primary-deep">{p.title}</h4>
+                      <p className="mt-1 text-sm text-muted-foreground">{p.text}</p>
                     </div>
                   </li>
                 );
@@ -134,20 +134,18 @@ function NossaProposta() {
         </Container>
       </section>
 
-      <section className="bg-secondary/30 pt-13 pb-5 md:pt-18 md:pb-6">
+      <section className="bg-secondary/30 pt-10 pb-5 md:pt-14 md:pb-6">
         <Container>
-          <div className="overflow-hidden rounded-[2rem] bg-card shadow-soft">
+          <div className="overflow-hidden rounded-3xl bg-card shadow-soft">
             <div className="grid gap-6 p-6 md:p-8 lg:grid-cols-12 lg:gap-10 lg:p-10">
               <div className="lg:col-span-8">
-                <p className="text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
+                <p className="text-xs font-extrabold tracking-eyebrow text-accent-ink uppercase">
                   Material e recursos
                 </p>
-                <h2 className="mt-2 text-2xl font-extrabold text-primary-deep md:text-3xl">
+                <h2 className="mt-2 text-3xl font-extrabold text-primary-deep md:text-4xl">
                   {materialPedagogico.title}
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
-                  {materialPedagogico.text}
-                </p>
+                <p className="mt-3 text-base text-muted-foreground">{materialPedagogico.text}</p>
 
                 <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
                   {materialPedagogico.destaques.map((d) => (
@@ -167,7 +165,7 @@ function NossaProposta() {
               </div>
 
               <div className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-primary-soft p-6 lg:col-span-4">
-                <p className="text-xs font-extrabold tracking-[0.18em] text-primary uppercase">
+                <p className="text-xs font-extrabold tracking-eyebrow text-primary uppercase">
                   Soluções educacionais
                 </p>
                 <img
@@ -184,7 +182,7 @@ function NossaProposta() {
         </Container>
       </section>
 
-      <ChamadaInternacionalizacao variante="suave" className="bg-secondary/30 pb-13 md:pb-18" />
+      <ChamadaInternacionalizacao variante="suave" className="bg-secondary/30 pb-10 md:pb-14" />
 
       <ExperienciasVida />
 

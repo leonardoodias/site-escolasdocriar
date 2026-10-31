@@ -205,12 +205,12 @@ function HeroDecor() {
     >
       <defs>
         <linearGradient id="hero-orange" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="oklch(0.8 0.14 55)" stopOpacity="0.55" />
-          <stop offset="1" stopColor="oklch(0.66 0.22 40)" stopOpacity="0.28" />
+          <stop offset="0" stopColor="var(--hero-wave-peach)" stopOpacity="0.55" />
+          <stop offset="1" stopColor="var(--accent)" stopOpacity="0.28" />
         </linearGradient>
         <linearGradient id="hero-blue" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stopColor="oklch(0.75 0.11 240)" stopOpacity="0.15" />
-          <stop offset="1" stopColor="oklch(0.68 0.14 235)" stopOpacity="0.4" />
+          <stop offset="0" stopColor="var(--hero-wave-sky)" stopOpacity="0.15" />
+          <stop offset="1" stopColor="var(--sky)" stopOpacity="0.4" />
         </linearGradient>
       </defs>
       <path d="M1010 0 H1440 V420 C1400 250 1250 90 1010 0 Z" fill="url(#hero-orange)" />
@@ -220,7 +220,7 @@ function HeroDecor() {
       />
       <path
         d="M960 720 C1120 610 1320 590 1460 650 V720 Z"
-        fill="oklch(0.46 0.17 267)"
+        fill="var(--primary)"
         fillOpacity="0.1"
       />
     </svg>
@@ -246,7 +246,7 @@ export function HeroGrupo() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[oklch(0.972_0.004_250)] py-14 text-foreground md:py-20"
+      className="relative overflow-hidden bg-hero-canvas py-12 text-foreground md:py-16"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       aria-roledescription="carousel"
@@ -274,14 +274,12 @@ export function HeroGrupo() {
             )}
 
             {/* Título Principal */}
-            <h1 className="mt-4 text-3xl leading-tight font-extrabold text-primary-deep sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+            <h1 className="mt-4 text-4xl font-extrabold text-primary-deep md:text-5xl">
               {currentBanner.title}
             </h1>
 
             {/* Subtítulo */}
-            <p className="mt-4 text-base leading-relaxed text-foreground/80 sm:text-lg">
-              {currentBanner.subtitle}
-            </p>
+            <p className="mt-4 text-base text-foreground/80 md:text-lg">{currentBanner.subtitle}</p>
 
             {/* Informações de apoio das escolas (quando disponível) */}
             {currentBanner.escolasInfo && currentBanner.escolasInfo.length > 0 && (
@@ -324,7 +322,7 @@ export function HeroGrupo() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/40 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl bg-background/95 p-3.5 shadow-soft backdrop-blur-md">
                 <div>
-                  <p className="text-xs font-extrabold text-accent-ink uppercase tracking-wider">
+                  <p className="text-xs font-extrabold tracking-eyebrow text-accent-ink uppercase">
                     {currentBanner.cardBadge.eyebrow}
                   </p>
                   <p className="text-sm font-bold text-primary-deep">

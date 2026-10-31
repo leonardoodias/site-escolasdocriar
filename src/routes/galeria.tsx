@@ -31,8 +31,7 @@ function Galeria() {
   const [categoria, setCategoria] = useState("Todas");
   const [aberta, setAberta] = useState<string | null>(null);
 
-  const lista =
-    categoria === "Todas" ? fotos : fotos.filter((f) => f.categoria === categoria);
+  const lista = categoria === "Todas" ? fotos : fotos.filter((f) => f.categoria === categoria);
   const foto = fotos.find((f) => f.id === aberta);
 
   return (
@@ -63,7 +62,7 @@ function Galeria() {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 md:mt-10 lg:grid-cols-3">
             {lista.map((f) => (
               <button
                 key={f.id}
@@ -79,9 +78,7 @@ function Galeria() {
                   loading="lazy"
                   className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <span className="block p-4 text-sm font-bold text-primary-deep">
-                  {f.legenda}
-                </span>
+                <span className="block p-4 text-sm font-bold text-primary-deep">{f.legenda}</span>
               </button>
             ))}
           </div>

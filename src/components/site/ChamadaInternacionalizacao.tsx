@@ -7,7 +7,7 @@ import { internacionalizacao } from "@/content/programas";
 import { cn } from "@/lib/utils";
 
 export function ChamadaInternacionalizacao({
-  className = "pb-12 md:pb-16",
+  className = "pb-10 md:pb-14",
   variante = "destaque",
 }: {
   className?: string;
@@ -30,7 +30,7 @@ export function ChamadaInternacionalizacao({
           <div className="max-w-2xl">
             <p
               className={cn(
-                "text-xs font-extrabold tracking-[0.16em] uppercase",
+                "text-xs font-extrabold tracking-eyebrow uppercase",
                 suave ? "text-primary" : "text-accent",
               )}
             >
@@ -39,15 +39,15 @@ export function ChamadaInternacionalizacao({
             <h2
               className={cn(
                 "mt-2.5 text-2xl font-extrabold",
-                suave ? "text-primary-deep" : "text-primary-foreground sm:text-3xl",
+                suave ? "text-primary-deep" : "text-primary-foreground",
               )}
             >
               {internacionalizacao.titulo}
             </h2>
             <p
               className={cn(
-                "mt-3",
-                suave ? "text-muted-foreground" : "text-primary-foreground/85 md:text-lg",
+                "mt-3 text-base md:text-lg",
+                suave ? "text-muted-foreground" : "text-primary-foreground/85",
               )}
             >
               {internacionalizacao.subtitulo}

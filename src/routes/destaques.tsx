@@ -58,7 +58,7 @@ function DestaquesPage() {
                       <span className="text-xs font-bold text-muted-foreground">{d.data}</span>
                     )}
                   </div>
-                  <h2 className="mt-4 text-xl font-extrabold text-primary-deep">{d.titulo}</h2>
+                  <h2 className="mt-4 text-lg font-bold text-primary-deep">{d.titulo}</h2>
                   <p className="mt-3 flex-1 text-sm text-muted-foreground">{d.texto}</p>
                   <div className="mt-6">
                     {d.cta.href ? (

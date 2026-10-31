@@ -39,6 +39,9 @@
   --color-sky: var(--sky);
   --color-sand: var(--sand);
   --color-mint: var(--mint);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-deep: var(--whatsapp-deep);
+  --color-hero-canvas: var(--hero-canvas);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -60,6 +63,11 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-display: "Baloo 2", "Nunito", system-ui, sans-serif;
   --font-sans: "Nunito", system-ui, sans-serif;
+  --text-xs--line-height: 1.5;
+  --text-sm--line-height: 1.6;
+  --text-base--line-height: 1.6;
+  --text-lg--line-height: 1.55;
+  --tracking-eyebrow: 0.14em;
   --shadow-soft: 0 12px 34px -18px oklch(0.45 0.16 250 / 0.35);
   --shadow-lift: 0 24px 60px -28px oklch(0.45 0.16 250 / 0.45);
 }
@@ -88,6 +96,11 @@
   --sky: oklch(0.68 0.14 235);
   --sand: oklch(0.98 0.02 85);
   --mint: oklch(0.95 0.05 165);
+  --whatsapp: oklch(0.68 0.16 150);
+  --whatsapp-deep: oklch(0.62 0.16 150);
+  --hero-canvas: oklch(0.972 0.004 250);
+  --hero-wave-peach: oklch(0.8 0.14 55);
+  --hero-wave-sky: oklch(0.75 0.11 240);
   --destructive: oklch(0.58 0.22 25);
   --destructive-foreground: oklch(0.99 0.005 250);
   --border: oklch(0.92 0.015 250);
@@ -139,6 +152,7 @@
   --sky: oklch(0.7 0.14 235);
   --sand: oklch(0.28 0.04 85);
   --mint: oklch(0.3 0.06 165);
+  --hero-canvas: var(--background);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 16%);
   --ring: oklch(0.7 0.15 253);
@@ -161,15 +175,32 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  h5 {
     font-family: var(--font-display);
     letter-spacing: -0.01em;
+  }
+
+  /* Altura de linha por nível de título; prevalece sobre o padrão de cada tamanho de texto. */
+  h1 {
+    --tw-leading: 1.15;
+  }
+
+  h2 {
+    --tw-leading: 1.2;
+  }
+
+  h3,
+  h4,
+  h5 {
+    --tw-leading: 1.3;
   }
 
   :focus-visible {
@@ -220,8 +251,8 @@
 }
 
 @utility section {
-  padding-block: 3.25rem;
+  padding-block: 2.5rem;
   @media (min-width: 768px) {
-    padding-block: 4.5rem;
+    padding-block: 3.5rem;
   }
 }

@@ -14,7 +14,10 @@ export const Route = createFileRoute("/noticias/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Notícia não encontrada — Castelo do Criar" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Notícia não encontrada — Castelo do Criar" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { noticia } = loaderData;
@@ -73,7 +76,7 @@ function NoticiaDetalhe() {
               {formatarData(noticia.data)}
             </time>
           </div>
-          <h1 className="mt-4 text-3xl font-extrabold text-primary-deep md:text-4xl">
+          <h1 className="mt-4 text-4xl font-extrabold text-primary-deep md:text-5xl">
             {noticia.titulo}
           </h1>
           <img

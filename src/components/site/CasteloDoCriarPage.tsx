@@ -47,7 +47,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
   return (
     <>
       {/* 1. HERO */}
-      <section className="relative overflow-hidden bg-primary-deep py-16 text-primary-foreground md:py-24">
+      <section className="relative overflow-hidden bg-primary-deep py-12 text-primary-foreground md:py-16">
         <div aria-hidden="true" className="gradient-hero absolute inset-0 opacity-90" />
         <div
           aria-hidden="true"
@@ -55,13 +55,13 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
         />
         <Container className="relative grid items-center gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
           <div className="max-w-2xl">
-            <p className="text-xs font-extrabold tracking-[0.18em] text-accent uppercase">
+            <p className="text-xs font-extrabold tracking-eyebrow text-accent uppercase">
               Escola Castelo do Criar
             </p>
-            <h1 className="mt-4 text-3xl leading-tight font-extrabold text-primary-foreground sm:text-4xl md:text-5xl">
+            <h1 className="mt-4 text-4xl font-extrabold text-primary-foreground md:text-5xl">
               Educação com propósito. Formação com excelência.
             </h1>
-            <p className="mt-5 text-base text-primary-foreground/85 sm:text-lg">
+            <p className="mt-5 text-base text-primary-foreground/85 md:text-lg">
               A Escola Castelo do Criar oferece Ensino Fundamental e Ensino Médio com uma proposta
               voltada à formação integral, unindo excelência acadêmica, desenvolvimento humano e
               construção de valores.
@@ -107,7 +107,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
                   <span className="font-display text-sm font-bold text-primary-deep">
                     Castelo do Criar
                   </span>
-                  <span className="text-[10px] font-semibold text-muted-foreground uppercase">
+                  <span className="text-xs font-semibold text-muted-foreground uppercase">
                     Fundamental e Médio
                   </span>
                 </div>
@@ -122,14 +122,14 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
         <Container>
           <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
-              <p className="text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
+              <p className="text-xs font-extrabold tracking-eyebrow text-accent-ink uppercase">
                 Quem Somos
               </p>
-              <h2 className="mt-3 text-2xl font-extrabold text-primary-deep sm:text-3xl md:text-4xl">
+              <h2 className="mt-3 text-3xl font-extrabold text-primary-deep md:text-4xl">
                 Uma escola para aprender, crescer e construir novos caminhos
               </h2>
             </div>
-            <div className="space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <div className="space-y-4 text-base text-muted-foreground md:text-lg">
               <p>
                 A Escola Castelo do Criar, localizada em Santa Rosa de Viterbo, é uma instituição
                 particular de ensino que oferece Ensino Fundamental e Ensino Médio com foco na
@@ -154,7 +154,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
             text="Princípios que orientam a prática diária e preparam nossos estudantes para todas as etapas da vida."
           />
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 md:mt-10 lg:grid-cols-4">
             {pilaresProposta.map((pilar) => {
               const Icon = pilar.icon;
               return (
@@ -166,9 +166,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
                     <Icon className="size-6" aria-hidden="true" />
                   </div>
                   <h3 className="mt-5 text-lg font-bold text-primary-deep">{pilar.title}</h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-                    {pilar.description}
-                  </p>
+                  <p className="mt-2.5 text-sm text-muted-foreground">{pilar.description}</p>
                 </div>
               );
             })}
