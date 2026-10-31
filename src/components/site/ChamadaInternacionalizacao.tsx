@@ -55,13 +55,12 @@ export function ChamadaInternacionalizacao({
           </div>
           <Button
             asChild
-            size="lg"
-            variant={suave ? "outline" : "default"}
+            size="xl"
+            variant={suave ? "outline" : "cta"}
             className={cn(
-              "min-h-12 w-fit shrink-0 rounded-full px-7 font-bold",
-              suave
-                ? "border-primary/30 bg-background text-primary hover:bg-background hover:text-primary"
-                : "gradient-accent text-accent-foreground shadow-soft hover:opacity-90",
+              "w-fit shrink-0",
+              suave &&
+                "rounded-full border-primary/30 bg-background font-bold text-primary hover:bg-background hover:text-primary",
             )}
           >
             <Link to="/internacionalizacao">

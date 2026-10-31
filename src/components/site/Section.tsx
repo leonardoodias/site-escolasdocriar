@@ -22,7 +22,7 @@ export function SectionHeading({
   return (
     <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
       {eyebrow && (
-        <p className="mb-2 text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
+        <p className="mb-2 text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
           {eyebrow}
         </p>
       )}
@@ -57,7 +57,7 @@ export function PageHero({
   const content = (
     <div className={cn("max-w-3xl", wide && "max-w-none")}>
       {eyebrow && (
-        <p className="mb-3 text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
+        <p className="mb-3 text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
           {eyebrow}
         </p>
       )}

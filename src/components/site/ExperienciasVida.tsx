@@ -13,7 +13,7 @@ import { eixosExperiencias } from "@/content/programas";
 const icons: Record<string, LucideIcon> = { HeartHandshake, Lightbulb };
 
 const linkClass =
-  "inline-flex items-center gap-1.5 rounded-full px-1 font-bold text-primary underline-offset-4 hover:underline";
+  "inline-flex min-h-11 items-center gap-1.5 rounded-full px-1 font-bold text-primary underline-offset-4 hover:underline";
 
 export function ExperienciasVida() {
   return (

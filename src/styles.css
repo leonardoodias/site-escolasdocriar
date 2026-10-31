@@ -35,6 +35,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
   --color-sky: var(--sky);
   --color-sand: var(--sand);
   --color-mint: var(--mint);
@@ -82,6 +83,8 @@
   --accent: oklch(0.66 0.22 40);
   --accent-foreground: oklch(0.99 0.01 60);
   --accent-soft: oklch(0.96 0.045 50);
+  /* Laranja para texto pequeno sobre fundos claros (contraste mínimo de 4,5:1). */
+  --accent-ink: oklch(0.54 0.185 40);
   --sky: oklch(0.68 0.14 235);
   --sand: oklch(0.98 0.02 85);
   --mint: oklch(0.95 0.05 165);
@@ -109,7 +112,8 @@
     oklch(0.4 0.16 267 / 0.8) 55%,
     oklch(0.66 0.22 40 / 0.6)
   );
-  --gradient-accent: linear-gradient(100deg, var(--accent), oklch(0.74 0.19 55));
+  /* Contraste mínimo de 4,5:1 com o texto em toda a extensão do gradiente. */
+  --gradient-accent: linear-gradient(100deg, var(--accent-ink), oklch(0.57 0.19 45));
   --gradient-soft: linear-gradient(180deg, var(--primary-soft), oklch(1 0 0));
 }
 
@@ -131,6 +135,7 @@
   --accent: oklch(0.7 0.21 42);
   --accent-foreground: oklch(0.2 0.05 60);
   --accent-soft: oklch(0.32 0.07 60);
+  --accent-ink: oklch(0.7 0.21 42);
   --sky: oklch(0.7 0.14 235);
   --sand: oklch(0.28 0.04 85);
   --mint: oklch(0.3 0.06 165);

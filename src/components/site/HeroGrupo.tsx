@@ -140,11 +140,7 @@ function RenderCta({
 
   if (cta.variant === "primary") {
     return (
-      <Button
-        asChild
-        size="lg"
-        className="min-h-12 rounded-full gradient-accent px-6 font-bold text-accent-foreground shadow-lift hover:opacity-95"
-      >
+      <Button asChild variant="cta" size="xl">
         <Link to={cta.to ?? "/matriculas"}>
           {iconElement}
           {cta.label}
@@ -328,7 +324,7 @@ export function HeroGrupo() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/40 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl bg-background/95 p-3.5 shadow-soft backdrop-blur-md">
                 <div>
-                  <p className="text-xs font-extrabold text-accent uppercase tracking-wider">
+                  <p className="text-xs font-extrabold text-accent-ink uppercase tracking-wider">
                     {currentBanner.cardBadge.eyebrow}
                   </p>
                   <p className="text-sm font-bold text-primary-deep">
@@ -336,11 +332,7 @@ export function HeroGrupo() {
                   </p>
                 </div>
                 {currentBanner.cardBadge.ctaLabel && (
-                  <Button
-                    asChild
-                    size="sm"
-                    className="h-9 rounded-full gradient-accent px-4 text-xs font-bold text-accent-foreground shadow-sm"
-                  >
+                  <Button asChild size="sm" variant="cta" className="h-9 px-4">
                     <Link to={currentBanner.cardBadge.ctaTo ?? "/matriculas"}>
                       {currentBanner.cardBadge.ctaLabel}
                     </Link>

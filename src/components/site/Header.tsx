@@ -62,10 +62,7 @@ export function Header() {
             </Button>
           </ContatoDialog>
 
-          <Button
-            asChild
-            className="hidden h-10 rounded-full bg-accent px-5 text-[13px] font-bold text-accent-foreground shadow-soft transition-colors hover:bg-accent/90 sm:inline-flex"
-          >
+          <Button asChild variant="cta" className="hidden h-10 px-5 text-[13px] sm:inline-flex">
             <Link to="/matriculas">
               <CalendarCheck className="mr-1.5 size-4" aria-hidden="true" />
               Agende uma visita
@@ -110,10 +107,7 @@ export function Header() {
               </li>
             ))}
             <li className="mt-2 pt-3 border-t border-border/60">
-              <Button
-                asChild
-                className="h-11 w-full rounded-full bg-accent font-bold text-accent-foreground shadow-soft transition-colors hover:bg-accent/90"
-              >
+              <Button asChild variant="cta" className="h-11 w-full">
                 <Link to="/matriculas" onClick={() => setOpen(false)}>
                   <CalendarCheck className="mr-2 size-4" aria-hidden="true" />
                   Agende uma visita

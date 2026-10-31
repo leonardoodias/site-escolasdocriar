@@ -68,11 +68,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button
-                asChild
-                size="lg"
-                className="min-h-12 rounded-full gradient-accent px-7 font-bold text-accent-foreground shadow-lift hover:opacity-90"
-              >
+              <Button asChild variant="cta" size="xl">
                 <Link to="/matriculas">
                   <CalendarCheck className="mr-2 size-5" aria-hidden="true" />
                   Agende uma visita
@@ -126,7 +122,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
         <Container>
           <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
-              <p className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
+              <p className="text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
                 Quem Somos
               </p>
               <h2 className="mt-3 text-2xl font-extrabold text-primary-deep sm:text-3xl md:text-4xl">

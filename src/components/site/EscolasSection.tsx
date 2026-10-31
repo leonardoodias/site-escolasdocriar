@@ -45,7 +45,7 @@ export function EscolasSection({
                 />
               </div>
               <div className="flex flex-1 flex-col p-6 md:p-7">
-                <p className="text-xs font-extrabold tracking-[0.14em] text-accent uppercase">
+                <p className="text-xs font-extrabold tracking-[0.14em] text-accent-ink uppercase">
                   {escola.faixa}
                 </p>
                 <h3 className="mt-2.5 text-2xl font-extrabold text-primary-deep">{escola.nome}</h3>
@@ -59,7 +59,7 @@ export function EscolasSection({
                         key={foco}
                         className={
                           i === 0
-                            ? "rounded-full bg-accent-soft px-2.5 py-1 text-xs font-bold text-accent"
+                            ? "rounded-full bg-accent-soft px-2.5 py-1 text-xs font-bold text-accent-ink"
                             : "rounded-full bg-primary-soft px-2.5 py-1 text-xs font-bold text-primary"
                         }
                       >

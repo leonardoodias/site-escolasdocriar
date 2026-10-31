@@ -246,10 +246,7 @@ function Matriculas() {
                 </div>
               </div>
 
-              <Button
-                type="submit"
-                className="mt-8 min-h-12 w-full rounded-full gradient-accent font-bold text-accent-foreground hover:opacity-90"
-              >
+              <Button type="submit" variant="cta" size="xl" className="mt-8 w-full">
                 Enviar solicitação
               </Button>
               <p className="mt-4 text-xs text-muted-foreground">
@@ -326,10 +323,7 @@ function Matriculas() {
               </p>
               <div className="mt-8 flex justify-center">
                 <ContatoDialog>
-                  <Button
-                    size="lg"
-                    className="min-h-12 rounded-full gradient-accent px-6 font-bold text-accent-foreground shadow-soft hover:opacity-90"
-                  >
+                  <Button variant="cta" size="xl">
                     <MessageCircle className="mr-2 size-5" aria-hidden="true" />
                     Falar com nossa equipe
                   </Button>

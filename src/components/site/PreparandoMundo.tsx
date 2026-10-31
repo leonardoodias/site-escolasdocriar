@@ -61,7 +61,7 @@ export function PreparandoMundo() {
                     <h3 className="text-lg leading-snug font-bold text-primary-deep">
                       {iniciativa.nome}
                     </h3>
-                    <p className="mt-1 text-xs font-extrabold tracking-[0.12em] text-accent uppercase">
+                    <p className="mt-1 text-xs font-extrabold tracking-[0.12em] text-accent-ink uppercase">
                       {iniciativa.publico}
                     </p>
                     {iniciativa.paragrafos.map((paragrafo) => (

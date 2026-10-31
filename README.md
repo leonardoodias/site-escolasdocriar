@@ -145,7 +145,8 @@ O rodapé (`src/components/site/Footer.tsx`) apresenta as duas unidades lado a l
 
 A identidade visual é definida por tokens de design em `src/styles.css` (Tailwind CSS v4, formato `@theme`):
 
-- **Paleta base:** azul institucional (`--primary`), laranja de destaque/CTA (`--accent`), branco e tons claros de apoio (`--secondary`, `--muted`, `--sand`, `--mint`, `--sky`), todos definidos em `oklch()`
+- **Botão principal:** usar `<Button variant="cta" size="xl">` (`src/components/ui/button.tsx`), com altura de 48 px; o gradiente `--gradient-accent` mantém contraste mínimo de 4,5:1 com o texto
+- **Paleta base:** azul institucional (`--primary`), laranja de destaque/CTA (`--accent`), laranja para texto pequeno sobre fundo claro (`--accent-ink`), branco e tons claros de apoio (`--secondary`, `--muted`, `--sand`, `--mint`, `--sky`), todos definidos em `oklch()`
 - **Tipografia:** "Baloo 2" para títulos (`--font-display`) e "Nunito" para texto corrido (`--font-sans`), carregadas via Google Fonts em `src/routes/__root.tsx`
 - **Forma:** cantos arredondados consistentes via escala de `--radius` (de `sm` a `4xl`)
 - **Elevação:** sombras suaves padronizadas (`shadow-soft`, `shadow-lift`) e gradientes utilitários (`gradient-hero`, `gradient-accent`, `gradient-soft`)

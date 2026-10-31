@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import {
   BookOpen,
+  CalendarCheck,
   Check,
   GraduationCap,
   HeartHandshake,
@@ -13,6 +14,7 @@ import {
 import ftdSchoolOfSchoolsLogo from "@/assets/ftd-school-of-schools-logo.webp";
 import { ChamadaInternacionalizacao } from "@/components/site/ChamadaInternacionalizacao";
 import { Container, PageHero, SectionHeading } from "@/components/site/Section";
+import { Button } from "@/components/ui/button";
 import { CtaMatriculas } from "@/components/site/CtaMatriculas";
 import { ExperienciasVida } from "@/components/site/ExperienciasVida";
 import { pilares, metodologia, materialPedagogico } from "@/content/site";
@@ -73,7 +75,14 @@ function NossaProposta() {
         text="Nas Escolas do Criar, aprendizagem, desenvolvimento e formação humana caminham juntos. Nossa proposta respeita cada etapa, estimula autonomia, criatividade e responsabilidade e conecta conhecimento a experiências que fazem sentido para os alunos."
         visual={heroVisual}
         size="compact"
-      />
+      >
+        <Button asChild variant="cta" size="xl">
+          <Link to="/matriculas">
+            <CalendarCheck className="mr-2 size-5" aria-hidden="true" />
+            Agende uma visita
+          </Link>
+        </Button>
+      </PageHero>
 
       <section className="section bg-background">
         <Container>
@@ -99,7 +108,7 @@ function NossaProposta() {
           </div>
 
           <div className="mt-10 border-t border-border pt-8 md:pt-10">
-            <p className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
+            <p className="text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
               Pilares
             </p>
             <h3 className="mt-2 text-2xl font-extrabold text-primary-deep">
@@ -130,7 +139,7 @@ function NossaProposta() {
           <div className="overflow-hidden rounded-[2rem] bg-card shadow-soft">
             <div className="grid gap-6 p-6 md:p-8 lg:grid-cols-12 lg:gap-10 lg:p-10">
               <div className="lg:col-span-8">
-                <p className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
+                <p className="text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
                   Material e recursos
                 </p>
                 <h2 className="mt-2 text-2xl font-extrabold text-primary-deep md:text-3xl">

@@ -62,7 +62,7 @@ function EscolaPage() {
                 className="size-16 shrink-0 rounded-2xl bg-background p-1.5 shadow-soft"
                 imgClassName="size-full"
               />
-              <p className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">
+              <p className="text-xs font-extrabold tracking-[0.16em] text-accent-ink uppercase">
                 {escola.faixa}
               </p>
             </div>
@@ -72,11 +72,7 @@ function EscolaPage() {
             <p className="mt-5 text-lg text-muted-foreground">{escola.descricao}</p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button
-                asChild
-                size="lg"
-                className="min-h-12 rounded-full gradient-accent px-7 font-bold text-accent-foreground shadow-soft hover:opacity-90"
-              >
+              <Button asChild variant="cta" size="xl">
                 <Link to="/matriculas">
                   <CalendarCheck className="mr-2 size-5" aria-hidden="true" />
                   Agende uma visita

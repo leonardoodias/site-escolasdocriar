@@ -51,7 +51,7 @@ export function Footer() {
             <h3 className="font-display text-sm font-bold text-primary-deep uppercase tracking-wider">
               {castelinhoDetails.nome}
             </h3>
-            <span className="mt-0.5 text-xs font-semibold text-accent uppercase">
+            <span className="mt-0.5 text-xs font-semibold text-accent-ink uppercase">
               {castelinhoDetails.faixa}
             </span>
           </div>
@@ -110,7 +110,7 @@ export function Footer() {
             <h3 className="font-display text-sm font-bold text-primary-deep uppercase tracking-wider">
               {casteloDetails.nome}
             </h3>
-            <span className="mt-0.5 text-xs font-semibold text-accent uppercase">
+            <span className="mt-0.5 text-xs font-semibold text-accent-ink uppercase">
               {casteloDetails.faixa}
             </span>
           </div>

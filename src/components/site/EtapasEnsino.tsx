@@ -14,7 +14,7 @@ function BlocoComplementarEtapa({ id, bloco }: { id: string; bloco: BlocoComplem
   return (
     <section aria-labelledby={id} className="border-t border-border px-6 py-6 sm:px-8 sm:py-7">
       {bloco.publico && (
-        <p className="text-xs font-extrabold tracking-[0.12em] text-accent uppercase">
+        <p className="text-xs font-extrabold tracking-[0.12em] text-accent-ink uppercase">
           {bloco.publico}
         </p>
       )}
@@ -99,7 +99,7 @@ export function EtapasEnsino({ etapas }: { etapas: EtapaProgramas[] }) {
                     className="group flex h-full items-center justify-between gap-3 rounded-2xl border border-border bg-background px-5 py-4 shadow-soft transition-colors hover:border-primary/40"
                   >
                     <span>
-                      <span className="block text-xs font-extrabold tracking-[0.12em] text-accent uppercase">
+                      <span className="block text-xs font-extrabold tracking-[0.12em] text-accent-ink uppercase">
                         {etapa.etapa}
                       </span>
                       <span className="font-display mt-0.5 block text-lg font-extrabold text-primary-deep">
@@ -130,7 +130,7 @@ export function EtapasEnsino({ etapas }: { etapas: EtapaProgramas[] }) {
                   className="scroll-mt-24 overflow-hidden rounded-3xl border border-border bg-background"
                 >
                   <div className="p-6 sm:p-8">
-                    <p className="text-xs font-extrabold tracking-[0.14em] text-accent uppercase">
+                    <p className="text-xs font-extrabold tracking-[0.14em] text-accent-ink uppercase">
                       {etapa.etapa}
                     </p>
                     <h3

@@ -30,7 +30,7 @@ export function ProgramaCard({ programa }: { programa: Programa }) {
       </span>
       <div className="min-w-0">
         <h3 className="text-lg leading-snug font-bold text-primary-deep">{programa.nome}</h3>
-        <p className="mt-1 text-xs font-extrabold tracking-[0.12em] text-accent uppercase">
+        <p className="mt-1 text-xs font-extrabold tracking-[0.12em] text-accent-ink uppercase">
           {programa.publico}
         </p>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{programa.texto}</p>

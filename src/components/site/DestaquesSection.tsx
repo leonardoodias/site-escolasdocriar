@@ -56,11 +56,9 @@ function VerDetalhesDialog({ destaque, small = false }: { destaque: Destaque; sm
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          size={small ? "default" : "lg"}
-          className={cn(
-            "rounded-full gradient-accent font-bold text-accent-foreground shadow-soft hover:opacity-90",
-            small ? "min-h-10 px-5 text-sm" : "min-h-12 px-6",
-          )}
+          variant="cta"
+          size={small ? "default" : "xl"}
+          className={cn(small && "min-h-11 px-5")}
         >
           {destaque.cta.label}
           <ArrowRight className="size-4" aria-hidden="true" />
