@@ -7,7 +7,7 @@ import { internacionalizacao } from "@/content/programas";
 import { cn } from "@/lib/utils";
 
 export function ChamadaInternacionalizacao({
-  className = "pb-10 md:pb-14",
+  className = "pb-8 md:pb-14",
   variante = "destaque",
 }: {
   className?: string;

@@ -56,13 +56,13 @@ export function Header() {
               variant="outline"
               size="icon"
               aria-label="Fale com a nossa equipe"
-              className="size-9.5 rounded-full border-primary/30 text-primary transition-colors hover:bg-primary-soft hover:text-primary"
+              className="touch-target size-9.5 rounded-full border-primary/30 text-primary transition-colors hover:bg-primary-soft hover:text-primary"
             >
               <MessageCircle className="size-4.5" />
             </Button>
           </ContatoDialog>
 
-          <Button asChild variant="cta" className="hidden h-10 px-5 sm:inline-flex">
+          <Button asChild variant="cta" className="touch-target hidden h-10 px-5 sm:inline-flex">
             <Link to="/matriculas">
               <CalendarCheck className="mr-1.5 size-4" aria-hidden="true" />
               Agende uma visita
@@ -73,7 +73,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="size-9.5 lg:hidden text-foreground hover:bg-muted"
+            className="touch-target size-9.5 lg:hidden text-foreground hover:bg-muted"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}

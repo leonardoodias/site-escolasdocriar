@@ -147,7 +147,7 @@ export function EtapasEnsino({ etapas }: { etapas: EtapaProgramas[] }) {
                     </CollapsiblePrimitive.Trigger>
                     <ExternalLink
                       href={unidades.castelo.whatsappUrl}
-                      className="inline-flex w-fit items-center gap-1.5 rounded-full px-1 text-sm font-bold text-primary underline-offset-4 hover:underline"
+                      className="touch-target inline-flex w-fit items-center gap-1.5 rounded-full px-1 text-sm font-bold text-primary underline-offset-4 hover:underline"
                     >
                       <MessageCircle className="size-4" aria-hidden="true" />
                       Tirar dúvidas sobre o {etapa.titulo}

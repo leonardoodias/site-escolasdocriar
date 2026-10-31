@@ -251,8 +251,23 @@
 }
 
 @utility section {
-  padding-block: 2.5rem;
+  padding-block: 2rem;
   @media (min-width: 768px) {
     padding-block: 3.5rem;
+  }
+}
+
+/* Amplia a área de toque até 44 px sem alterar o tamanho visível do elemento. */
+@utility touch-target {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, 2.75rem);
+    height: max(100%, 2.75rem);
+    transform: translate(-50%, -50%);
   }
 }

@@ -88,7 +88,7 @@ function Noticias() {
                   <Link
                     to="/noticias/$slug"
                     params={{ slug: n.slug }}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary hover:gap-3"
+                    className="touch-target mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary hover:gap-3"
                   >
                     Ler notícia
                     <ArrowRight className="size-4" aria-hidden="true" />

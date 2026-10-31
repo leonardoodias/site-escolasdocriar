@@ -64,11 +64,11 @@ export function Footer() {
                 ))}
               </span>
             </li>
-            <li className="flex items-start gap-2">
+            <li className="flex items-start gap-2 max-lg:mb-5.5">
               <Phone className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
               <a
                 href={castelinhoDetails.telefoneHref}
-                className="hover:text-primary transition-colors"
+                className="touch-target hover:text-primary transition-colors"
               >
                 <span className="whitespace-nowrap">{castelinhoDetails.telefone}</span>
               </a>
@@ -78,24 +78,24 @@ export function Footer() {
               <ExternalLink
                 href={castelinhoDetails.whatsappUrl}
                 aria-label={`WhatsApp do ${castelinhoDetails.nome}, ${castelinhoDetails.whatsapp}`}
-                className="hover:text-primary transition-colors"
+                className="touch-target hover:text-primary transition-colors"
               >
                 <span className="whitespace-nowrap">{castelinhoDetails.whatsapp}</span>
               </ExternalLink>
             </li>
           </ul>
-          <div className="mt-3 flex gap-2">
+          <div className="mt-3 flex gap-3 max-lg:mt-4.5">
             <ExternalLink
               href={castelinhoDetails.instagram}
               aria-label="Instagram Castelinho do Criar"
-              className="grid size-8 place-items-center rounded-full bg-background text-primary shadow-soft transition-colors hover:bg-primary-soft"
+              className="touch-target grid size-8 place-items-center rounded-full bg-background text-primary shadow-soft transition-colors hover:bg-primary-soft"
             >
               <Instagram className="size-3.5" />
             </ExternalLink>
             <ExternalLink
               href={castelinhoDetails.facebook}
               aria-label="Facebook Castelinho do Criar"
-              className="grid size-8 place-items-center rounded-full bg-background text-primary shadow-soft transition-colors hover:bg-primary-soft"
+              className="touch-target grid size-8 place-items-center rounded-full bg-background text-primary shadow-soft transition-colors hover:bg-primary-soft"
             >
               <Facebook className="size-3.5" />
             </ExternalLink>
@@ -123,11 +123,11 @@ export function Footer() {
                 ))}
               </span>
             </li>
-            <li className="flex items-start gap-2">
+            <li className="flex items-start gap-2 max-lg:mb-5.5">
               <Phone className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
               <a
                 href={casteloDetails.telefoneHref}
-                className="hover:text-primary transition-colors"
+                className="touch-target hover:text-primary transition-colors"
               >
                 <span className="whitespace-nowrap">{casteloDetails.telefone}</span>
               </a>
@@ -137,24 +137,24 @@ export function Footer() {
               <ExternalLink
                 href={casteloDetails.whatsappUrl}
                 aria-label={`WhatsApp do ${casteloDetails.nome}, ${casteloDetails.whatsapp}`}
-                className="hover:text-primary transition-colors"
+                className="touch-target hover:text-primary transition-colors"
               >
                 <span className="whitespace-nowrap">{casteloDetails.whatsapp}</span>
               </ExternalLink>
             </li>
           </ul>
-          <div className="mt-3 flex gap-2">
+          <div className="mt-3 flex gap-3 max-lg:mt-4.5">
             <ExternalLink
               href={casteloDetails.instagram}
               aria-label="Instagram Castelo do Criar"
-              className="grid size-8 place-items-center rounded-full bg-background text-primary shadow-soft transition-colors hover:bg-primary-soft"
+              className="touch-target grid size-8 place-items-center rounded-full bg-background text-primary shadow-soft transition-colors hover:bg-primary-soft"
             >
               <Instagram className="size-3.5" />
             </ExternalLink>
             <ExternalLink
               href={casteloDetails.facebook}
               aria-label="Facebook Castelo do Criar"
-              className="grid size-8 place-items-center rounded-full bg-background text-primary shadow-soft transition-colors hover:bg-primary-soft"
+              className="touch-target grid size-8 place-items-center rounded-full bg-background text-primary shadow-soft transition-colors hover:bg-primary-soft"
             >
               <Facebook className="size-3.5" />
             </ExternalLink>
@@ -163,17 +163,17 @@ export function Footer() {
 
         {/* Coluna 4 — Links rápidos */}
         <div className="flex flex-col md:col-span-2 lg:col-span-1">
-          <div className="flex min-h-10 flex-col">
+          <div className="flex flex-col lg:min-h-10">
             <h3 className="font-display text-sm font-bold text-primary-deep uppercase tracking-wider">
               Links rápidos
             </h3>
           </div>
-          <ul className="mt-3 space-y-2.5">
+          <ul className="mt-1 grid grid-cols-2 gap-x-4 lg:mt-3 lg:block lg:space-y-2.5">
             {linksRapidos.map((link) => (
               <li key={link.to}>
                 <Link
                   to={link.to}
-                  className="text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
+                  className="flex min-h-11 items-center text-sm font-semibold text-foreground/80 hover:text-primary transition-colors lg:inline lg:min-h-0"
                 >
                   {link.label}
                 </Link>
@@ -190,10 +190,16 @@ export function Footer() {
               © {new Date().getFullYear()} {grupo.nome} — Todos os direitos reservados.
             </p>
             <div className="flex gap-4">
-              <Link to="/politica-de-privacidade" className="hover:text-primary transition-colors">
+              <Link
+                to="/politica-de-privacidade"
+                className="touch-target hover:text-primary transition-colors"
+              >
                 Política de Privacidade
               </Link>
-              <Link to="/termos-de-uso" className="hover:text-primary transition-colors">
+              <Link
+                to="/termos-de-uso"
+                className="touch-target hover:text-primary transition-colors"
+              >
                 Termos de Uso
               </Link>
             </div>

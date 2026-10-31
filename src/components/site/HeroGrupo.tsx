@@ -330,7 +330,7 @@ export function HeroGrupo() {
                   </p>
                 </div>
                 {currentBanner.cardBadge.ctaLabel && (
-                  <Button asChild size="sm" variant="cta" className="h-9 px-4">
+                  <Button asChild size="sm" variant="cta" className="touch-target h-9 px-4">
                     <Link to={currentBanner.cardBadge.ctaTo ?? "/matriculas"}>
                       {currentBanner.cardBadge.ctaLabel}
                     </Link>
@@ -348,14 +348,14 @@ export function HeroGrupo() {
             variant="outline"
             size="icon"
             aria-label="Banner anterior"
-            className="size-9 rounded-full border-primary/25 bg-white text-primary hover:bg-primary-soft hover:text-primary"
+            className="touch-target size-9 rounded-full border-primary/25 bg-white text-primary hover:bg-primary-soft hover:text-primary"
             onClick={() => setCurrentIndex((prev) => (prev - 1 + total) % total)}
           >
             <ChevronLeft className="size-4.5" />
           </Button>
 
           {/* Indicadores / Dots */}
-          <div className="flex items-center gap-2.5">
+          <div className="-my-1 flex items-center">
             {heroBanners.map((banner, i) => (
               <button
                 key={banner.id}
@@ -363,13 +363,17 @@ export function HeroGrupo() {
                 aria-label={`Ir para banner ${i + 1}: ${banner.title}`}
                 aria-current={i === currentIndex}
                 onClick={() => setCurrentIndex(i)}
-                className={cn(
-                  "h-2.5 rounded-full transition-all duration-300",
-                  i === currentIndex
-                    ? "w-8 bg-accent shadow-sm"
-                    : "w-2.5 bg-primary/25 hover:bg-primary/50",
-                )}
-              />
+                className="group grid size-11 cursor-pointer place-items-center rounded-full"
+              >
+                <span
+                  className={cn(
+                    "h-2.5 rounded-full transition-all duration-300",
+                    i === currentIndex
+                      ? "w-8 bg-accent shadow-sm"
+                      : "w-2.5 bg-primary/25 group-hover:bg-primary/50",
+                  )}
+                />
+              </button>
             ))}
           </div>
 
@@ -378,7 +382,7 @@ export function HeroGrupo() {
             variant="outline"
             size="icon"
             aria-label="Próximo banner"
-            className="size-9 rounded-full border-primary/25 bg-white text-primary hover:bg-primary-soft hover:text-primary"
+            className="touch-target size-9 rounded-full border-primary/25 bg-white text-primary hover:bg-primary-soft hover:text-primary"
             onClick={() => setCurrentIndex((prev) => (prev + 1) % total)}
           >
             <ChevronRight className="size-4.5" />

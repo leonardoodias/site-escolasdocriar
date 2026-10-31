@@ -155,13 +155,13 @@ function Matriculas() {
       />
 
       {/* Formulário + Como funciona */}
-      <section className="pt-8 pb-10 md:pt-10 md:pb-14">
+      <section className="pt-8 pb-8 md:pt-10 md:pb-14">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[7fr_5fr] lg:gap-14">
+          <div className="grid gap-8 lg:grid-cols-[7fr_5fr] lg:gap-14">
             <form
               onSubmit={onSubmit}
               noValidate
-              className="rounded-4xl border border-border bg-card p-8 shadow-soft md:p-10"
+              className="rounded-4xl border border-border bg-card p-6 shadow-soft md:p-10"
             >
               <h2 className="text-2xl font-extrabold text-primary-deep">Solicitar contato</h2>
 
@@ -254,7 +254,7 @@ function Matriculas() {
                 <ContatoDialog>
                   <button
                     type="button"
-                    className="cursor-pointer font-bold text-primary hover:underline"
+                    className="touch-target cursor-pointer font-bold text-primary hover:underline"
                   >
                     Fale com a nossa equipe
                   </button>
@@ -263,7 +263,7 @@ function Matriculas() {
               </p>
             </form>
 
-            <div className="pt-8 md:pt-10">
+            <div className="lg:pt-10">
               <h2 className="text-2xl font-extrabold text-primary-deep">
                 Como funciona a matrícula
               </h2>
@@ -285,7 +285,7 @@ function Matriculas() {
       </section>
 
       {/* FAQ */}
-      <section className="pt-10 pb-8 md:pt-12 md:pb-10">
+      <section className="pt-8 pb-8 md:pt-12 md:pb-10">
         <Container>
           <SectionHeading
             align="left"
@@ -296,7 +296,7 @@ function Matriculas() {
             <Accordion type="single" collapsible>
               {faq.map((item, i) => (
                 <AccordionItem key={item.pergunta} value={`faq-${i}`}>
-                  <AccordionTrigger className="py-6 text-left text-base font-bold text-primary-deep hover:no-underline">
+                  <AccordionTrigger className="py-4 text-left text-base font-bold text-primary-deep hover:no-underline">
                     {item.pergunta}
                   </AccordionTrigger>
                   <AccordionContent className="text-sm text-muted-foreground">
@@ -310,9 +310,9 @@ function Matriculas() {
       </section>
 
       {/* CTA final */}
-      <section className="pt-8 pb-10 md:pt-10 md:pb-14">
+      <section className="pt-8 pb-8 md:pt-10 md:pb-14">
         <Container>
-          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-primary/15 bg-primary-soft px-6 py-12 text-center shadow-soft md:rounded-4xl md:px-14 md:py-16">
+          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-primary/15 bg-primary-soft px-6 py-9 text-center shadow-soft md:rounded-4xl md:px-14 md:py-16">
             <div className="relative mx-auto max-w-2xl">
               <h2 className="text-3xl font-extrabold text-primary-deep md:text-4xl">
                 Ainda ficou com alguma dúvida?

@@ -86,7 +86,7 @@ function NossaProposta() {
 
       <section className="section bg-background">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="grid gap-8 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <SectionHeading
                 align="left"
@@ -96,7 +96,7 @@ function NossaProposta() {
               />
             </div>
             <div className="lg:col-span-7 lg:border-l lg:border-border lg:pl-16">
-              <ul className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
+              <ul className="grid gap-x-10 gap-y-4 sm:grid-cols-2 md:gap-y-6">
                 {metodologia.principios.map((p) => (
                   <li key={p} className="flex items-start gap-3">
                     <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden="true" />
@@ -107,7 +107,7 @@ function NossaProposta() {
             </div>
           </div>
 
-          <div className="mt-8 border-t border-border pt-8 md:mt-10 md:pt-10">
+          <div className="mt-6 border-t border-border pt-6 md:mt-10 md:pt-10">
             <p className="text-xs font-extrabold tracking-eyebrow text-accent-ink uppercase">
               Pilares
             </p>
@@ -134,7 +134,7 @@ function NossaProposta() {
         </Container>
       </section>
 
-      <section className="bg-secondary/30 pt-10 pb-5 md:pt-14 md:pb-6">
+      <section className="bg-secondary/30 pt-8 pb-5 md:pt-14 md:pb-6">
         <Container>
           <div className="overflow-hidden rounded-3xl bg-card shadow-soft">
             <div className="grid gap-6 p-6 md:p-8 lg:grid-cols-12 lg:gap-10 lg:p-10">
@@ -164,7 +164,7 @@ function NossaProposta() {
                 </p>
               </div>
 
-              <div className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-primary-soft p-6 lg:col-span-4">
+              <div className="flex flex-col items-center justify-center gap-3 rounded-3xl bg-primary-soft p-4 lg:col-span-4 lg:gap-4 lg:p-6">
                 <p className="text-xs font-extrabold tracking-eyebrow text-primary uppercase">
                   Soluções educacionais
                 </p>
@@ -182,7 +182,7 @@ function NossaProposta() {
         </Container>
       </section>
 
-      <ChamadaInternacionalizacao variante="suave" className="bg-secondary/30 pb-10 md:pb-14" />
+      <ChamadaInternacionalizacao variante="suave" className="bg-secondary/30 pb-8 md:pb-14" />
 
       <ExperienciasVida />
 

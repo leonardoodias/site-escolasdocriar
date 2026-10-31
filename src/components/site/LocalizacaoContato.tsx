@@ -63,7 +63,7 @@ export function LocalizacaoContato({
                   <span className={rotuloClass}>Telefone</span>
                   <a
                     href={dados.telefoneHref}
-                    className="font-bold text-foreground transition-colors hover:text-primary"
+                    className="touch-target font-bold text-foreground transition-colors hover:text-primary"
                   >
                     {dados.telefone}
                   </a>
@@ -75,7 +75,7 @@ export function LocalizacaoContato({
                   <span className={rotuloClass}>WhatsApp</span>
                   <ExternalLink
                     href={dados.whatsappUrl}
-                    className="font-bold text-foreground transition-colors hover:text-primary"
+                    className="touch-target font-bold text-foreground transition-colors hover:text-primary"
                   >
                     {dados.whatsapp}
                   </ExternalLink>
@@ -87,14 +87,14 @@ export function LocalizacaoContato({
               <ExternalLink
                 href={localizacao.instagram}
                 aria-label={`Instagram do ${dados.nome}`}
-                className="flex size-10 items-center justify-center rounded-full border border-border bg-card text-primary shadow-soft transition-colors hover:bg-primary-soft"
+                className="touch-target flex size-10 items-center justify-center rounded-full border border-border bg-card text-primary shadow-soft transition-colors hover:bg-primary-soft"
               >
                 <Instagram className="size-4.5" aria-hidden="true" />
               </ExternalLink>
               <ExternalLink
                 href={localizacao.facebook}
                 aria-label={`Facebook do ${dados.nome}`}
-                className="flex size-10 items-center justify-center rounded-full border border-border bg-card text-primary shadow-soft transition-colors hover:bg-primary-soft"
+                className="touch-target flex size-10 items-center justify-center rounded-full border border-border bg-card text-primary shadow-soft transition-colors hover:bg-primary-soft"
               >
                 <Facebook className="size-4.5" aria-hidden="true" />
               </ExternalLink>
@@ -134,7 +134,7 @@ export function LocalizacaoContato({
               {localizacao.mapsDirections && (
                 <ExternalLink
                   href={localizacao.mapsDirections}
-                  className="inline-flex w-fit items-center gap-1.5 rounded-full px-1 text-sm font-bold text-primary underline-offset-4 hover:underline"
+                  className="touch-target inline-flex w-fit items-center gap-1.5 rounded-full px-1 text-sm font-bold text-primary underline-offset-4 hover:underline"
                 >
                   <Navigation className="size-4" aria-hidden="true" />
                   Ver rota no mapa

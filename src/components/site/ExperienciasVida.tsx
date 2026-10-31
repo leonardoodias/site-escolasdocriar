@@ -26,7 +26,7 @@ export function ExperienciasVida() {
           text="Programas que ampliam a formação para além da sala de aula, com projetos, convivência e escolhas reais."
         />
 
-        <div className="mt-8 grid gap-10 md:mt-10 lg:grid-cols-2 lg:gap-14">
+        <div className="mt-8 grid gap-8 md:mt-10 lg:grid-cols-2 lg:gap-14">
           {eixosExperiencias.map((eixo) => {
             const Icon = icons[eixo.icon] ?? Sprout;
             return (
@@ -42,7 +42,7 @@ export function ExperienciasVida() {
                 <Accordion type="multiple" className="mt-3">
                   {eixo.iniciativas.map((item) => (
                     <AccordionItem key={item.nome} value={item.nome}>
-                      <AccordionTrigger className="min-h-11 gap-3 hover:no-underline">
+                      <AccordionTrigger className="min-h-11 gap-3 py-3 hover:no-underline md:py-4">
                         <span>
                           <span className="block text-base leading-snug font-bold text-primary-deep">
                             {item.nome}
@@ -67,7 +67,7 @@ export function ExperienciasVida() {
           })}
         </div>
 
-        <div className="mt-4 flex flex-col gap-3 border-t border-border pt-8 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8">
+        <div className="mt-4 flex flex-col gap-1 border-t border-border pt-6 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-8 sm:gap-y-3 md:pt-8">
           <p className="text-muted-foreground">
             A relação completa por etapa está na página de cada escola:
           </p>

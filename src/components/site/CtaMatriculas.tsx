@@ -15,7 +15,7 @@ export function CtaMatriculas({ unidade }: { unidade?: UnidadeId }) {
   return (
     <section className="section">
       <Container>
-        <div className="gradient-hero relative mx-auto max-w-5xl overflow-hidden rounded-3xl md:rounded-4xl px-6 py-12 text-center shadow-lift md:px-14 md:py-16">
+        <div className="gradient-hero relative mx-auto max-w-5xl overflow-hidden rounded-3xl md:rounded-4xl px-6 py-9 text-center shadow-lift md:px-14 md:py-16">
           <div
             aria-hidden="true"
             className="absolute -top-16 -right-10 size-56 rounded-full bg-white/10 blur-xl"
@@ -32,7 +32,7 @@ export function CtaMatriculas({ unidade }: { unidade?: UnidadeId }) {
               Agende uma visita e descubra qual das nossas escolas é o melhor caminho para seu
               filho.
             </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:flex-nowrap">
               <Button
                 asChild
                 size="lg"
