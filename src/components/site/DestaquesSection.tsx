@@ -160,7 +160,7 @@ export function DestaquesSection() {
                   Confira os próximos compromissos e momentos importantes das Escolas do Criar.
                 </p>
 
-                <div className="mt-5 flex gap-2 border-b border-border pb-3">
+                <div className="mt-5 flex flex-wrap gap-2 border-b border-border pb-3">
                   {proximasDatas.map((mes, i) => (
                     <button
                       key={mes.mes}

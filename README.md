@@ -54,7 +54,7 @@ O contexto de negócio, tom de voz e identidade estão detalhados em [docs/desig
 | `/escolas/castelinho` | Castelinho do Criar | Apresentação com acesso ao atendimento, diferenciais, "Aprendizagens e descobertas", localização e contato |
 | `/escolas/castelo-do-criar` | Castelo do Criar | Apresentação, quem somos, proposta, "Etapas de ensino" (Fundamental I, II e Médio com aulas, programas, período estendido e atividades complementares), localização e contato |
 | `/a-escola` | A Escola | Página antiga sem links internos e com conteúdo contraditório — destino pendente (ver [docs/conteudo-pendente.md](docs/conteudo-pendente.md)) |
-| `/nossa-proposta` | Nosso Jeito de Educar | Metodologia, pilares, material e recursos, experiências que preparam para a vida |
+| `/nossa-proposta` | Nosso Jeito de Educar | Metodologia, pilares, material e recursos, projeto de internacionalização 2027, experiências que preparam para a vida |
 | `/projetos` | Projetos e experiências | Lista de projetos |
 | `/destaques` | Destaques | Eventos e campanhas em destaque |
 | `/galeria` | Galeria de fotos | Fotos filtráveis por categoria, com lightbox |
@@ -102,7 +102,7 @@ O menu é fixo no topo (`src/components/site/Header.tsx`), com CTA em destaque (
 │   ├── /escolas/castelinho        (#aprendizagens, #localizacao)
 │   └── /escolas/castelo-do-criar  (#etapas, #fundamental-1, #fundamental-2, #ensino-medio, #localizacao)
 ├── /a-escola                      (sem links internos; destino pendente)
-├── /nossa-proposta
+├── /nossa-proposta                (#internacionalizacao)
 ├── /projetos
 ├── /destaques
 ├── /galeria
@@ -362,11 +362,12 @@ O registro detalhado, com os textos antigos preservados, está em [docs/conteudo
 - **Endereço do Castelinho do Criar** — confirmar a numeração "1381-1563"
 - **Textos antigos de segmentos** — características e rotinas das antigas páginas de Fundamental, Médio e Educação Infantil (incluindo simulados e itinerários) não foram migrados e aguardam confirmação
 - **Período estendido do Castelo** — falta a lista de oficinas do 1º ao 3º ano, hoje representada por um card genérico
+- **Regularização da School of Schools** — o nome aparece no site, mas a nota sobre a regularização junto à FTD não é publicada; confirmar com a escola se precisa ser divulgada
+- **Caso de Cape Town** — a seção de internacionalização cita um aluno confirmado para 2027; revisar o texto depois dessa data
 - **Página `/a-escola`** — conteúdo contraditório e sem links internos; proposta de redirecionamento para a página do Castelo depois de confirmar história, missão, visão, valores e estrutura
 - **E-mail nas páginas legais** — Política de Privacidade e Termos de Uso exibem `mailto:undefined` desde a remoção do e-mail
 - **Destino dos dados do formulário de Matrículas** — o envio apenas valida os campos e exibe uma notificação local
 - **Conteúdo de exemplo** — notícias e galeria; alguns eventos em destaque aguardam imagem oficial
-- **Regularização da School of Schools** — texto existente, ainda não exibido
 - **Modo escuro, painel administrativo, testes automatizados e `sitemap.xml`** — sem decisão
 
 ## Recomendações de evolução

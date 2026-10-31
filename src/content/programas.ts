@@ -45,7 +45,7 @@ export const programasCastelo: EtapaProgramas[] = [
       "Inglês com atividades adequadas à idade, robótica, educação financeira, musicalização e projetos ambientais, com acompanhamento das necessidades individuais de aprendizagem.",
     programas: [
       {
-        nome: "Inglês — Programa Bilíngue B21",
+        nome: "Programa Bilíngue",
         texto:
           "Atividades comunicativas adequadas à idade desenvolvem a compreensão, a comunicação e a confiança no uso do inglês.",
       },
@@ -75,7 +75,7 @@ export const programasCastelo: EtapaProgramas[] = [
           "Projetos de sustentabilidade, reciclagem e conscientização ambiental que desenvolvem responsabilidade, cooperação e hábitos sustentáveis.",
       },
       {
-        nome: "Acamp Park — Vivência em Inglês",
+        nome: "AcampPark — Vivência em Inglês",
         texto:
           "Imersão na língua inglesa com atividades recreativas e educativas para praticar o idioma, ganhar autonomia e fortalecer a convivência.",
         condicoes: ["4º e 5º anos"],
@@ -150,7 +150,7 @@ export const programasCastelo: EtapaProgramas[] = [
       "Aprofundamento da língua inglesa, projetos de tecnologia e sustentabilidade, orientação para a organização dos estudos e oportunidades de imersão e intercâmbio.",
     programas: [
       {
-        nome: "Inglês — Programa Bilíngue B21",
+        nome: "Programa Bilíngue",
         texto:
           "Aprofundamento das competências comunicativas para aprimorar a comunicação, a interpretação e a fluência de forma progressiva.",
       },
@@ -170,7 +170,7 @@ export const programasCastelo: EtapaProgramas[] = [
           "Projetos de sustentabilidade, reciclagem e ações coletivas que incentivam a consciência ambiental, a liderança e o protagonismo.",
       },
       {
-        nome: "Acamp Park — Imersão em Inglês",
+        nome: "AcampPark — Imersão em Inglês",
         texto:
           "Imersão na língua inglesa com atividades práticas e integração, que desenvolve a comunicação em inglês, a autonomia e a socialização.",
         condicoes: ["6º ao 9º ano", "Possibilidade de pernoite"],
@@ -276,7 +276,7 @@ export const programasCastelo: EtapaProgramas[] = [
           "Aprofundamento dos conhecimentos e preparação para o ENEM e os vestibulares, com desenvolvimento do pensamento crítico e da interpretação.",
       },
       {
-        nome: "Inglês e Desenvolvimento Linguístico",
+        nome: "Programa Bilíngue",
         texto:
           "Aprimoramento da comunicação e da interpretação em língua inglesa, ampliando as oportunidades acadêmicas.",
       },
@@ -376,38 +376,6 @@ export type EixoExperiencias = {
 
 export const eixosExperiencias: EixoExperiencias[] = [
   {
-    titulo: "Idiomas e experiências culturais",
-    intro:
-      "O contato com outros idiomas e culturas, dentro e fora da escola, amplia o repertório dos alunos e estimula a autonomia.",
-    icon: "Globe",
-    iniciativas: [
-      {
-        nome: "Intercâmbio Internacional",
-        texto:
-          "Preparação, orientação e experiências internacionais de curta duração, com aprendizado de idiomas e vivência cultural que desenvolvem autonomia, maturidade e visão global.",
-        publico: "Fundamental II, conforme idade e requisitos, e Ensino Médio",
-      },
-      {
-        nome: "Acamp Park",
-        texto:
-          "Imersão na língua inglesa com atividades recreativas, práticas e de integração, para usar o idioma com naturalidade, ganhar autonomia e fortalecer a convivência.",
-        publico: "4º e 5º anos · 6º ao 9º ano, com possibilidade de pernoite",
-      },
-      {
-        nome: "Programa Poupe Viagem",
-        texto:
-          "Planejamento financeiro para preparar com antecedência as experiências internacionais, incentivando organização e realização de objetivos.",
-        publico: "A partir do 6º ano",
-      },
-      {
-        nome: "Viagens Pedagógicas e Experiências Culturais",
-        texto:
-          "Passeios e experiências educativas fora da sala de aula, que ampliam conhecimentos, estimulam a autonomia e fortalecem vínculos.",
-        publico: "Todos os segmentos, conforme programação",
-      },
-    ],
-  },
-  {
     titulo: "Tecnologia, sustentabilidade e escolhas responsáveis",
     intro:
       "Projetos práticos que conectam o que se aprende a decisões reais: criar soluções, cuidar do ambiente e lidar com recursos.",
@@ -457,6 +425,12 @@ export const eixosExperiencias: EixoExperiencias[] = [
           "Atividades esportivas e recreativas que aproximam os alunos e desenvolvem espírito de equipe, disciplina e hábitos saudáveis.",
         publico: "Ensino Fundamental e Ensino Médio",
       },
+      {
+        nome: "Viagens Pedagógicas e Experiências Culturais",
+        texto:
+          "Passeios e experiências educativas fora da sala de aula, que ampliam conhecimentos, estimulam a autonomia e fortalecem vínculos.",
+        publico: "Todos os segmentos, conforme programação",
+      },
     ],
   },
 ];
@@ -498,10 +472,69 @@ export const programasCastelinho: Programa[] = [
     icon: "Globe",
   },
   {
-    nome: "Projeto Bilíngue",
+    nome: "Programa Bilíngue",
     publico: "Maternal ao Nível II",
     texto:
       "Músicas, histórias e brincadeiras aproximam as crianças do inglês de forma natural, ampliando o vocabulário e desenvolvendo a comunicação.",
     icon: "Languages",
   },
 ];
+
+/** Projeto de internacionalização para 2027, com o texto oficial da escola. */
+export const internacionalizacao = {
+  eyebrow: "Internacionalização 2027",
+  titulo: "Preparando nossos alunos para o mundo!",
+  subtitulo:
+    "Educação bilíngue desde a infância, experiências de imersão e intercâmbio internacional.",
+  abertura:
+    "Nas Escolas do Criar, a preparação para o mundo começa no Castelinho e acompanha nossos alunos ao longo de toda a trajetória escolar, com um projeto estruturado de ensino da língua inglesa.",
+  trajetoria: [
+    { titulo: "Castelinho do Criar", texto: "Desde a Educação Infantil" },
+    { titulo: "Castelo do Criar", texto: "Ensino Fundamental e Médio" },
+    { titulo: "O mundo", texto: "Imersão e intercâmbio internacional" },
+  ],
+  chamadaIniciativas: "Conheça nosso projeto de internacionalização para 2027:",
+  iniciativas: [
+    {
+      nome: "Programa Bilíngue",
+      publico: "Da Educação Infantil ao Ensino Médio",
+      icon: "Languages",
+      paragrafos: [
+        "O ensino de inglês começa no Castelinho do Criar, com o método apostilado School of Schools Bilíngue, que utiliza atividades lúdicas, músicas, brincadeiras e experiências adequadas a cada faixa etária.",
+        "No Castelo do Criar, o mesmo programa tem continuidade no Ensino Fundamental e Médio, ampliando gradativamente o domínio do idioma e desenvolvendo as habilidades de comunicação.",
+      ],
+    },
+    {
+      nome: "AcampPark – Imersão em Inglês",
+      publico: "4º e 5º anos · 6º ao 9º ano, com possibilidade de pernoite",
+      icon: "Tent",
+      paragrafos: [
+        "Experiências de imersão para alunos do Ensino Fundamental I e II, combinando aprendizado do idioma, convivência, atividades práticas e desenvolvimento da autonomia.",
+      ],
+    },
+    {
+      nome: "Intercâmbio Internacional",
+      publico: "Fundamental II, conforme idade e requisitos, e Ensino Médio",
+      icon: "Plane",
+      paragrafos: [
+        "Em parceria com a Experimento Intercâmbio Cultural, nossos alunos terão oportunidades de vivenciar experiências internacionais, aperfeiçoar o inglês e conhecer novas culturas.",
+      ],
+    },
+    {
+      nome: "Projeto Poupe Viagem",
+      publico: "A partir do 6º ano",
+      icon: "PiggyBank",
+      paragrafos: [
+        "A partir do 6º ano, incentivamos o planejamento financeiro antecipado das famílias, facilitando a organização para o futuro intercâmbio.",
+      ],
+    },
+  ],
+  fechamento: {
+    titulo: "Da Educação Infantil ao mundo!",
+    paragrafos: [
+      "Nosso projeto já começa a transformar sonhos em realidade, com aluno das Escolas do Criar confirmado para um intercâmbio em Cape Town, na África do Sul, em 2027.",
+      "Mais do que ensinar um idioma, queremos desenvolver autonomia, confiança e preparar nossos alunos para as oportunidades de um mundo sem fronteiras.",
+    ],
+    assinatura: "Escolas do Criar – Formando para a vida, preparando para o mundo!",
+  },
+};

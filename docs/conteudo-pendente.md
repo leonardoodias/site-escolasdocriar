@@ -74,5 +74,6 @@ Proposta: depois de confirmar ou descartar esses itens, redirecionar `/a-escola`
 ## Outros
 
 - **E-mail nas páginas legais:** resolvido em 2026-10-29 — Política de Privacidade e Termos de Uso agora apontam para `/contato`, que lista os canais de cada unidade. Falta só um e-mail oficial, se a escola quiser publicá-lo.
-- **Regularização da School of Schools:** o texto `regularizacaoSchoolOfSchools` (`src/content/site.ts`) não é exibido. É preciso definir se e onde publicá-lo.
+- **Regularização da School of Schools:** o texto `regularizacaoSchoolOfSchools` (`src/content/site.ts`) não é exibido. O nome School of Schools aparece no logotipo de Material e recursos e na seção de internacionalização. É preciso confirmar com a escola se a nota precisa ser divulgada e onde.
+- **Internacionalização 2027:** a seção de Nosso Jeito de Educar (`internacionalizacao`, em `src/content/programas.ts`) cita um aluno confirmado para intercâmbio em Cape Town em 2027. Revisar o texto depois dessa data. Faltam logotipo da Experimento e fotos do projeto.
 - **Foto do Fundamental II:** não há foto própria dessa etapa.

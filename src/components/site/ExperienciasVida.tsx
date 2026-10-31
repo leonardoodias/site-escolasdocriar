@@ -1,17 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  Globe,
-  HeartHandshake,
-  Lightbulb,
-  Sprout,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowRight, HeartHandshake, Lightbulb, Sprout, type LucideIcon } from "lucide-react";
 
 import { Container, SectionHeading } from "@/components/site/Section";
 import { eixosExperiencias } from "@/content/programas";
 
-const icons: Record<string, LucideIcon> = { Globe, HeartHandshake, Lightbulb };
+const icons: Record<string, LucideIcon> = { HeartHandshake, Lightbulb };
 
 const linkClass =
   "inline-flex items-center gap-1.5 rounded-full px-1 font-bold text-primary underline-offset-4 hover:underline";
@@ -23,7 +16,7 @@ export function ExperienciasVida() {
         <SectionHeading
           eyebrow="Na prática"
           title="Experiências que preparam para a vida"
-          text="Programas que ampliam a formação para além da sala de aula, com idiomas, projetos, convivência e escolhas reais."
+          text="Programas que ampliam a formação para além da sala de aula, com projetos, convivência e escolhas reais."
         />
 
         <div className="mx-auto mt-12 max-w-[1200px] md:mt-14">

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { ChamadaInternacionalizacao } from "@/components/site/ChamadaInternacionalizacao";
 import { CtaMatriculas } from "@/components/site/CtaMatriculas";
 import { DestaquesSection } from "@/components/site/DestaquesSection";
 import { DiferenciaisSection } from "@/components/site/DiferenciaisSection";
@@ -37,6 +38,7 @@ function HomePage() {
       <EscolasSection />
       <DestaquesSection />
       <PropositoSection />
+      <ChamadaInternacionalizacao />
       <DiferenciaisSection />
       <CtaMatriculas />
     </>
