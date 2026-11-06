@@ -70,7 +70,11 @@ export type ItemAgenda = {
 };
 
 export type MesAgenda = {
+  /** Nome exibido na aba. */
   mes: string;
+  /** Ano e número do mês (1 a 12), usados para abrir a agenda no mês corrente. */
+  ano: number;
+  numero: number;
   itens: ItemAgenda[];
 };
 
@@ -78,6 +82,8 @@ export type MesAgenda = {
 export const proximasDatas: MesAgenda[] = [
   {
     mes: "Outubro",
+    ano: 2026,
+    numero: 10,
     itens: [
       { data: "08 e 09/10", evento: "Reunião de Pais e Mestres" },
       { data: "09/10", evento: "Comemoração Dia das Crianças" },
@@ -89,6 +95,8 @@ export const proximasDatas: MesAgenda[] = [
   },
   {
     mes: "Novembro",
+    ano: 2026,
+    numero: 11,
     itens: [
       { data: "23 a 30/11", evento: "Avaliação P2" },
       { data: "Data a definir", evento: "Viagem do 9º Ano" },
@@ -97,6 +105,8 @@ export const proximasDatas: MesAgenda[] = [
   },
   {
     mes: "Dezembro",
+    ano: 2026,
+    numero: 12,
     itens: [
       {
         data: "04/12",

@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { destaques, proximasDatas, type Destaque } from "@/content/destaques";
+import { destaques, proximasDatas, type Destaque, type MesAgenda } from "@/content/destaques";
 import { cn } from "@/lib/utils";
 
 function DestaqueImagem({ destaque, className }: { destaque: Destaque; className?: string }) {
@@ -51,15 +51,11 @@ function DestaqueMeta({ destaque, className }: { destaque: Destaque; className?:
   );
 }
 
-function VerDetalhesDialog({ destaque, small = false }: { destaque: Destaque; small?: boolean }) {
+function VerDetalhesDialog({ destaque }: { destaque: Destaque }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          variant="cta"
-          size={small ? "default" : "xl"}
-          className={cn(small && "min-h-11 px-5")}
-        >
+        <Button variant="cta" className="min-h-11 px-5">
           {destaque.cta.label}
           <ArrowRight className="size-4" aria-hidden="true" />
         </Button>
@@ -90,12 +86,29 @@ function VerDetalhesDialog({ destaque, small = false }: { destaque: Destaque; sm
   );
 }
 
+/** Índice do mês atual em São Paulo; sem ele, o próximo cadastrado; sem próximo, o último. */
+function indiceMesInicial(meses: MesAgenda[], agora: Date) {
+  const partes = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Sao_Paulo",
+    year: "numeric",
+    month: "numeric",
+  }).formatToParts(agora);
+  const valor = (tipo: string) => Number(partes.find((p) => p.type === tipo)?.value);
+  const atual = valor("year") * 12 + valor("month");
+  const chave = (m: MesAgenda) => m.ano * 12 + m.numero;
+
+  const exato = meses.findIndex((m) => chave(m) === atual);
+  if (exato >= 0) return exato;
+  const proximo = meses.findIndex((m) => chave(m) > atual);
+  return proximo >= 0 ? proximo : meses.length - 1;
+}
+
 export function DestaquesSection() {
-  const [mesAtivo, setMesAtivo] = useState(0);
-  const [principal, ...secundarios] = destaques.filter((d) => !d.ocultarNaHome);
+  const [mesAtivo, setMesAtivo] = useState(() => indiceMesInicial(proximasDatas, new Date()));
+  const eventos = destaques.filter((d) => !d.ocultarNaHome);
   const mesSelecionado = proximasDatas[mesAtivo];
 
-  if (!principal || !mesSelecionado) return null;
+  if (eventos.length === 0 || !mesSelecionado) return null;
 
   return (
     <section className="section bg-secondary/40">
@@ -106,50 +119,32 @@ export function DestaquesSection() {
           text="Acompanhe o que está acontecendo nas Escolas do Criar."
         />
 
-        <div className="mt-8 grid gap-8 md:mt-10 lg:grid-cols-12 lg:gap-10">
+        <div className="mt-8 grid gap-6 md:mt-10 lg:grid-cols-12 lg:items-start lg:gap-8">
           {/* Coluna esquerda — Destaques editoriais */}
-          <div className="lg:col-span-7">
-            <article className="overflow-hidden rounded-3xl bg-card shadow-soft">
-              <div className="relative aspect-[16/9] sm:aspect-[21/10]">
-                <DestaqueImagem destaque={principal} />
-              </div>
-              <div className="p-6 md:p-7">
-                <DestaqueMeta destaque={principal} />
-                <h3 className="mt-3 text-2xl font-extrabold text-primary-deep">
-                  {principal.titulo}
-                </h3>
-                <p className="mt-2 text-muted-foreground md:text-base">{principal.texto}</p>
-                <div className="mt-5">
-                  <VerDetalhesDialog destaque={principal} />
+          <div className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
+            {eventos.map((d) => (
+              <article
+                key={d.id}
+                className="flex flex-col overflow-hidden rounded-3xl bg-card shadow-soft"
+              >
+                <div className="relative aspect-[2/1]">
+                  <DestaqueImagem destaque={d} />
                 </div>
-              </div>
-            </article>
-
-            <div className={cn("mt-5 grid gap-5", secundarios.length > 1 && "sm:grid-cols-2")}>
-              {secundarios.map((d) => (
-                <article
-                  key={d.id}
-                  className="flex flex-col overflow-hidden rounded-2xl bg-card shadow-soft"
-                >
-                  <div className="relative aspect-[16/10]">
-                    <DestaqueImagem destaque={d} />
+                <div className="flex flex-1 flex-col p-5">
+                  <DestaqueMeta destaque={d} />
+                  <h3 className="mt-2.5 text-lg font-bold text-primary-deep">{d.titulo}</h3>
+                  <p className="mt-1.5 flex-1 text-sm text-muted-foreground">{d.texto}</p>
+                  <div className="mt-4">
+                    <VerDetalhesDialog destaque={d} />
                   </div>
-                  <div className="flex flex-1 flex-col p-5">
-                    <DestaqueMeta destaque={d} />
-                    <h4 className="mt-2.5 text-lg font-bold text-primary-deep">{d.titulo}</h4>
-                    <p className="mt-1.5 flex-1 text-sm text-muted-foreground">{d.texto}</p>
-                    <div className="mt-4">
-                      <VerDetalhesDialog destaque={d} small />
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
+                </div>
+              </article>
+            ))}
           </div>
 
           {/* Coluna direita — Agenda Escolar */}
           <div className="lg:col-span-5">
-            <div className="rounded-3xl bg-card p-6 shadow-soft md:p-7 lg:sticky lg:top-24">
+            <div className="rounded-3xl bg-card p-5 shadow-soft md:p-6 lg:sticky lg:top-24">
               <h3 className="text-2xl font-extrabold text-primary-deep">Agenda Escolar</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Confira os próximos compromissos e momentos importantes das Escolas do Criar.
@@ -158,9 +153,9 @@ export function DestaquesSection() {
               <div className="mt-5 flex flex-wrap gap-x-2 gap-y-3.5 border-b border-border pb-3">
                 {proximasDatas.map((mes, i) => (
                   <button
-                    key={mes.mes}
+                    key={`${mes.ano}-${mes.numero}`}
                     type="button"
-                    aria-current={i === mesAtivo}
+                    aria-pressed={i === mesAtivo}
                     onClick={() => setMesAtivo(i)}
                     className={cn(
                       "touch-target rounded-full px-3.5 py-1.5 text-xs font-extrabold tracking-wide uppercase transition-colors",
@@ -174,24 +169,33 @@ export function DestaquesSection() {
                 ))}
               </div>
 
-              <ul className="mt-1">
-                {mesSelecionado.itens.map((item) => (
-                  <li
-                    key={`${item.data}-${item.evento}`}
-                    className="flex items-start gap-3 border-b border-border/60 py-3.5 last:border-b-0"
-                  >
-                    <span className="shrink-0 text-sm font-extrabold whitespace-nowrap text-primary-deep">
-                      {item.data}
-                    </span>
-                    <span className="text-sm text-foreground/80">
-                      {item.evento}
-                      {item.detalhe && (
-                        <span className="block text-xs text-muted-foreground">{item.detalhe}</span>
-                      )}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              {mesSelecionado.itens.length > 0 ? (
+                <ul className="mt-1">
+                  {mesSelecionado.itens.map((item) => (
+                    <li
+                      key={`${item.data}-${item.evento}`}
+                      className="flex items-start gap-3 border-b border-border/60 py-3.5 last:border-b-0"
+                    >
+                      <span className="shrink-0 text-sm font-extrabold whitespace-nowrap text-primary-deep">
+                        {item.data}
+                      </span>
+                      <span className="text-sm text-foreground/80">
+                        {item.evento}
+                        {item.detalhe && (
+                          <span className="block text-xs text-muted-foreground">
+                            {item.detalhe}
+                          </span>
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="py-6 text-sm text-muted-foreground">
+                  Nenhum compromisso cadastrado para {mesSelecionado.mes.toLowerCase()} até o
+                  momento.
+                </p>
+              )}
             </div>
           </div>
         </div>
