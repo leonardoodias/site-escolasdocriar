@@ -92,7 +92,7 @@ function VerDetalhesDialog({ destaque, small = false }: { destaque: Destaque; sm
 
 export function DestaquesSection() {
   const [mesAtivo, setMesAtivo] = useState(0);
-  const [principal, ...secundarios] = destaques;
+  const [principal, ...secundarios] = destaques.filter((d) => !d.ocultarNaHome);
   const mesSelecionado = proximasDatas[mesAtivo];
 
   if (!principal || !mesSelecionado) return null;
@@ -125,7 +125,7 @@ export function DestaquesSection() {
               </div>
             </article>
 
-            <div className="mt-5 grid gap-5 sm:grid-cols-2">
+            <div className={cn("mt-5 grid gap-5", secundarios.length > 1 && "sm:grid-cols-2")}>
               {secundarios.map((d) => (
                 <article
                   key={d.id}

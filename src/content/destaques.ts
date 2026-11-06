@@ -18,6 +18,8 @@ export type Destaque = {
   placeholderText?: string;
   /** Informações complementares, exibidas apenas no "Ver detalhes". */
   detalhes?: string[];
+  /** Mantém o destaque só na página /destaques, fora de "Eventos e campanhas" da home. */
+  ocultarNaHome?: boolean;
   cta: { label: string; to?: string; href?: string };
 };
 
@@ -30,6 +32,7 @@ export const destaques: Destaque[] = [
       "Uma noite especial para alunos, professores, colaboradores, familiares e amigos das Escolas do Criar.",
     data: "04/12",
     imagem: baileDeMascarasImg,
+    ocultarNaHome: true,
     detalhes: [
       "19h às 23h",
       "Chácara Recanto Campanilli",

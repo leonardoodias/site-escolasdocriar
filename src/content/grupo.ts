@@ -5,10 +5,12 @@
  */
 
 import castelinhoImg from "@/assets/castelinho.jpeg";
+import castelinhoGaleria0 from "@/assets/castelinho-galeria-0.jpeg";
 import castelinhoGaleria1 from "@/assets/castelinho-galeria-1.jpeg";
 import castelinhoGaleria2 from "@/assets/castelinho-galeria-2.jpeg";
 import castelinhoGaleria3 from "@/assets/castelinho-galeria-3.jpeg";
 import castelinhoGaleria4 from "@/assets/castelinho-galeria-4.jpeg";
+import castelinhoGaleria5 from "@/assets/castelinho-galeria-5.jpeg";
 import casteloImg from "@/assets/castelo-fachada.jpg";
 import logoCastelinho from "@/assets/logo-castelinho.webp";
 import logoCastelo from "@/assets/logo-castelo.webp";
@@ -75,11 +77,24 @@ export const escolas: Escola[] = [
     logo: logoCastelinho,
     imagem: castelinhoImg,
     imagens: [
-      { src: castelinhoImg, alt: "Fachada do Castelinho do Criar, com portões coloridos" },
-      { src: castelinhoGaleria1, alt: "Recreação do Castelinho do Criar com escorregador e jardim" },
-      { src: castelinhoGaleria2, alt: "Portões amarelo e rosa da fachada do Castelinho do Criar" },
-      { src: castelinhoGaleria3, alt: "Brinquedão de madeira no pátio do Castelinho do Criar" },
-      { src: castelinhoGaleria4, alt: "Fachada do Castelinho do Criar vista da rua" },
+      { src: castelinhoGaleria0, alt: "Portões amarelo e rosa da fachada do Castelinho do Criar" },
+      { src: castelinhoGaleria1, alt: "Fachada do Castelinho do Criar vista da rua" },
+      {
+        src: castelinhoGaleria2,
+        alt: "Varanda coberta com bancos, voltada para o parquinho do Castelinho do Criar",
+      },
+      {
+        src: castelinhoGaleria3,
+        alt: "Brinquedão com escorregador no pátio gramado do Castelinho do Criar",
+      },
+      {
+        src: castelinhoGaleria4,
+        alt: "Jardim com escorregador e o prédio do Castelinho do Criar ao fundo",
+      },
+      {
+        src: castelinhoGaleria5,
+        alt: "Pátio gramado com escorregador e brinquedão do Castelinho do Criar",
+      },
     ],
     destaques: [
       {

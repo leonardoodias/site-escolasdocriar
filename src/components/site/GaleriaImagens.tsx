@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 
 type Props = {
   imagens: { src: string; alt: string }[];
@@ -19,7 +19,17 @@ export function GaleriaImagens({ imagens }: Props) {
         className="aspect-[4/3] w-full rounded-4xl object-cover shadow-lift"
       />
       {imagens.length > 1 && (
-        <div className="grid grid-cols-5 gap-2 sm:gap-3">
+        <div
+          className="grid grid-cols-[repeat(var(--colunas-celular),minmax(0,1fr))] gap-2 sm:gap-3 lg:grid-cols-[repeat(var(--colunas),minmax(0,1fr))]"
+          // Uma linha de até seis miniaturas no computador; abaixo disso, mais de quatro viram duas linhas.
+          style={
+            {
+              "--colunas": Math.min(imagens.length, 6),
+              "--colunas-celular":
+                imagens.length > 4 ? Math.ceil(imagens.length / 2) : imagens.length,
+            } as CSSProperties
+          }
+        >
           {imagens.map((img, i) => (
             <button
               key={img.src}
@@ -28,9 +38,7 @@ export function GaleriaImagens({ imagens }: Props) {
               aria-label={`Ver imagem ${i + 1} da galeria`}
               aria-current={i === ativa}
               className={`overflow-hidden rounded-2xl border-2 transition focus-visible:outline-2 focus-visible:outline-accent ${
-                i === ativa
-                  ? "border-accent"
-                  : "border-transparent opacity-80 hover:opacity-100"
+                i === ativa ? "border-accent" : "border-transparent opacity-80 hover:opacity-100"
               }`}
             >
               <img
