@@ -42,8 +42,7 @@ export const projetos: Projeto[] = [
     slug: "cultura",
     nome: "Cultura e Arte",
     categoria: "Cultura",
-    resumo:
-      "Mostras culturais, teatro, música e leitura como forma de expressão e repertório.",
+    resumo: "Mostras culturais, teatro, música e leitura como forma de expressão e repertório.",
     detalhe:
       "Apresentações abertas às famílias, clubes de leitura, oficinas de teatro e música que valorizam a expressão e a identidade de cada estudante.",
     imagem: heroImg,
@@ -53,8 +52,7 @@ export const projetos: Projeto[] = [
     slug: "esportes",
     nome: "Esportes e Movimento",
     categoria: "Esportes",
-    resumo:
-      "Modalidades esportivas, jogos internos e trabalho em equipe dentro e fora da quadra.",
+    resumo: "Modalidades esportivas, jogos internos e trabalho em equipe dentro e fora da quadra.",
     detalhe:
       "Treinos, festivais e jogos internos que desenvolvem coordenação, disciplina, cooperação e o gosto por uma vida ativa.",
     imagem: medioImg,
@@ -64,8 +62,7 @@ export const projetos: Projeto[] = [
     slug: "gincanas",
     nome: "Gincanas do Castelo",
     categoria: "Eventos",
-    resumo:
-      "Desafios colaborativos que unem turmas, famílias e ações solidárias.",
+    resumo: "Desafios colaborativos que unem turmas, famílias e ações solidárias.",
     detalhe:
       "Provas culturais, esportivas e de arrecadação solidária, com participação das famílias e forte sentimento de comunidade.",
     imagem: familiaImg,
@@ -75,8 +72,7 @@ export const projetos: Projeto[] = [
     slug: "passeios-pedagogicos",
     nome: "Passeios Pedagógicos",
     categoria: "Passeios",
-    resumo:
-      "Saídas de estudo que transformam o conteúdo da sala de aula em experiência real.",
+    resumo: "Saídas de estudo que transformam o conteúdo da sala de aula em experiência real.",
     detalhe:
       "Visitas a museus, parques, espaços científicos e produtivos da região, sempre articuladas aos projetos em andamento.",
     imagem: fundamentalImg,
@@ -86,8 +82,7 @@ export const projetos: Projeto[] = [
     slug: "projetos-interdisciplinares",
     nome: "Projetos Interdisciplinares",
     categoria: "Projetos",
-    resumo:
-      "Um tema, várias áreas do conhecimento e um resultado construído pelos alunos.",
+    resumo: "Um tema, várias áreas do conhecimento e um resultado construído pelos alunos.",
     detalhe:
       "Os estudantes investigam um problema real, planejam soluções em grupo e apresentam suas conclusões para a comunidade escolar.",
     imagem: fundamentalImg,
@@ -97,8 +92,7 @@ export const projetos: Projeto[] = [
     slug: "tecnologia",
     nome: "Tecnologia e Robótica",
     categoria: "Projetos",
-    resumo:
-      "Pensamento computacional, criação digital e uso responsável da tecnologia.",
+    resumo: "Pensamento computacional, criação digital e uso responsável da tecnologia.",
     detalhe:
       "Atividades de programação, robótica e produção de conteúdo digital, com foco em criar e não apenas consumir tecnologia.",
     imagem: medioImg,
@@ -108,8 +102,7 @@ export const projetos: Projeto[] = [
     slug: "empreendedorismo",
     nome: "Empreendedorismo Jovem",
     categoria: "Projetos",
-    resumo:
-      "Da ideia ao plano: estudantes desenvolvem iniciativas com propósito.",
+    resumo: "Da ideia ao plano: estudantes desenvolvem iniciativas com propósito.",
     detalhe:
       "Turmas maiores estruturam projetos, calculam custos, definem público e apresentam suas propostas em uma feira interna.",
     imagem: heroImg,
@@ -119,22 +112,10 @@ export const projetos: Projeto[] = [
     slug: "eventos-familias",
     nome: "Eventos com as Famílias",
     categoria: "Família na Escola",
-    resumo:
-      "Momentos de convivência que fortalecem a parceria entre escola e responsáveis.",
+    resumo: "Momentos de convivência que fortalecem a parceria entre escola e responsáveis.",
     detalhe:
       "Dia da Família, Café com Afeto, apresentações e encontros de orientação pedagógica ao longo do ano.",
     imagem: familiaImg,
     alt: "Família reunida em evento escolar",
   },
-];
-
-export const educacaoFinanceiraTopicos = [
-  "Escolhas do dia a dia",
-  "Desejos e necessidades",
-  "Planejamento",
-  "Consumo consciente",
-  "Prioridades",
-  "Objetivos de curto e longo prazo",
-  "Organização financeira",
-  "Responsabilidade",
 ];

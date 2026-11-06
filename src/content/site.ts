@@ -104,16 +104,6 @@ export const regularizacaoSchoolOfSchools = {
   text: "Nossas escolas já utilizam as soluções educacionais da FTD, e estamos em processo de regularização da identificação da School of Schools junto à plataforma. Trata-se de uma etapa de formalização administrativa, que está em andamento e não altera o material utilizado, a metodologia aplicada ou o acompanhamento pedagógico dos nossos alunos.",
 };
 
-export const eventosFamilia = [
-  "Dia da Família",
-  "Café com Afeto",
-  "Encontros de pais e responsáveis",
-  "Apresentações culturais",
-  "Atividades esportivas",
-  "Comemorações do calendário escolar",
-  "Projetos especiais abertos à comunidade",
-];
-
 export const estrutura = [
   "Salas amplas, climatizadas e organizadas por faixa etária",
   "Espaços de leitura e biblioteca",

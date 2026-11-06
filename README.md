@@ -203,7 +203,7 @@ Estados tratados no código: *hover* e *active* em links e botões, menu mobile 
 - **`src/components/site/`** — componentes específicos do site
 - **`src/components/ui/`** — componentes de interface reutilizáveis e agnósticos de conteúdo
 - **`src/content/`** — única fonte de conteúdo editável, isolada dos componentes para permitir uma futura migração a um painel administrativo
-- **`src/hooks/`** — hooks utilitários (detecção de mobile, preferência por movimento reduzido)
+- **`src/hooks/`** — hooks utilitários (preferência por movimento reduzido)
 - **`src/lib/`** — utilitários e tratamento de erros, incluindo telemetria do editor Lovable
 - **`src/server.ts`** — *fetch handler* do servidor, que transforma erros 500 internos em uma página de erro amigável
 - **`src/start.ts`** — middlewares do TanStack Start: captura de erros e CSRF para *server functions*

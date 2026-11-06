@@ -4,8 +4,6 @@
  * Estrutura pensada para migrar futuramente para banco de dados/painel admin.
  */
 
-import baileDeMascarasImg from "@/assets/baile-de-mascaras.webp";
-
 export type Destaque = {
   id: string;
   tag: string;
@@ -18,29 +16,10 @@ export type Destaque = {
   placeholderText?: string;
   /** Informações complementares, exibidas apenas no "Ver detalhes". */
   detalhes?: string[];
-  /** Mantém o destaque só na página /destaques, fora de "Eventos e campanhas" da home. */
-  ocultarNaHome?: boolean;
   cta: { label: string; to?: string; href?: string };
 };
 
 export const destaques: Destaque[] = [
-  {
-    id: "baile-de-mascaras",
-    tag: "Evento especial",
-    titulo: "Baile de Máscaras",
-    texto:
-      "Uma noite especial para alunos, professores, colaboradores, familiares e amigos das Escolas do Criar.",
-    data: "04/12",
-    imagem: baileDeMascarasImg,
-    ocultarNaHome: true,
-    detalhes: [
-      "19h às 23h",
-      "Chácara Recanto Campanilli",
-      "Espaço Kids",
-      "Traje máscara obrigatório",
-    ],
-    cta: { label: "Ver detalhes", to: "/destaques" },
-  },
   {
     id: "festa-das-cores",
     tag: "Evento",
@@ -108,11 +87,6 @@ export const proximasDatas: MesAgenda[] = [
     ano: 2026,
     numero: 12,
     itens: [
-      {
-        data: "04/12",
-        evento: "Baile de Máscaras",
-        detalhe: "Alunos, professores, colaboradores, familiares e amigos",
-      },
       { data: "08 e 09/12", evento: "Reunião de Pais e Mestres" },
       { data: "10/12", evento: "Festa de encerramento para alunos" },
       { data: "11/12", evento: "Formatura 5º e 9º Ano" },

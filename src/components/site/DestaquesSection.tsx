@@ -105,10 +105,9 @@ function indiceMesInicial(meses: MesAgenda[], agora: Date) {
 
 export function DestaquesSection() {
   const [mesAtivo, setMesAtivo] = useState(() => indiceMesInicial(proximasDatas, new Date()));
-  const eventos = destaques.filter((d) => !d.ocultarNaHome);
   const mesSelecionado = proximasDatas[mesAtivo];
 
-  if (eventos.length === 0 || !mesSelecionado) return null;
+  if (destaques.length === 0 || !mesSelecionado) return null;
 
   return (
     <section className="section bg-secondary/40">
@@ -122,7 +121,7 @@ export function DestaquesSection() {
         <div className="mt-8 grid gap-6 md:mt-10 lg:grid-cols-12 lg:items-start lg:gap-8">
           {/* Coluna esquerda — Destaques editoriais */}
           <div className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
-            {eventos.map((d) => (
+            {destaques.map((d) => (
               <article
                 key={d.id}
                 className="flex flex-col overflow-hidden rounded-3xl bg-card shadow-soft"

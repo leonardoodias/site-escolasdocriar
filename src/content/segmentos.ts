@@ -109,7 +109,3 @@ export const segmentos: Segmento[] = [
     ],
   },
 ];
-
-export function getSegmento(slug: string) {
-  return segmentos.find((s) => s.slug === slug);
-}
