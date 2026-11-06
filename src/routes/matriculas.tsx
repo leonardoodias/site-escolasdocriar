@@ -14,6 +14,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { ContatoDialog } from "@/components/site/ContatoDialog";
+import {
+  errosDaValidacao,
+  solicitacaoSchema,
+  solicitarContato,
+  type CampoSolicitacao,
+} from "@/lib/solicitar-contato";
 import { Container, PageHero, SectionHeading } from "@/components/site/Section";
 import { segmentos } from "@/content/segmentos";
 
@@ -113,34 +119,49 @@ const faq = [
   },
 ];
 
-type Erros = Partial<Record<"responsavel" | "aluno" | "telefone" | "email" | "segmento", string>>;
+type Erros = Partial<Record<CampoSolicitacao, string>>;
+
+const FALHA_ENVIO =
+  "Não foi possível enviar sua solicitação agora. Tente novamente em instantes ou fale com a nossa equipe pelo WhatsApp.";
 
 function Matriculas() {
   const [erros, setErros] = useState<Erros>({});
+  const [enviando, setEnviando] = useState(false);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (enviando) return;
     const form = e.currentTarget;
-    const data = new FormData(form);
-    const get = (k: string) => String(data.get(k) ?? "").trim();
+    const dados = Object.fromEntries(
+      [...new FormData(form)].map(([campo, valor]) => [campo, String(valor)]),
+    );
 
-    const proximos: Erros = {};
-    if (get("responsavel").length < 3) proximos.responsavel = "Informe o nome do responsável.";
-    if (get("aluno").length < 2) proximos.aluno = "Informe o nome do aluno.";
-    if (get("telefone").replace(/\D/g, "").length < 10)
-      proximos.telefone = "Informe um telefone com DDD.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(get("email")))
-      proximos.email = "Informe um e-mail válido.";
-    if (!get("segmento")) proximos.segmento = "Selecione o segmento de interesse.";
-
-    setErros(proximos);
-    if (Object.keys(proximos).length > 0) {
+    const lido = solicitacaoSchema.safeParse(dados);
+    if (!lido.success) {
+      setErros(errosDaValidacao(lido.error));
       toast.error("Revise os campos destacados.");
       return;
     }
 
-    toast.success("Solicitação enviada! Entraremos em contato em breve.");
-    form.reset();
+    setErros({});
+    setEnviando(true);
+    try {
+      // O sucesso só aparece depois que o serviço de e-mail confirma o envio.
+      const resultado = await solicitarContato({ data: dados });
+      if (resultado.ok) {
+        toast.success("Solicitação enviada! Entraremos em contato em breve.");
+        form.reset();
+      } else if (resultado.motivo === "validacao") {
+        setErros(resultado.erros);
+        toast.error("Revise os campos destacados.");
+      } else {
+        toast.error(FALHA_ENVIO);
+      }
+    } catch {
+      toast.error(FALHA_ENVIO);
+    } finally {
+      setEnviando(false);
+    }
   }
 
   return (
@@ -242,12 +263,30 @@ function Matriculas() {
                 </div>
                 <div>
                   <Label htmlFor="mensagem">Mensagem</Label>
-                  <Textarea id="mensagem" name="mensagem" rows={4} className="mt-2.5 rounded-xl" />
+                  <Textarea
+                    id="mensagem"
+                    name="mensagem"
+                    rows={4}
+                    maxLength={2000}
+                    className="mt-2.5 rounded-xl"
+                  />
+                </div>
+                {/* Campo invisível contra envios automáticos; pessoas não o veem nem o alcançam. */}
+                <div aria-hidden="true" className="sr-only">
+                  <label htmlFor="site">Site</label>
+                  <input id="site" name="site" type="text" tabIndex={-1} autoComplete="off" />
                 </div>
               </div>
 
-              <Button type="submit" variant="cta" size="xl" className="mt-8 w-full">
-                Enviar solicitação
+              <Button
+                type="submit"
+                variant="cta"
+                size="xl"
+                disabled={enviando}
+                aria-busy={enviando}
+                className="mt-8 w-full"
+              >
+                {enviando ? "Enviando…" : "Enviar solicitação"}
               </Button>
               <p className="mt-4 text-xs text-muted-foreground">
                 Prefere falar agora?{" "}
