@@ -80,11 +80,11 @@ export const segmentos: Segmento[] = [
   {
     slug: "ensino-medio",
     to: "/ensino-medio",
-    nome: "Ensino Médio",
+    nome: "Novo Ensino Médio",
     faixa: "1ª à 3ª série",
     resumo:
       "Aprofundamento acadêmico, pensamento crítico, responsabilidade e preparação para novas escolhas.",
-    chamada: "Conheça o Ensino Médio",
+    chamada: "Conheça o Novo Ensino Médio",
     imagem: medioImg,
     destaques: [
       {

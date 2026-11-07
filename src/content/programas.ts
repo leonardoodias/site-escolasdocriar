@@ -265,7 +265,7 @@ export const programasCastelo: EtapaProgramas[] = [
   },
   {
     id: "ensino-medio",
-    titulo: "Ensino Médio",
+    titulo: "Novo Ensino Médio",
     etapa: "1ª à 3ª série",
     resumo:
       "Aprofundamento acadêmico e preparação para o ENEM e os vestibulares, com pensamento crítico, projeto de vida, protagonismo e experiências de gestão e intercâmbio.",
@@ -391,13 +391,13 @@ export const eixosExperiencias: EixoExperiencias[] = [
         nome: "Educação Financeira",
         texto:
           "Do valor do dinheiro às decisões responsáveis: planejamento, consumo consciente e organização de recursos, com profundidade adequada a cada etapa.",
-        publico: "Do Ensino Fundamental I ao Ensino Médio",
+        publico: "Do Ensino Fundamental I ao Novo Ensino Médio",
       },
       {
         nome: "Ecoempreendedorismo e Empresa Escolar",
         texto:
-          "Projetos de sustentabilidade, reciclagem e ações coletivas. No Ensino Médio, os alunos participam da gestão de uma empresa escolar, assumindo cargos e responsabilidades.",
-        publico: "Ecoempreendedorismo no Fundamental · Empresa Escolar no Ensino Médio",
+          "Projetos de sustentabilidade, reciclagem e ações coletivas. No Novo Ensino Médio, os alunos participam da gestão de uma empresa escolar, assumindo cargos e responsabilidades.",
+        publico: "Ecoempreendedorismo no Fundamental · Empresa Escolar no Novo Ensino Médio",
       },
     ],
   },
@@ -417,13 +417,13 @@ export const eixosExperiencias: EixoExperiencias[] = [
         nome: "Mostra Cultural e Projetos Interdisciplinares",
         texto:
           "Projetos que integram diferentes áreas do conhecimento e valorizam criatividade e protagonismo, estimulando pesquisa, comunicação e trabalho em equipe.",
-        publico: "Da Educação Infantil ao Ensino Médio",
+        publico: "Da Educação Infantil ao Novo Ensino Médio",
       },
       {
         nome: "Esporte, Integração e Interclasses",
         texto:
           "Atividades esportivas e recreativas que aproximam os alunos e desenvolvem espírito de equipe, disciplina e hábitos saudáveis.",
-        publico: "Ensino Fundamental e Ensino Médio",
+        publico: "Ensino Fundamental e Novo Ensino Médio",
       },
       {
         nome: "Viagens Pedagógicas e Experiências Culturais",
@@ -490,18 +490,18 @@ export const internacionalizacao = {
     "Nas Escolas do Criar, a preparação para o mundo começa no Castelinho e acompanha nossos alunos ao longo de toda a trajetória escolar, com um projeto estruturado de ensino da língua inglesa.",
   trajetoria: [
     { titulo: "Castelinho do Criar", texto: "Desde a Educação Infantil" },
-    { titulo: "Castelo do Criar", texto: "Ensino Fundamental e Médio" },
+    { titulo: "Castelo do Criar", texto: "Ensino Fundamental e Novo Ensino Médio" },
     { titulo: "O mundo", texto: "Imersão e intercâmbio internacional" },
   ],
   chamadaIniciativas: "Conheça nosso projeto de internacionalização para 2027:",
   iniciativas: [
     {
       nome: "Programa Bilíngue",
-      publico: "Da Educação Infantil ao Ensino Médio",
+      publico: "Da Educação Infantil ao Novo Ensino Médio",
       icon: "Languages",
       paragrafos: [
         "O ensino de inglês começa no Castelinho do Criar, com o método apostilado School of Schools Bilíngue, que utiliza atividades lúdicas, músicas, brincadeiras e experiências adequadas a cada faixa etária.",
-        "No Castelo do Criar, o mesmo programa tem continuidade no Ensino Fundamental e Médio, ampliando gradativamente o domínio do idioma e desenvolvendo as habilidades de comunicação.",
+        "No Castelo do Criar, o mesmo programa tem continuidade no Ensino Fundamental e Novo Ensino Médio, ampliando gradativamente o domínio do idioma e desenvolvendo as habilidades de comunicação.",
       ],
     },
     {
@@ -514,7 +514,7 @@ export const internacionalizacao = {
     },
     {
       nome: "Intercâmbio Internacional",
-      publico: "Fundamental II, conforme idade e requisitos, e Ensino Médio",
+      publico: "Fundamental II, conforme idade e requisitos, e Novo Ensino Médio",
       icon: "Plane",
       paragrafos: [
         "Em parceria com a Experimento Intercâmbio Cultural, nossos alunos terão oportunidades de vivenciar experiências internacionais, aperfeiçoar o inglês e conhecer novas culturas.",

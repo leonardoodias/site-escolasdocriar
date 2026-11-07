@@ -17,7 +17,7 @@ export const categoriasGaleria = [
   "Todas",
   "Educação Infantil",
   "Fundamental",
-  "Ensino Médio",
+  "Novo Ensino Médio",
   "Projetos",
   "Esportes",
   "Passeios",
@@ -44,9 +44,9 @@ export const fotos: Foto[] = [
   {
     id: "g3",
     src: medioImg,
-    alt: "Estudantes do Ensino Médio em atividade de laboratório",
-    legenda: "Investigação científica no Ensino Médio",
-    categoria: "Ensino Médio",
+    alt: "Estudantes do Novo Ensino Médio em atividade de laboratório",
+    legenda: "Investigação científica no Novo Ensino Médio",
+    categoria: "Novo Ensino Médio",
   },
   {
     id: "g4",
@@ -107,8 +107,8 @@ export const fotos: Foto[] = [
   {
     id: "g12",
     src: medioImg,
-    alt: "Estudantes do Ensino Médio em roda de conversa",
+    alt: "Estudantes do Novo Ensino Médio em roda de conversa",
     legenda: "Projeto de vida",
-    categoria: "Ensino Médio",
+    categoria: "Novo Ensino Médio",
   },
 ];

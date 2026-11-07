@@ -8,7 +8,7 @@ import { grupo } from "@/content/grupo";
 const casteloDetails = {
   ...unidades.castelo,
   ...localizacaoCastelo.rodape,
-  faixa: "Fundamental I, II e Médio",
+  faixa: "Fundamental I, II e Novo Ensino Médio",
 };
 
 const castelinhoDetails = {

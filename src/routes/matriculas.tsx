@@ -254,8 +254,8 @@ function Matriculas() {
                     ))}
                   </select>
                   <p className="mt-1.5 text-xs text-muted-foreground">
-                    Educação Infantil é no Castelinho do Criar; Fundamental e Médio são no Castelo
-                    do Criar.
+                    Educação Infantil é no Castelinho do Criar; Fundamental e Novo Ensino Médio são
+                    no Castelo do Criar.
                   </p>
                   {erros.segmento && (
                     <p className="mt-1 text-xs font-semibold text-destructive">{erros.segmento}</p>

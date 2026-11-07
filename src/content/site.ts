@@ -12,7 +12,7 @@ export const school = {
   state: "SP",
   tagline: "Educar é criar possibilidades para o futuro.",
   description:
-    "Escola de Educação Infantil, Ensino Fundamental e Ensino Médio em Santa Rosa de Viterbo/SP. Conhecimento, afeto e criatividade em cada etapa da vida escolar.",
+    "Escola de Educação Infantil, Ensino Fundamental e Novo Ensino Médio em Santa Rosa de Viterbo/SP. Conhecimento, afeto e criatividade em cada etapa da vida escolar.",
 };
 
 /** Menu principal simplificado */

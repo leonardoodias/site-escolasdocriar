@@ -88,7 +88,7 @@ export const heroBanners: HeroBanner[] = [
       },
       {
         nome: "Castelo do Criar",
-        segmento: "Ensino Fundamental I, Ensino Fundamental II e Ensino Médio",
+        segmento: "Ensino Fundamental I, Ensino Fundamental II e Novo Ensino Médio",
       },
     ],
     image: heroImg,

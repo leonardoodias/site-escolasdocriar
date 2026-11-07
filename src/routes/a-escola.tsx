@@ -34,7 +34,7 @@ function AEscola() {
       <PageHero
         eyebrow="A Escola"
         title="Um lugar onde aprender faz sentido"
-        text="O Castelo do Criar é uma escola de Educação Infantil, Ensino Fundamental e Ensino Médio em Santa Rosa de Viterbo/SP, com acompanhamento próximo das famílias e olhar atento a cada aluno."
+        text="O Castelo do Criar é uma escola de Educação Infantil, Ensino Fundamental e Novo Ensino Médio em Santa Rosa de Viterbo/SP, com acompanhamento próximo das famílias e olhar atento a cada aluno."
       />
 
       <section className="section">

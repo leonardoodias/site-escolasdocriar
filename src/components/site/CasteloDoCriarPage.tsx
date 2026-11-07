@@ -62,9 +62,9 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
               Educação com propósito. Formação com excelência.
             </h1>
             <p className="mt-5 text-base text-primary-foreground/85 md:text-lg">
-              A Escola Castelo do Criar oferece Ensino Fundamental e Ensino Médio com uma proposta
-              voltada à formação integral, unindo excelência acadêmica, desenvolvimento humano e
-              construção de valores.
+              A Escola Castelo do Criar oferece Ensino Fundamental e Novo Ensino Médio com uma
+              proposta voltada à formação integral, unindo excelência acadêmica, desenvolvimento
+              humano e construção de valores.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -108,7 +108,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
                     Castelo do Criar
                   </span>
                   <span className="text-xs font-semibold text-muted-foreground uppercase">
-                    Fundamental e Médio
+                    Fundamental e Novo Ensino Médio
                   </span>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
             <div className="space-y-4 text-base text-muted-foreground md:text-lg">
               <p>
                 A Escola Castelo do Criar, localizada em Santa Rosa de Viterbo, é uma instituição
-                particular de ensino que oferece Ensino Fundamental e Ensino Médio com foco na
+                particular de ensino que oferece Ensino Fundamental e Novo Ensino Médio com foco na
                 formação integral dos estudantes.
               </p>
               <p>

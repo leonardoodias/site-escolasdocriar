@@ -83,7 +83,7 @@ export const noticias: Noticia[] = [
     imagem: heroImg,
     alt: "Estudantes no pátio da escola",
     paragrafos: [
-      "As reuniões do segundo semestre acontecerão por segmento, com horários específicos para Educação Infantil, Fundamental e Ensino Médio.",
+      "As reuniões do segundo semestre acontecerão por segmento, com horários específicos para Educação Infantil, Fundamental e Novo Ensino Médio.",
       "O calendário completo será enviado também pela agenda e pelos canais oficiais de comunicação da escola.",
     ],
   },
@@ -93,7 +93,7 @@ export const noticias: Noticia[] = [
     data: "2026-05-22",
     categoria: "Esportes",
     resumo:
-      "Turmas do Fundamental e do Ensino Médio disputaram modalidades coletivas durante uma semana.",
+      "Turmas do Fundamental e do Novo Ensino Médio disputaram modalidades coletivas durante uma semana.",
     imagem: medioImg,
     alt: "Adolescentes em atividade esportiva escolar",
     paragrafos: [

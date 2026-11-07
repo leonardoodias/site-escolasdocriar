@@ -14,7 +14,13 @@ import {
 import { destaques, proximasDatas, type Destaque, type MesAgenda } from "@/content/destaques";
 import { cn } from "@/lib/utils";
 
-function DestaqueImagem({ destaque, className }: { destaque: Destaque; className?: string }) {
+export function DestaqueImagem({
+  destaque,
+  className,
+}: {
+  destaque: Destaque;
+  className?: string;
+}) {
   if (destaque.imagem) {
     return (
       <img
@@ -51,11 +57,24 @@ function DestaqueMeta({ destaque, className }: { destaque: Destaque; className?:
   );
 }
 
-function VerDetalhesDialog({ destaque }: { destaque: Destaque }) {
+/** `contorno` usa o botão de contorno da página /destaques; o padrão é o botão principal da home. */
+export function VerDetalhesDialog({
+  destaque,
+  contorno = false,
+}: {
+  destaque: Destaque;
+  contorno?: boolean;
+}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="cta" className="min-h-11 px-5">
+        <Button
+          variant={contorno ? "outline" : "cta"}
+          className={cn(
+            "min-h-11 px-5",
+            contorno && "rounded-full border-primary/30 font-bold text-primary",
+          )}
+        >
           {destaque.cta.label}
           <ArrowRight className="size-4" aria-hidden="true" />
         </Button>
@@ -73,9 +92,9 @@ function VerDetalhesDialog({ destaque }: { destaque: Destaque }) {
             {destaque.detalhes.map((d) => (
               <li
                 key={d}
-                className="flex items-center gap-2.5 text-sm font-semibold text-foreground/85"
+                className="flex items-start gap-2.5 text-sm font-semibold text-foreground/85"
               >
-                <Check className="size-4 shrink-0 text-primary" aria-hidden="true" />
+                <Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
                 {d}
               </li>
             ))}

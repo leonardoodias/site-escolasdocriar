@@ -76,7 +76,7 @@ export function EtapasEnsino({ etapas }: { etapas: EtapaProgramas[] }) {
         <SectionHeading
           eyebrow="Do 1º ano à 3ª série"
           title="Etapas de ensino"
-          text="Acompanhamento consistente do Ensino Fundamental até a conclusão do Ensino Médio."
+          text="Acompanhamento consistente do Ensino Fundamental até a conclusão do Novo Ensino Médio."
         />
 
         <nav aria-label="Atalhos para as etapas" className="mt-8 md:mt-10">

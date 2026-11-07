@@ -1,9 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
 import { ExternalLink } from "@/components/site/ExternalLink";
 import { Container, PageHero } from "@/components/site/Section";
 import { CtaMatriculas } from "@/components/site/CtaMatriculas";
+import { DestaqueImagem, VerDetalhesDialog } from "@/components/site/DestaquesSection";
 import { Button } from "@/components/ui/button";
 import { destaques } from "@/content/destaques";
 
@@ -43,12 +44,10 @@ function DestaquesPage() {
                 key={d.id}
                 className="card-hover flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft"
               >
-                <img
-                  src={d.imagem}
-                  alt={d.titulo}
-                  loading="lazy"
-                  className="aspect-[16/10] w-full object-cover"
-                />
+                {/* Mesma proporção 2:1 do card da home: uma única imagem serve aos dois. */}
+                <div className="relative aspect-[2/1]">
+                  <DestaqueImagem destaque={d} />
+                </div>
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="rounded-full bg-primary-soft px-3 py-1 text-xs font-extrabold tracking-wide text-primary uppercase">
@@ -73,16 +72,8 @@ function DestaquesPage() {
                         </ExternalLink>
                       </Button>
                     ) : (
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="min-h-11 rounded-full border-primary/30 font-bold text-primary"
-                      >
-                        <Link to={d.cta.to ?? "/"}>
-                          {d.cta.label}
-                          <ArrowRight className="size-4" aria-hidden="true" />
-                        </Link>
-                      </Button>
+                      // O link do cadastro aponta para esta mesma página; aqui os detalhes abrem na janela.
+                      <VerDetalhesDialog destaque={d} contorno />
                     )}
                   </div>
                 </div>
