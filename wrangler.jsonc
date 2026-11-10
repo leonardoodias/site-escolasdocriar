@@ -1,0 +1,11 @@
+// Configuração do Worker na Cloudflare. O build (Nitro) completa este arquivo e gera
+// .output/server/wrangler.json, que é o usado por `npx wrangler deploy`.
+{
+  // Deve ser igual ao nome do Worker no painel da Cloudflare (exigência do Workers Builds).
+  "name": "site-escolasdocriar",
+  "compatibility_date": "2026-11-01",
+  // Mantém as variáveis criadas no painel a cada deploy (segredos já são mantidos).
+  "keep_vars": true,
+  // Logs do Worker no painel, úteis para ver falhas do formulário.
+  "observability": { "enabled": true },
+}
