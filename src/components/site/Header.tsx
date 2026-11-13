@@ -32,12 +32,10 @@ export function Header() {
         <nav aria-label="Menu principal" className="hidden lg:block">
           <ul className="flex items-center gap-1 xl:gap-1.5">
             {navLinks.map((link) => (
-              <li key={link.label}>
+              <li key={link.to}>
                 <Link
                   to={link.to}
-                  {...("hash" in link ? { hash: link.hash } : {})}
-                  // Matrículas e Contato abrem a mesma página; a âncora decide qual fica marcado.
-                  activeOptions={{ exact: link.to === "/", includeHash: link.to === "/matriculas" }}
+                  activeOptions={{ exact: link.to === "/" }}
                   activeProps={{
                     className:
                       "bg-primary text-primary-foreground shadow-soft hover:bg-primary hover:text-primary-foreground",
@@ -65,7 +63,7 @@ export function Header() {
           </ContatoDialog>
 
           <Button asChild variant="cta" className="touch-target hidden h-10 px-5 sm:inline-flex">
-            <Link to="/matriculas">
+            <Link to="/faleconosco">
               <CalendarCheck className="mr-1.5 size-4" aria-hidden="true" />
               Agende uma visita
             </Link>
@@ -93,13 +91,11 @@ export function Header() {
         >
           <ul className="mx-auto flex max-w-md flex-col gap-1">
             {navLinks.map((link) => (
-              <li key={link.label}>
+              <li key={link.to}>
                 <Link
                   to={link.to}
-                  {...("hash" in link ? { hash: link.hash } : {})}
                   onClick={() => setOpen(false)}
-                  // Matrículas e Contato abrem a mesma página; a âncora decide qual fica marcado.
-                  activeOptions={{ exact: link.to === "/", includeHash: link.to === "/matriculas" }}
+                  activeOptions={{ exact: link.to === "/" }}
                   activeProps={{
                     className:
                       "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground",
@@ -112,7 +108,7 @@ export function Header() {
             ))}
             <li className="mt-2 pt-3 border-t border-border/60">
               <Button asChild variant="cta" className="h-11 w-full">
-                <Link to="/matriculas" onClick={() => setOpen(false)}>
+                <Link to="/faleconosco" onClick={() => setOpen(false)}>
                   <CalendarCheck className="mr-2 size-4" aria-hidden="true" />
                   Agende uma visita
                 </Link>

@@ -102,7 +102,7 @@ export function LocalizacaoContato({
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button asChild variant="cta" size="xl">
-                <Link to="/matriculas">
+                <Link to="/faleconosco">
                   <CalendarCheck className="mr-2 size-4" aria-hidden="true" />
                   Agendar uma visita
                 </Link>

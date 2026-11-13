@@ -16,6 +16,7 @@ import { Route as DestaquesRouteImport } from './routes/destaques'
 import { Route as EducacaoInfantilRouteImport } from './routes/educacao-infantil'
 import { Route as EnsinoFundamentalRouteImport } from './routes/ensino-fundamental'
 import { Route as EnsinoMedioRouteImport } from './routes/ensino-medio'
+import { Route as FaleconoscoRouteImport } from './routes/faleconosco'
 import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as InternacionalizacaoRouteImport } from './routes/internacionalizacao'
 import { Route as MatriculasRouteImport } from './routes/matriculas'
@@ -62,6 +63,11 @@ const EnsinoFundamentalRoute = EnsinoFundamentalRouteImport.update({
 const EnsinoMedioRoute = EnsinoMedioRouteImport.update({
   id: '/ensino-medio',
   path: '/ensino-medio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaleconoscoRoute = FaleconoscoRouteImport.update({
+  id: '/faleconosco',
+  path: '/faleconosco',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GaleriaRoute = GaleriaRouteImport.update({
@@ -133,6 +139,7 @@ export interface FileRoutesByFullPath {
   '/educacao-infantil': typeof EducacaoInfantilRoute
   '/ensino-fundamental': typeof EnsinoFundamentalRoute
   '/ensino-medio': typeof EnsinoMedioRoute
+  '/faleconosco': typeof FaleconoscoRoute
   '/galeria': typeof GaleriaRoute
   '/internacionalizacao': typeof InternacionalizacaoRoute
   '/matriculas': typeof MatriculasRoute
@@ -154,6 +161,7 @@ export interface FileRoutesByTo {
   '/educacao-infantil': typeof EducacaoInfantilRoute
   '/ensino-fundamental': typeof EnsinoFundamentalRoute
   '/ensino-medio': typeof EnsinoMedioRoute
+  '/faleconosco': typeof FaleconoscoRoute
   '/galeria': typeof GaleriaRoute
   '/internacionalizacao': typeof InternacionalizacaoRoute
   '/matriculas': typeof MatriculasRoute
@@ -176,6 +184,7 @@ export interface FileRoutesById {
   '/educacao-infantil': typeof EducacaoInfantilRoute
   '/ensino-fundamental': typeof EnsinoFundamentalRoute
   '/ensino-medio': typeof EnsinoMedioRoute
+  '/faleconosco': typeof FaleconoscoRoute
   '/galeria': typeof GaleriaRoute
   '/internacionalizacao': typeof InternacionalizacaoRoute
   '/matriculas': typeof MatriculasRoute
@@ -199,6 +208,7 @@ export interface FileRouteTypes {
     | '/educacao-infantil'
     | '/ensino-fundamental'
     | '/ensino-medio'
+    | '/faleconosco'
     | '/galeria'
     | '/internacionalizacao'
     | '/matriculas'
@@ -220,6 +230,7 @@ export interface FileRouteTypes {
     | '/educacao-infantil'
     | '/ensino-fundamental'
     | '/ensino-medio'
+    | '/faleconosco'
     | '/galeria'
     | '/internacionalizacao'
     | '/matriculas'
@@ -241,6 +252,7 @@ export interface FileRouteTypes {
     | '/educacao-infantil'
     | '/ensino-fundamental'
     | '/ensino-medio'
+    | '/faleconosco'
     | '/galeria'
     | '/internacionalizacao'
     | '/matriculas'
@@ -263,6 +275,7 @@ export interface RootRouteChildren {
   EducacaoInfantilRoute: typeof EducacaoInfantilRoute
   EnsinoFundamentalRoute: typeof EnsinoFundamentalRoute
   EnsinoMedioRoute: typeof EnsinoMedioRoute
+  FaleconoscoRoute: typeof FaleconoscoRoute
   GaleriaRoute: typeof GaleriaRoute
   InternacionalizacaoRoute: typeof InternacionalizacaoRoute
   MatriculasRoute: typeof MatriculasRoute
@@ -326,6 +339,13 @@ declare module '@tanstack/react-router' {
       path: '/ensino-medio'
       fullPath: '/ensino-medio'
       preLoaderRoute: typeof EnsinoMedioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faleconosco': {
+      id: '/faleconosco'
+      path: '/faleconosco'
+      fullPath: '/faleconosco'
+      preLoaderRoute: typeof FaleconoscoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/galeria': {
@@ -423,6 +443,7 @@ const rootRouteChildren: RootRouteChildren = {
   EducacaoInfantilRoute: EducacaoInfantilRoute,
   EnsinoFundamentalRoute: EnsinoFundamentalRoute,
   EnsinoMedioRoute: EnsinoMedioRoute,
+  FaleconoscoRoute: FaleconoscoRoute,
   GaleriaRoute: GaleriaRoute,
   InternacionalizacaoRoute: InternacionalizacaoRoute,
   MatriculasRoute: MatriculasRoute,

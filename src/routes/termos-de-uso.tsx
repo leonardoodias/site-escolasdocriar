@@ -47,9 +47,9 @@ function Termos() {
           </p>
           <h2 className="text-2xl font-extrabold text-primary-deep">Contato</h2>
           <p>
-            Dúvidas sobre estes termos podem ser enviadas pela nossa{" "}
-            <Link to="/matriculas" hash="atendimento" className="font-bold text-primary">
-              página de Contato
+            Dúvidas sobre estes termos podem ser enviadas pelos nossos{" "}
+            <Link to="/faleconosco" hash="atendimento" className="font-bold text-primary">
+              canais de atendimento
             </Link>
             .
           </p>

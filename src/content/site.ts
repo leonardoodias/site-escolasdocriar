@@ -20,8 +20,7 @@ export const navLinks = [
   { label: "Início", to: "/" },
   { label: "Nossas Escolas", to: "/escolas" },
   { label: "Nosso Jeito de Educar", to: "/nossa-proposta" },
-  { label: "Matrículas", to: "/matriculas" },
-  { label: "Contato", to: "/matriculas", hash: "atendimento" },
+  { label: "Fale Conosco", to: "/faleconosco" },
 ] as const;
 
 export const pilares = [

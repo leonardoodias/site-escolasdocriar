@@ -48,9 +48,9 @@ function Politica() {
           <h2 className="text-2xl font-extrabold text-primary-deep">Seus direitos</h2>
           <p>
             Conforme a Lei Geral de Proteção de Dados (LGPD), você pode solicitar a confirmação,
-            correção ou exclusão dos seus dados entrando em contato pela nossa{" "}
-            <Link to="/matriculas" hash="atendimento" className="font-bold text-primary">
-              página de Contato
+            correção ou exclusão dos seus dados entrando em contato pelos nossos{" "}
+            <Link to="/faleconosco" hash="atendimento" className="font-bold text-primary">
+              canais de atendimento
             </Link>
             .
           </p>

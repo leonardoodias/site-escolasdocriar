@@ -3,26 +3,64 @@ import { z } from "zod";
 
 import { segmentos } from "@/content/segmentos";
 
-/** Regras compartilhadas pelo formulário de Matrículas e pela validação no servidor. */
-export const solicitacaoSchema = z.object({
-  responsavel: z.string().trim().min(3, "Informe o nome do responsável.").max(120),
-  aluno: z.string().trim().min(2, "Informe o nome do aluno.").max(120),
-  telefone: z
-    .string()
-    .trim()
-    .max(30)
-    .refine((v) => v.replace(/\D/g, "").length >= 10, "Informe um telefone com DDD."),
-  email: z.string().trim().max(160).email("Informe um e-mail válido."),
-  segmento: z
-    .string()
-    .refine((v) => segmentos.some((s) => s.nome === v), "Selecione o segmento de interesse."),
-  mensagem: z.string().trim().max(2000).optional().default(""),
-  /** Campo invisível: só robôs o preenchem. */
-  site: z.string().max(200).optional().default(""),
-});
+/** Motivos do formulário Fale Conosco. Visita e matrícula pedem os dados do aluno. */
+export const assuntos = [
+  { valor: "visita", rotulo: "Agendar uma visita", escolar: true },
+  { valor: "matricula", rotulo: "Informações sobre matrículas", escolar: true },
+  { valor: "duvida", rotulo: "Esclarecer uma dúvida", escolar: false },
+  { valor: "outros", rotulo: "Outros assuntos", escolar: false },
+] as const;
+
+export type Assunto = (typeof assuntos)[number]["valor"];
+
+export function dadosDoAssunto(valor: Assunto) {
+  return assuntos.find((a) => a.valor === valor) ?? assuntos[0];
+}
+
+/** Regras compartilhadas pelo formulário Fale Conosco e pela validação no servidor. */
+export const solicitacaoSchema = z
+  .object({
+    // Sem o campo (envio no formato antigo), vale "visita"; vazio é recusado.
+    assunto: z
+      .enum(["visita", "matricula", "duvida", "outros"], {
+        errorMap: () => ({ message: "Selecione o motivo do contato." }),
+      })
+      .optional()
+      .default("visita"),
+    responsavel: z.string().trim().min(3, "Informe o nome do responsável.").max(120),
+    aluno: z.string().trim().max(120).optional().default(""),
+    telefone: z
+      .string()
+      .trim()
+      .max(30)
+      .refine((v) => v.replace(/\D/g, "").length >= 10, "Informe um telefone com DDD."),
+    email: z.string().trim().max(160).email("Informe um e-mail válido."),
+    segmento: z.string().optional().default(""),
+    mensagem: z.string().trim().max(2000).optional().default(""),
+    /** Campo invisível: só robôs o preenchem. */
+    site: z.string().max(200).optional().default(""),
+  })
+  .superRefine((s, ctx) => {
+    if (dadosDoAssunto(s.assunto).escolar) {
+      if (s.aluno.length < 2)
+        ctx.addIssue({ code: "custom", path: ["aluno"], message: "Informe o nome do aluno." });
+      if (!segmentos.some((seg) => seg.nome === s.segmento))
+        ctx.addIssue({
+          code: "custom",
+          path: ["segmento"],
+          message: "Selecione o nível de ensino.",
+        });
+    } else if (s.mensagem.length < 5) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["mensagem"],
+        message: "Conte-nos como podemos ajudar.",
+      });
+    }
+  });
 
 export type Solicitacao = z.input<typeof solicitacaoSchema>;
-export type CampoSolicitacao = Exclude<keyof Solicitacao, "site" | "mensagem">;
+export type CampoSolicitacao = Exclude<keyof Solicitacao, "site">;
 
 type ErrosDosCampos = Partial<Record<CampoSolicitacao, string>>;
 
@@ -75,18 +113,20 @@ export const solicitarContato = createServerFn({ method: "POST" })
       return { ok: false, motivo: "configuracao" };
     }
 
+    const assunto = dadosDoAssunto(s.assunto);
     const texto = [
-      "Nova solicitação de contato enviada pelo site (página Matrículas).",
+      "Nova mensagem enviada pelo formulário Fale Conosco do site.",
       "",
+      `Motivo: ${assunto.rotulo}`,
       `Responsável: ${s.responsavel}`,
-      `Aluno: ${s.aluno}`,
       `Telefone/WhatsApp: ${s.telefone}`,
       `E-mail: ${s.email}`,
-      `Nível de ensino: ${s.segmento}`,
+      ...(assunto.escolar ? [`Aluno: ${s.aluno}`, `Nível de ensino: ${s.segmento}`] : []),
       "",
       "Mensagem:",
       s.mensagem || "(sem mensagem)",
     ].join("\n");
+    const resumo = assunto.escolar ? [s.segmento, s.aluno] : [s.responsavel];
 
     try {
       const resposta = await fetch("https://api.resend.com/emails", {
@@ -96,7 +136,7 @@ export const solicitarContato = createServerFn({ method: "POST" })
           from: remetente,
           to: destinos,
           reply_to: s.email,
-          subject: `Solicitação de visita — ${s.segmento} — ${s.aluno}`,
+          subject: [assunto.rotulo, ...resumo].join(" — "),
           text: texto,
         }),
         signal: AbortSignal.timeout(10_000),

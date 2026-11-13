@@ -38,7 +38,7 @@ export function CtaMatriculas({ unidade }: { unidade?: UnidadeId }) {
                 size="lg"
                 className="min-h-12 rounded-full bg-background px-6 font-bold text-primary shadow-soft hover:bg-background/95 hover:text-primary-deep"
               >
-                <Link to="/matriculas">
+                <Link to="/faleconosco">
                   <CalendarCheck className="mr-2 size-5" aria-hidden="true" />
                   Agende uma visita
                 </Link>
@@ -64,7 +64,7 @@ export function CtaMatriculas({ unidade }: { unidade?: UnidadeId }) {
                 variant="ghost"
                 className="min-h-12 rounded-full px-5 font-bold text-primary-foreground hover:bg-white/15 hover:text-primary-foreground"
               >
-                <Link to="/matriculas">
+                <Link to="/faleconosco">
                   Saiba mais sobre matrículas
                   <ArrowRight className="ml-1.5 size-4" aria-hidden="true" />
                 </Link>

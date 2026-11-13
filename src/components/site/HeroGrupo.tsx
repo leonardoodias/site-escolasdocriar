@@ -63,7 +63,7 @@ export const heroBanners: HeroBanner[] = [
     ctas: [
       {
         label: "Agende uma visita",
-        to: "/matriculas",
+        to: "/faleconosco",
         variant: "primary",
         icon: "calendar",
       },
@@ -97,12 +97,12 @@ export const heroBanners: HeroBanner[] = [
       eyebrow: "Ano Letivo 2027",
       title: "Garanta a vaga do seu filho",
       ctaLabel: "Saiba mais",
-      ctaTo: "/matriculas",
+      ctaTo: "/faleconosco",
     },
     ctas: [
       {
         label: "Agende uma visita",
-        to: "/matriculas",
+        to: "/faleconosco",
         variant: "primary",
         icon: "calendar",
       },
@@ -141,7 +141,7 @@ function RenderCta({
   if (cta.variant === "primary") {
     return (
       <Button asChild variant="cta" size="xl">
-        <Link to={cta.to ?? "/matriculas"}>
+        <Link to={cta.to ?? "/faleconosco"}>
           {iconElement}
           {cta.label}
         </Link>
@@ -331,7 +331,7 @@ export function HeroGrupo() {
                 </div>
                 {currentBanner.cardBadge.ctaLabel && (
                   <Button asChild size="sm" variant="cta" className="touch-target h-9 px-4">
-                    <Link to={currentBanner.cardBadge.ctaTo ?? "/matriculas"}>
+                    <Link to={currentBanner.cardBadge.ctaTo ?? "/faleconosco"}>
                       {currentBanner.cardBadge.ctaLabel}
                     </Link>
                   </Button>

@@ -69,7 +69,7 @@ export function CasteloDoCriarPage({ escola }: { escola: Escola }) {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="cta" size="xl">
-                <Link to="/matriculas">
+                <Link to="/faleconosco">
                   <CalendarCheck className="mr-2 size-5" aria-hidden="true" />
                   Agende uma visita
                 </Link>

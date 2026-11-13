@@ -77,7 +77,7 @@ function NossaProposta() {
         size="compact"
       >
         <Button asChild variant="cta" size="xl">
-          <Link to="/matriculas">
+          <Link to="/faleconosco">
             <CalendarCheck className="mr-2 size-5" aria-hidden="true" />
             Agende uma visita
           </Link>
