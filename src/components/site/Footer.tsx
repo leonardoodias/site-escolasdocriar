@@ -17,10 +17,14 @@ const castelinhoDetails = {
   faixa: "Primeira Infância",
 };
 
+/** Mesmas páginas do menu, mais as institucionais fora dele. Política e Termos ficam na barra inferior. */
 const linksRapidos = [
+  { label: "Início", to: "/" },
   { label: "Nossas Escolas", to: "/escolas" },
+  { label: "Nosso Jeito de Educar", to: "/nossa-proposta" },
+  { label: "Internacionalização", to: "/internacionalizacao" },
+  { label: "Eventos e destaques", to: "/destaques" },
   { label: "Fale Conosco", to: "/faleconosco" },
-  { label: "Política de Privacidade", to: "/politica-de-privacidade" },
 ] as const;
 
 export function Footer() {

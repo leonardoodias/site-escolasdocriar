@@ -39,6 +39,13 @@ import { segmentos } from "@/content/segmentos";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/faleconosco")({
+  // ?assunto=visita|matricula|duvida|outros pré-seleciona o motivo; os demais parâmetros (ex.: utm_*) seguem intactos.
+  validateSearch: (busca: Record<string, unknown>): { assunto?: Assunto } => {
+    const { assunto, ...resto } = busca;
+    return assuntos.some((a) => a.valor === assunto)
+      ? { ...resto, assunto: assunto as Assunto }
+      : resto;
+  },
   head: () => ({
     meta: [
       { title: "Fale Conosco — Escolas do Criar" },
@@ -177,7 +184,12 @@ function Matriculas() {
   const [erros, setErros] = useState<Erros>({});
   const [enviando, setEnviando] = useState(false);
   const [enviado, setEnviado] = useState(false);
-  const [assunto, setAssunto] = useState<Assunto | "">("");
+  const { assunto: assuntoDaUrl } = Route.useSearch();
+  const [assunto, setAssunto] = useState<Assunto | "">(assuntoDaUrl ?? "");
+  // Navegação interna para a mesma página com outro motivo na URL.
+  useEffect(() => {
+    if (assuntoDaUrl) setAssunto(assuntoDaUrl);
+  }, [assuntoDaUrl]);
   // Antes da escolha, os campos do aluno ficam visíveis (visita é o motivo mais comum).
   const escolar = assunto === "" || dadosDoAssunto(assunto).escolar;
   const confirmacaoRef = useRef<HTMLDivElement>(null);
@@ -267,7 +279,10 @@ function Matriculas() {
       <section className="pt-8 pb-8 md:pt-10 md:pb-14">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[7fr_5fr] lg:gap-12">
-            <div className="rounded-4xl border border-border/70 bg-card p-6 shadow-lift sm:p-8 md:p-10">
+            <div
+              id="formulario"
+              className="scroll-mt-24 rounded-4xl border border-border/70 bg-card p-6 shadow-lift sm:p-8 md:p-10"
+            >
               {enviado ? (
                 <div
                   ref={confirmacaoRef}

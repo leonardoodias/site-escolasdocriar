@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ChamadaInternacionalizacao } from "@/components/site/ChamadaInternacionalizacao";
-import { CtaMatriculas } from "@/components/site/CtaMatriculas";
+import { CtaCaptacao } from "@/components/site/CtaCaptacao";
 import { DestaquesSection } from "@/components/site/DestaquesSection";
 import { DiferenciaisSection } from "@/components/site/DiferenciaisSection";
 import { EscolasSection } from "@/components/site/EscolasSection";
@@ -36,11 +36,12 @@ function HomePage() {
     <>
       <HeroGrupo />
       <EscolasSection />
+      {/* Chamada de matrículas da home; substitui a chamada final para não repetir as mesmas ações. */}
+      <CtaCaptacao />
       <DestaquesSection />
       <PropositoSection />
       <ChamadaInternacionalizacao />
       <DiferenciaisSection />
-      <CtaMatriculas />
     </>
   );
 }
