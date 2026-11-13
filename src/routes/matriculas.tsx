@@ -171,7 +171,7 @@ function Matriculas() {
         wide
         eyebrow="Matrículas abertas"
         title="Agende sua visita às Escolas do Criar"
-        text="Conheça o Castelinho do Criar ou o Castelo do Criar e descubra de perto a unidade ideal para sua família."
+        text="Se você ainda não conhece nossas escolas ou deseja entender melhor nossa proposta pedagógica, convidamos sua família para uma visita ao Castelinho do Criar ou ao Castelo do Criar. Venha conhecer de perto nossa equipe, a direção e os ambientes de aprendizagem."
         supportText="Preencha o formulário e nossa equipe entrará em contato para organizar sua visita e esclarecer suas dúvidas."
       />
 

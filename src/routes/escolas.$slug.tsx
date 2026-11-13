@@ -132,7 +132,7 @@ function EscolaPage() {
           <SectionHeading
             eyebrow="Aulas e programas"
             title="Aprendizagens e descobertas"
-            text="Experiências que ampliam a rotina e respeitam o momento de cada turma."
+            text="Desde os primeiros anos, nossos pequenos participam de seis oficinas pedagógicas, conforme a faixa etária, que ampliam as possibilidades de aprendizagem por meio de vivências lúdicas, práticas e significativas."
           />
           <div className="mx-auto mt-8 grid max-w-5xl gap-4 md:mt-10 md:grid-cols-2 md:gap-5">
             {programasCastelinho.map((programa) => (

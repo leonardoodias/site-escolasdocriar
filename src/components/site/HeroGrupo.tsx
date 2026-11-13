@@ -51,7 +51,7 @@ export const heroBanners: HeroBanner[] = [
     id: "institucional",
     title: "Duas escolas, um propósito em comum",
     subtitle:
-      "Educar com acolhimento, criatividade e desenvolvimento — do primeiro passo na escola até a formação para o futuro.",
+      "Educar com acolhimento, criatividade e desenvolvimento. Do primeiro passo no Castelinho do Criar à formação para o futuro no Castelo do Criar.",
     image: heroImg,
     imageAlt: "Escolas do Criar — Castelo do Criar e Castelinho do Criar",
     cardBadge: {

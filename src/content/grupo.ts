@@ -20,7 +20,10 @@ export const grupo = {
   nome: "ESCOLAS DO CRIAR",
   tagline: "Duas escolas, um propósito em comum",
   descricao:
-    "Educar com acolhimento, criatividade e desenvolvimento — do primeiro passo na escola até a formação para o futuro.",
+    "Educar com acolhimento, criatividade e desenvolvimento. Do primeiro passo no Castelinho do Criar à formação para o futuro no Castelo do Criar.",
+  /** Texto da seção "Nosso propósito" da home. */
+  proposito:
+    "Educar com acolhimento, criatividade e valores. Nossa proposta pedagógica integra conhecimento e experiências significativas, desenvolve o potencial de cada aluno, respeita sua individualidade e amplia seus horizontes.",
   cidade: "Santa Rosa de Viterbo/SP",
   /** Logotipo institucional do grupo (fundo transparente). */
   logo: logoEscolasDoCriar,

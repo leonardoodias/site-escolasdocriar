@@ -440,21 +440,21 @@ export const programasCastelinho: Programa[] = [
     nome: "Musicalização",
     publico: "Berçário ao Nível II",
     texto:
-      "Vivências musicais que despertam a criatividade e a expressão, enquanto desenvolvem ritmo, percepção auditiva, coordenação motora e convivência.",
+      "A musicalização contribui para o desenvolvimento da percepção auditiva, da linguagem, da memória e da expressão corporal. Por meio de ritmos, sons e experiências musicais, as crianças ampliam suas possibilidades de comunicação e interação.",
     icon: "Music",
   },
   {
     nome: "Psicomotricidade",
     publico: "Berçário ao Nível II",
     texto:
-      "Brincadeiras de movimento, equilíbrio e exploração do espaço ajudam as crianças a conhecer o próprio corpo e a desenvolver coordenação e confiança.",
+      "As aulas de movimento proporcionam experiências que estimulam a coordenação motora, o equilíbrio, a percepção corporal e a orientação espacial. Com brincadeiras e desafios adequados a cada etapa, as crianças desenvolvem confiança, autonomia e habilidades fundamentais para seu crescimento.",
     icon: "PersonStanding",
   },
   {
     nome: "Culinária",
     publico: "Mini Maternal ao Nível II",
     texto:
-      "Em atividades práticas com os alimentos, as crianças fazem novas descobertas sensoriais, ganham autonomia e constroem hábitos saudáveis.",
+      "Nas oficinas de culinária, as crianças exploram ingredientes, texturas, aromas e sabores, desenvolvendo a percepção sensorial, a coordenação motora e a autonomia. As atividades também incentivam a cooperação, a curiosidade e a construção de hábitos alimentares saudáveis.",
     icon: "ChefHat",
   },
   {
@@ -468,7 +468,7 @@ export const programasCastelinho: Programa[] = [
     nome: "Oficina de Inglês",
     publico: "Mini Maternal",
     texto:
-      "Um primeiro contato divertido com o idioma, pensado para a faixa etária, que estimula a escuta, a curiosidade e a familiaridade com o inglês.",
+      "O contato com a língua inglesa acontece de maneira lúdica, por meio de músicas, brincadeiras e interações adequadas à faixa etária. As experiências estimulam a escuta, a comunicação e a familiarização com novos sons e palavras, ampliando o repertório linguístico das crianças.",
     icon: "Globe",
   },
   {

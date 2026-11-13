@@ -15,7 +15,7 @@ export function PropositoSection() {
             <h2 className="mt-2.5 text-3xl font-extrabold text-primary-deep md:text-4xl">
               Um grupo, o mesmo cuidado em cada escola
             </h2>
-            <p className="mt-3.5 text-base text-muted-foreground md:text-lg">{grupo.descricao}</p>
+            <p className="mt-3.5 text-base text-muted-foreground md:text-lg">{grupo.proposito}</p>
           </div>
           <ul className="grid gap-3">
             {propositoGrupo.map((item) => (
