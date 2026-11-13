@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
 
-import { ExternalLink } from "@/components/site/ExternalLink";
 import { Container, PageHero } from "@/components/site/Section";
 import { CtaMatriculas } from "@/components/site/CtaMatriculas";
-import { DestaqueImagem, VerDetalhesDialog } from "@/components/site/DestaquesSection";
-import { Button } from "@/components/ui/button";
-import { destaques } from "@/content/destaques";
+import { DestaqueCard } from "@/components/site/DestaquesSection";
+import { destaques, hojeEmSaoPaulo, ordenarDestaques, type Destaque } from "@/content/destaques";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/destaques")({
   head: () => ({
@@ -27,7 +25,42 @@ export const Route = createFileRoute("/destaques")({
   component: DestaquesPage,
 });
 
+/** Colunas que evitam um card sozinho na última linha nos casos comuns. */
+function classesGradeEventos(total: number) {
+  if (total <= 1) return "max-w-md";
+  return cn(
+    "sm:grid-cols-2",
+    (total % 3 === 0 || total % 2 === 1) && "lg:grid-cols-3",
+    // Abaixo de 1024 px, com total ímpar, o último card ocupa a linha inteira.
+    total % 2 === 1 && "sm:max-lg:[&>*:last-child]:col-span-2",
+  );
+}
+
+function GradeEventos({
+  titulo,
+  lista,
+  hoje,
+}: {
+  titulo: string;
+  lista: Destaque[];
+  hoje: string;
+}) {
+  return (
+    <div>
+      <h2 className="text-2xl font-extrabold text-primary-deep">{titulo}</h2>
+      <div className={cn("mt-6 grid gap-6", classesGradeEventos(lista.length))}>
+        {lista.map((d) => (
+          <DestaqueCard key={d.id} destaque={d} hoje={hoje} contorno />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function DestaquesPage() {
+  const hoje = hojeEmSaoPaulo();
+  const { ativos, encerrados } = ordenarDestaques(destaques, hoje);
+
   return (
     <>
       <PageHero
@@ -37,49 +70,13 @@ function DestaquesPage() {
       />
 
       <section className="section">
-        <Container>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {destaques.map((d) => (
-              <article
-                key={d.id}
-                className="card-hover flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft"
-              >
-                {/* Mesma proporção 2:1 do card da home: uma única imagem serve aos dois. */}
-                <div className="relative aspect-[2/1]">
-                  <DestaqueImagem destaque={d} />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="rounded-full bg-primary-soft px-3 py-1 text-xs font-extrabold tracking-wide text-primary uppercase">
-                      {d.tag}
-                    </span>
-                    {d.data && (
-                      <span className="text-xs font-bold text-muted-foreground">{d.data}</span>
-                    )}
-                  </div>
-                  <h2 className="mt-4 text-lg font-bold text-primary-deep">{d.titulo}</h2>
-                  <p className="mt-3 flex-1 text-sm text-muted-foreground">{d.texto}</p>
-                  <div className="mt-6">
-                    {d.cta.href ? (
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="min-h-11 rounded-full border-primary/30 font-bold text-primary"
-                      >
-                        <ExternalLink href={d.cta.href}>
-                          {d.cta.label}
-                          <ArrowRight className="size-4" aria-hidden="true" />
-                        </ExternalLink>
-                      </Button>
-                    ) : (
-                      // O link do cadastro aponta para esta mesma página; aqui os detalhes abrem na janela.
-                      <VerDetalhesDialog destaque={d} contorno />
-                    )}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+        <Container className="space-y-12 md:space-y-14">
+          {ativos.length > 0 && (
+            <GradeEventos titulo="Próximos eventos" lista={ativos} hoje={hoje} />
+          )}
+          {encerrados.length > 0 && (
+            <GradeEventos titulo="Eventos encerrados" lista={encerrados} hoje={hoje} />
+          )}
         </Container>
       </section>
 
