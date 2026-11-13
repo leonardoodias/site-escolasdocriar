@@ -20,7 +20,7 @@ const castelinhoDetails = {
 const linksRapidos = [
   { label: "Nossas Escolas", to: "/escolas" },
   { label: "Matrículas", to: "/matriculas" },
-  { label: "Contato", to: "/contato" },
+  { label: "Contato", to: "/matriculas", hash: "atendimento" },
   { label: "Política de Privacidade", to: "/politica-de-privacidade" },
 ] as const;
 
@@ -170,9 +170,10 @@ export function Footer() {
           </div>
           <ul className="mt-1 grid grid-cols-2 gap-x-4 lg:mt-3 lg:block lg:space-y-2.5">
             {linksRapidos.map((link) => (
-              <li key={link.to}>
+              <li key={link.label}>
                 <Link
                   to={link.to}
+                  {...("hash" in link ? { hash: link.hash } : {})}
                   className="flex min-h-11 items-center text-sm font-semibold text-foreground/80 hover:text-primary transition-colors lg:inline lg:min-h-0"
                 >
                   {link.label}

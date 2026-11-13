@@ -35,25 +35,21 @@ function Politica() {
         <Container className="max-w-3xl space-y-6 text-base text-foreground/85">
           <h2 className="text-2xl font-extrabold text-primary-deep">Dados que coletamos</h2>
           <p>
-            Coletamos apenas os dados informados voluntariamente nos formulários do site,
-            como nome do responsável, nome do aluno, telefone, e-mail e mensagem.
+            Coletamos apenas os dados informados voluntariamente nos formulários do site, como nome
+            do responsável, nome do aluno, telefone, e-mail e mensagem.
           </p>
           <h2 className="text-2xl font-extrabold text-primary-deep">Como utilizamos</h2>
           <p>
-            As informações são usadas exclusivamente para responder solicitações de
-            contato, agendamento de visitas e informações sobre matrículas.
+            As informações são usadas exclusivamente para responder solicitações de contato,
+            agendamento de visitas e informações sobre matrículas.
           </p>
           <h2 className="text-2xl font-extrabold text-primary-deep">Compartilhamento</h2>
-          <p>
-            Não vendemos nem compartilhamos dados pessoais com terceiros para fins
-            comerciais.
-          </p>
+          <p>Não vendemos nem compartilhamos dados pessoais com terceiros para fins comerciais.</p>
           <h2 className="text-2xl font-extrabold text-primary-deep">Seus direitos</h2>
           <p>
-            Conforme a Lei Geral de Proteção de Dados (LGPD), você pode solicitar a
-            confirmação, correção ou exclusão dos seus dados entrando em contato pela
-            nossa{" "}
-            <Link to="/contato" className="font-bold text-primary">
+            Conforme a Lei Geral de Proteção de Dados (LGPD), você pode solicitar a confirmação,
+            correção ou exclusão dos seus dados entrando em contato pela nossa{" "}
+            <Link to="/matriculas" hash="atendimento" className="font-bold text-primary">
               página de Contato
             </Link>
             .

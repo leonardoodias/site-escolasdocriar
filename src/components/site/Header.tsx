@@ -32,10 +32,12 @@ export function Header() {
         <nav aria-label="Menu principal" className="hidden lg:block">
           <ul className="flex items-center gap-1 xl:gap-1.5">
             {navLinks.map((link) => (
-              <li key={link.to}>
+              <li key={link.label}>
                 <Link
                   to={link.to}
-                  activeOptions={{ exact: link.to === "/" }}
+                  {...("hash" in link ? { hash: link.hash } : {})}
+                  // Matrículas e Contato abrem a mesma página; a âncora decide qual fica marcado.
+                  activeOptions={{ exact: link.to === "/", includeHash: link.to === "/matriculas" }}
                   activeProps={{
                     className:
                       "bg-primary text-primary-foreground shadow-soft hover:bg-primary hover:text-primary-foreground",
@@ -91,11 +93,13 @@ export function Header() {
         >
           <ul className="mx-auto flex max-w-md flex-col gap-1">
             {navLinks.map((link) => (
-              <li key={link.to}>
+              <li key={link.label}>
                 <Link
                   to={link.to}
+                  {...("hash" in link ? { hash: link.hash } : {})}
                   onClick={() => setOpen(false)}
-                  activeOptions={{ exact: link.to === "/" }}
+                  // Matrículas e Contato abrem a mesma página; a âncora decide qual fica marcado.
+                  activeOptions={{ exact: link.to === "/", includeHash: link.to === "/matriculas" }}
                   activeProps={{
                     className:
                       "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground",

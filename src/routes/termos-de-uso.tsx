@@ -36,21 +36,19 @@ function Termos() {
         <Container className="max-w-3xl space-y-6 text-base text-foreground/85">
           <h2 className="text-2xl font-extrabold text-primary-deep">Conteúdo do site</h2>
           <p>
-            Os textos, imagens e marcas presentes neste site pertencem à{" "}
-            {school.name} e não podem ser reproduzidos sem autorização prévia.
+            Os textos, imagens e marcas presentes neste site pertencem à {school.name} e não podem
+            ser reproduzidos sem autorização prévia.
           </p>
-          <h2 className="text-2xl font-extrabold text-primary-deep">
-            Informações institucionais
-          </h2>
+          <h2 className="text-2xl font-extrabold text-primary-deep">Informações institucionais</h2>
           <p>
-            As informações publicadas têm caráter informativo e podem ser atualizadas a
-            qualquer momento. Valores, vagas e calendários devem ser confirmados
-            diretamente com a secretaria.
+            As informações publicadas têm caráter informativo e podem ser atualizadas a qualquer
+            momento. Valores, vagas e calendários devem ser confirmados diretamente com a
+            secretaria.
           </p>
           <h2 className="text-2xl font-extrabold text-primary-deep">Contato</h2>
           <p>
             Dúvidas sobre estes termos podem ser enviadas pela nossa{" "}
-            <Link to="/contato" className="font-bold text-primary">
+            <Link to="/matriculas" hash="atendimento" className="font-bold text-primary">
               página de Contato
             </Link>
             .
