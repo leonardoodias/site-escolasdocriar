@@ -57,12 +57,18 @@ const cadastro: Destaque[] = [
   {
     id: "cantata-de-natal",
     tag: "Evento",
-    titulo: "Cantata de Natal",
+    titulo: "5ª Cantata de Natal",
     texto:
-      "Apresentação natalina dos alunos para celebrar o encerramento do ano com a comunidade escolar.",
+      "Apresentação natalina dos alunos do Castelinho e do Castelo na Escadaria da Igreja Matriz, para celebrar o encerramento do ano com a comunidade.",
     data: "30/11",
     placeholderText: "Adicione imagem de referência da Cantata de Natal",
-    detalhes: ["18h30", "Escadaria da Praça Matriz"],
+    detalhes: [
+      "Segunda-feira, 30 de novembro de 2026",
+      "18h30 — Castelinho do Criar",
+      "19h — Castelo do Criar",
+      "Escadaria da Igreja Matriz",
+      "Organização: Escolas do Criar – Castelinho e Castelo",
+    ],
     cta: { label: "Ver detalhes", to: "/destaques" },
   },
 ];
@@ -113,7 +119,11 @@ export const proximasDatas: MesAgenda[] = [
     itens: [
       { data: "23 a 30/11", evento: "Avaliação P2" },
       { data: "Data a definir", evento: "Viagem do 9º Ano" },
-      { data: "30/11", evento: "Cantata de Natal", detalhe: "18h30 · Escadaria da Praça Matriz" },
+      {
+        data: "30/11",
+        evento: "5ª Cantata de Natal",
+        detalhe: "Castelinho 18h30 · Castelo 19h · Escadaria da Igreja Matriz",
+      },
     ],
   },
   {
